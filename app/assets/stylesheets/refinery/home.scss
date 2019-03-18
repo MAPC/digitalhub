@@ -101,10 +101,11 @@
           width: 100%;
           margin-left: 0;
         }
+
         &__image--mc-arrow {
-          margin: 1rem 5rem 0 5.5rem;
-          max-width:100%;
-          max-height:auto;
+          margin: 1rem 8.5rem 0 5.5rem;
+          width: auto;
+          height: 28rem;
           @include media($break_xsmall){
             display: none;
           }
@@ -121,7 +122,14 @@
           }
         }
 
+        &--regional-plan {
+          margin-right: 11rem;
+        }
+        
         &--regional-plan-title {
+          font-family: $font_family-secondary-light;
+          color: $v3-color_green-dark;
+
           @include media(small) {
             font-size: 1.5rem;
           }
@@ -131,17 +139,29 @@
           align-content: center;
           color: $v3-color_green-dark;
           margin-bottom: 1rem;
+          font-family: $font_family-secondary-light;
         }
 
-        &__button--learn {
+        &__button {
+          width: 14rem;
+          margin-top: 2rem;
           padding: .5rem 3.5rem .5rem 2.5rem;
           border: 1px solid $v3-color_green-dark;
-          background-color: $v3-color_green-lightest;
+
           text-align: center;
+          text-transform: uppercase;
+          font-family: $font_family-secondary-light;
+          letter-spacing: .1rem;
+
+          color: $v3-color_green-medium;
+          background-color: $v3-color_green-lightest;
+          
           &:hover { 
             background-color: $color_green-medium; 
-            color: $v3-color_green-lightest;
-          }
+            a {
+              color: $v3-color_green-lightest;
+            } 
+          } 
         }
       }
 
