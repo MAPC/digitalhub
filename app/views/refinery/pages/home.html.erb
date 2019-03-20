@@ -15,20 +15,20 @@
     <section class="content-column">
       <%= raw @page.content_for(:body) %>
       <% if Flipper.enabled?(:action_buttons) %>
-      <div class="action-boxes">
-        <a href="/find-out"><span class="wrapper"><%= t('refinery.home.actions.learn') %></span></a>
-        <a href="/stories/new"><span class="wrapper"><%= t('refinery.home.actions.engage') %></span></a>
-        <a href="/events"><span class="wrapper"><%= t('refinery.home.actions.events') %></span></a>
-      </div>
+        <div class="action-boxes">
+          <a href="/find-out"><span class="wrapper"><%= t('refinery.home.actions.learn') %></span></a>
+          <a href="/stories/new"><span class="wrapper"><%= t('refinery.home.actions.engage') %></span></a>
+          <a href="/events"><span class="wrapper"><%= t('refinery.home.actions.events') %></span></a>
+        </div>
       <% end %>
     </section>
   </div>
   <% if @page.content_for(:bottom) %>
-  <div class="container">
-    <section class="content-column">
-      <%= raw @page.content_for(:bottom) %>
-    </section>
-  </div>
+    <div class="container">
+      <section class="content-column">
+        <%= raw @page.content_for(:bottom) %>
+      </section>
+    </div>
   <% end %>
   <div class="interruption">
     <div class="container">
