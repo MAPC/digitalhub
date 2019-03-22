@@ -1,0 +1,51 @@
+<% content_for :body_content_title do %>
+  <%= @hero_image.title %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Image</h1>
+    <p>
+      <%= image_fu @hero_image.image, nil %>
+    </p>
+  </section>
+  <section>
+    <h1>Title</h1>
+    <p>
+      <%=raw @hero_image.title %>
+    </p>
+  </section>
+  <section>
+    <h1>Description</h1>
+    <p>
+      <%=raw @hero_image.description %>
+    </p>
+  </section>
+  <section>
+    <h1>Url</h1>
+    <p>
+      <%=raw @hero_image.url %>
+    </p>
+  </section>
+  <section>
+    <h1>Format</h1>
+    <p>
+      <%=raw @hero_image.format %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="hero_images">
+      <% @hero_images.each do |hero_image| %>
+        <li>
+          <%= link_to hero_image.title, refinery.hero_images_hero_image_path(hero_image) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

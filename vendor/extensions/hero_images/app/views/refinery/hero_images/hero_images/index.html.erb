@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="hero_images">
+    <% @hero_images.each do |hero_image| %>
+      <li>
+        <%= link_to hero_image.title, refinery.hero_images_hero_image_path(hero_image) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>
