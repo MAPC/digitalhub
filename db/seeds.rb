@@ -21,3 +21,6 @@ Flipper.enable(:next_event)
 
 # Added by Refinery CMS Stories extension
 Refinery::Stories::Engine.load_seed
+
+# Added by Refinery CMS HeroImages extension
+Refinery::HeroImages::Engine.load_seed

@@ -75,6 +75,9 @@ PATH
     refinerycms-events (1.0)
       acts_as_indexed (~> 0.8.0)
       refinerycms-core (~> 4.0.2)
+    refinerycms-hero_images (1.0)
+      acts_as_indexed (~> 0.8.0)
+      refinerycms-core (~> 4.0.2)
     refinerycms-stories (1.0)
       acts_as_indexed (~> 0.8.0)
       refinerycms-core (~> 4.0.2)
@@ -620,6 +623,7 @@ DEPENDENCIES
   refinerycms-acts-as-indexed (~> 3.0, >= 3.0.0)
   refinerycms-authentication-devise (~> 2.0.0)!
   refinerycms-events!
+  refinerycms-hero_images!
   refinerycms-i18n
   refinerycms-search!
   refinerycms-stories!
