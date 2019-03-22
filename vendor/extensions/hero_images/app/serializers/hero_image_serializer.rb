@@ -1,4 +1,4 @@
 class HeroImageSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :title, :image, :format, :descriptionl :url
+  attributes :title, :image, :url, :description, :format
 end
