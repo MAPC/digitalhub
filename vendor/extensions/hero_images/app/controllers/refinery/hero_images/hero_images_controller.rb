@@ -9,6 +9,8 @@ module Refinery
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @hero_image in the line below:
         present(@page)
+        @hero_images = Refinery::HeroImages::HeroImage.all
+        render json: @hero_images
       end
 
       def show

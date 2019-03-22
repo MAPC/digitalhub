@@ -25,3 +25,5 @@ Refinery::Stories::Engine.load_seed
 
 # Added by Refinery CMS Announcements extension
 Refinery::Announcements::Engine.load_seed
+# Added by Refinery CMS HeroImages extension
+Refinery::HeroImages::Engine.load_seed
