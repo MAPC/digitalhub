@@ -1,6 +1,5 @@
 $(() => {
   getImages()
-  resetCounter()
 });
 
 let counter = 0
@@ -12,17 +11,18 @@ const getImages = () => {
       counter = response.length - 1
       imagesList = response
       loadImages(response)
-    });
-}
+    })
+};
 
 const loadImages = (images) => {
+  let index = 0
   for (let i = 1; i < images.length; i++) {
     setTimeout(() => {
     }, i * 1000);
 
-    let index = 0
     setTimeout(() => {
       loadImage(images[i])
+
       if (index++ <= images.length) {
         loadImages(images[index]);
       }
@@ -33,16 +33,14 @@ const loadImages = (images) => {
 const loadImage = (img) => {
   const baseUrl = 'http://127.0.0.1:3000'
   let hero = $('.styled-box')[0];
-  console.log("loading hero-background-image: ", img.data.attributes.title);
-  console.log("counter: ", counter)
   counter -= 1
-  hero.style.backgroundImage = `url(${baseUrl}${img.included[0].attributes.url})`
-  resetCounter()
+  hero.style.backgroundImage = `url(${baseUrl}${img.included[0].attributes.hero_image_thumbnail_url})`
+  replay()
 }
 
-const resetCounter = () => {
-  if (counter == 1) {
+const replay = () => {
+  if (counter == 0) {
     counter = imagesList.length
     loadImages(imagesList)
   }
-}
+};
