@@ -62,68 +62,65 @@
 
   .regional-plan {
     display: flex;
-    padding: 0 0 5rem 0;
-    align-items: center;
-    justify-content: center;
 
     font-family: $font_family-primary;
     background-color: $v3-color_green-lightest;
 
-    @include media(x-large) {
-      padding: 0 1rem 5rem 1rem;
-    }
-
-    @include media(small) {
-      display: block;
-      padding: 0 1rem 5rem 1rem;
+    @include media($break_xsmall) {
+      // display: block;
+      // padding: 0 1rem 5rem 1rem;
     }
 
     &--triangle {
-      flex: 1;
-      max-width: 622px;
+      flex: 5;
+      width: 21.56rem;
+      height: auto;
+      padding: 8.94rem 0 0 13.875rem;
 
-      margin: 1rem 8.5rem 8rem 0;
-      width: auto;
-      height: 28rem;
-
-      @include media(small) {
-        width: 100%;
-        margin-left: 0;
-      }
-      @include media(medium){
+      @include media($break_xsmall){
         display: none;
       }
     }
 
     &--description {
-      max-width: 622px;
-      margin-top: 1rem;
+      flex: 5;
+      width: 21.94rem;
+      height: auto;
+      padding: 13.125rem 16.875rem 13.09rem 11.03rem;
 
       @include media($break_xsmall) {
-        margin-bottom: 1rem;
+        // flex: 12;
         width: 100%;
-        h2 {
-          margin-bottom: 0.5rem;
-        }
+        height: auto;
+        padding: 3rem;
       }
-
 
       &-title {
         font-family: $font_family-primary;
         color: $v3-color_green-dark;
-        font-size: 2.75rem;
-
-        @include media(small) {
-          font-size: 1.5rem;
+        font-size: 2.625rem;
+        margin: 0;
+        
+        @include media($break_xsmall) {
+          font-size: 2.125rem;
+          padding: 3.25rem 10.43rem 2.06rem 0;
+          margin: 0;
         }
       }
-
-      &-text, h1, p{
+      
+      &-text, p{
         align-content: center;
         color: $v3-color_green-dark;
-        margin-bottom: 1rem;
+        
         font-family: $font_family-primary;
-        font-size: 1.25rem;
+        font-size: .9375rem;
+        
+        @include media($break_xsmall) {
+          width: 22rem;
+          margin: 0 4.625rem 0 0;
+          padding-bottom: 4.125rem;
+          font-size: .9375rem;
+        }
       }
 
       &__button {
@@ -131,14 +128,21 @@
         margin-top: 2.5rem;
         padding: .7rem 3.5rem .7rem 2.5rem;
         border: 1px solid $v3-color_green-dark;
-
+        
         text-align: center;
         text-transform: uppercase;
         font-family: $font_family-secondary;
         letter-spacing: .1rem;
-
+        
         color: $v3-color_green-medium;
         background-color: $v3-color_green-lightest;
+        
+        @include media($break_xsmall) {
+          margin: 0;
+          padding: .7rem 3.5rem .7rem 2.5rem;
+          // padding: .7rem 0 .7rem 0;
+          // width: 10.625rem;
+        }
 
         a {
           text-decoration: none;
