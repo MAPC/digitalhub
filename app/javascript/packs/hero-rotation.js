@@ -43,7 +43,7 @@ const loadImages = (images) => {
         loadImages(images[index]);
         index++
       }
-    }, i * 5000);
+    }, i * 3000);
   }
 };
 
@@ -60,7 +60,7 @@ const loadImage = (img) => {
   if (counter == 0) {
     setTimeout(() => {
       replay()
-    }, 5000);
+    }, 4000);
   }
 }
 
