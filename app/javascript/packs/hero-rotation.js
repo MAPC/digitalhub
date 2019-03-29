@@ -43,7 +43,7 @@ const loadImages = (images) => {
         loadImages(images[index]);
         index++
       }
-    }, i * 3000);
+    }, i * 5000);
   }
 };
 
