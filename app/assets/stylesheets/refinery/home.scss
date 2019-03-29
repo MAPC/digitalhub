@@ -52,73 +52,68 @@
 
   .one-box-grid {
     padding: 0 8.3rem 10.625rem 13.875rem;
-
+    
     background: $v3-color_green-dark;
-
+    
     @include media(small) {
       padding: 0 1rem;
     }
   }
-
+  
   .regional-plan {
-    display: flex;
+    display: grid;
+    grid-template-columns: 13.875rem 38.875rem 11.06rem 39.375rem 16.875rem;
+    grid-template-rows: 54.88rem;
+    padding: 0;
 
     font-family: $font_family-primary;
     background-color: $v3-color_green-lightest;
 
     @include media($break_xsmall) {
-      // display: block;
-      // padding: 0 1rem 5rem 1rem;
+      display: grid;
+      grid-template-columns: 1.56rem 26.25rem 2.31rem;
+      grid-template-rows: 39.68rem;
+      padding: 0;
     }
 
     &--triangle {
-      flex: 5;
-      width: 21.56rem;
+      grid-column-start: 2;
+      width: auto;
       height: auto;
-      padding: 8.94rem 0 0 13.875rem;
-
+      padding-top: 8.94rem;
+      
       @include media($break_xsmall){
         display: none;
       }
     }
-
+    
     &--description {
-      flex: 5;
-      width: 21.94rem;
-      height: auto;
-      padding: 13.125rem 16.875rem 13.09rem 11.03rem;
+      grid-column-start: 4;
+      padding-top: 12rem;
 
       @include media($break_xsmall) {
-        // flex: 12;
-        width: 100%;
-        height: auto;
-        padding: 3rem;
+        grid-column-start: 2;
+        padding-top: 3.25rem;
       }
 
       &-title {
         font-family: $font_family-primary;
         color: $v3-color_green-dark;
-        font-size: 2.625rem;
-        margin: 0;
+        font-size: 2.125rem;
         
         @include media($break_xsmall) {
           font-size: 2.125rem;
-          padding: 3.25rem 10.43rem 2.06rem 0;
-          margin: 0;
+          padding: 0 12rem 0 0;
         }
       }
       
       &-text, p{
-        align-content: center;
+        font-family: $font_family-primary;
+        font-size: 1.25rem;
         color: $v3-color_green-dark;
         
-        font-family: $font_family-primary;
-        font-size: .9375rem;
-        
         @include media($break_xsmall) {
-          width: 22rem;
-          margin: 0 4.625rem 0 0;
-          padding-bottom: 4.125rem;
+          padding: 0 1.85rem 1rem 0;
           font-size: .9375rem;
         }
       }
@@ -140,8 +135,6 @@
         @include media($break_xsmall) {
           margin: 0;
           padding: .7rem 3.5rem .7rem 2.5rem;
-          // padding: .7rem 0 .7rem 0;
-          // width: 10.625rem;
         }
 
         a {
