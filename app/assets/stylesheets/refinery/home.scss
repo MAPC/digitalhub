@@ -54,7 +54,11 @@
     padding: 0 8.3rem 10.625rem 13.875rem;
     
     background: $v3-color_green-dark;
-    
+
+    p {
+      color: #ffffff;
+    }
+
     @include media(small) {
       padding: 0 1rem;
     }
@@ -67,7 +71,7 @@
     padding: 0;
 
     font-family: $font_family-primary;
-    background-color: $v3-color_green-lightest;
+    background-color: #ffffff;
 
     @include media($break_xsmall) {
       display: grid;
