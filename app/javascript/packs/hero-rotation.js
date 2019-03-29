@@ -1,7 +1,5 @@
 $(() => {
-  setTimeout(() => {
-    getImages()
-  }, 5000);
+  getImages()
 });
 
 let counter = 0
@@ -19,15 +17,8 @@ const getImages = () => {
     .done(response => {
       counter = response.length
       imagesList = response
-      cacheImages(response)
       loadImages(response)
     })
-};
-
-const cacheImages = (images) => {
-  for (let i = 0; i < images.length; i++) {
-    $.get(images[i].included[0].attributes.hero_image_thumbnail_url)
-  }
 };
 
 const loadImages = (images) => {
@@ -37,7 +28,7 @@ const loadImages = (images) => {
     }, i * 1000);
 
     setTimeout(() => {
-      loadImage(images[i], images[i + 1])
+      loadImage(images[i])
 
       if (index < images.length) {
         loadImages(images[index]);
