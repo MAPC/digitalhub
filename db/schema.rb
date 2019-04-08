@@ -222,6 +222,8 @@ ActiveRecord::Schema.define(version: 2019_03_26_203306) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "children_count", default: 0, null: false
+    t.string "headline"
+    t.string "subheadline"
     t.index ["depth"], name: "index_refinery_pages_on_depth"
     t.index ["id"], name: "index_refinery_pages_on_id"
     t.index ["lft"], name: "index_refinery_pages_on_lft"
