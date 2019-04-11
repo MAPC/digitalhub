@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_05_181335) do
+ActiveRecord::Schema.define(version: 2019_04_10_184909) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,25 @@ ActiveRecord::Schema.define(version: 2019_02_05_181335) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["feature_key", "key", "value"], name: "index_flipper_gates_on_feature_key_and_key_and_value", unique: true
+  end
+
+  create_table "refinery_announcement_translations", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.string "locale", null: false
+    t.integer "refinery_announcement_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["locale"], name: "index_refinery_announcement_translations_on_locale"
+    t.index ["refinery_announcement_id", "locale"], name: "index_1e4a4b96bfcc2c70b6dced31b103aba9ca46fd70", unique: true
+  end
+
+  create_table "refinery_announcements", force: :cascade do |t|
+    t.integer "image_id"
+    t.string "link"
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "refinery_authentication_devise_roles", id: :serial, force: :cascade do |t|
@@ -120,6 +139,15 @@ ActiveRecord::Schema.define(version: 2019_02_05_181335) do
     t.string "location_name"
   end
 
+  create_table "refinery_hero_images", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.integer "image_id"
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "refinery_image_translations", id: :serial, force: :cascade do |t|
     t.string "image_alt"
     t.string "image_title"
@@ -141,6 +169,26 @@ ActiveRecord::Schema.define(version: 2019_02_05_181335) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "parent_id"
+  end
+
+  create_table "refinery_one_box_translations", force: :cascade do |t|
+    t.string "title"
+    t.string "locale", null: false
+    t.integer "refinery_one_box_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["locale"], name: "index_refinery_one_box_translations_on_locale"
+    t.index ["refinery_one_box_id", "locale"], name: "index_95394ba315aed2cb69dea96439990984a765aa44", unique: true
+  end
+
+  create_table "refinery_one_boxes", force: :cascade do |t|
+    t.boolean "visible"
+    t.boolean "triangle_overlay"
+    t.integer "image_id"
+    t.string "link"
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "refinery_page_part_translations", id: :serial, force: :cascade do |t|
@@ -194,8 +242,6 @@ ActiveRecord::Schema.define(version: 2019_02_05_181335) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "children_count", default: 0, null: false
-    t.string "headline"
-    t.string "subheadline"
     t.index ["depth"], name: "index_refinery_pages_on_depth"
     t.index ["id"], name: "index_refinery_pages_on_id"
     t.index ["lft"], name: "index_refinery_pages_on_lft"

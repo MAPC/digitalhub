@@ -1,15 +1,44 @@
 $font_size-base: 1rem;
-$font_size-xsmall: .75rem;  // 12px
-$font_size-small: 1rem;  // 16px
-$font_size-medium: 1.25rem; // 20px
-$font_size-large: 1.875rem;  // 30px
-$font_size-xlarge: 2.5rem; // 40px
+$font_size-xsmall: .75rem;    // 12px
+$font_size-small: 1rem;       // 16px
+$font_size-medium: 1.125rem;  // 18px
+$font_size-large: 1.5rem;     // 24px
+$font_size-xlarge: 2.1875rem; // 35px
+
+// font sizes in v3 home page
+$v3_font_size-h1: 2.6875rem;
+// sub heading - $font_size-large
+$v3_font_size-button: 1.125rem; // button text
+$v3_font_size-title: 1.8rem; // announcements title
+$v3_font_size-number: 1.25rem; // announcemnets number
+$v3_font_size-event: .9rem; // event text
+$v3_font_size-rptitle: 2.1875rem; // regional plan title
+$v3_font_size-event-title-mobile: 0.85rem;
+
 
 $font_family-primary: 'SwiftNeueLTPro', Georgia, serif;
 $font_family-secondary: 'CalibreWeb-Semibold', Helvetica, sans-serif;
+$font_family-secondary-light: 'CalibreWeb', Helvetica, sans-serif;
 
 $font_weight-normal: 400;
 $font_weight-bold: 700;
+
+
+$v3-color_green-dark: #03332D;
+$v3-color_green-medium: #00613F;
+$v3-color_green-light: #4FB965;
+$v3-color_green-lightest: #F0F8F3;
+
+$v3-color_green-light--dark: mix(black, $v3-color_green-light, 15);
+$v3-color_gray-dark: #707070;
+
+
+/*
+ * OLD VARS
+ *
+ * Try not to touch until we have removed
+ * all old interfaces.
+ */
 
 $color_bg-lightest: #FFFFFF;
 $color_bg-light: #EFEFE7;

@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.3'
 
 gem 'rails', '~> 5.2.1'
-gem "unicorn"
+gem "puma"
 gem 'sassc-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'pg'
@@ -14,6 +14,9 @@ gem 'webpacker', '~> 3.5'
 gem 'google-cloud-speech'
 gem 'sidekiq'
 gem 'google-cloud-storage'
+gem 'local_time'
+gem 'fast_jsonapi'
+gem "autoprefixer-rails"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
@@ -26,6 +29,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'dotenv-rails'
+  gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 end
 
 group :development do
@@ -51,8 +55,10 @@ group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15', '< 4.0'
   gem 'selenium-webdriver'
-  # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
+  gem 'capybara-screenshot'
+  gem 'browserstack-local'
+  gem 'parallel'
+  gem 'axe-matchers'
 end
 
 # Flipper for feature flags
@@ -80,3 +86,8 @@ gem 'refinerycms-events', path: 'vendor/extensions'
 gem 'aws-sdk-translate'
 
 gem 'refinerycms-stories', path: 'vendor/extensions'
+
+gem 'refinerycms-announcements', path: 'vendor/extensions'
+
+gem 'refinerycms-hero_images', path: 'vendor/extensions'
+gem 'refinerycms-one_boxes', path: 'vendor/extensions'

@@ -68,6 +68,14 @@ SyslogIdentifier=sidekiq-digitalhub
 WantedBy=multi-user.target
 ```
 
+## Testing
+System tests can be run on multiple platforms via BrowserStack by using the BROWSER variable.
+
+`BROWSER='iphone' bundle exec rspec`
+
+Valid options include: internet_explorer, chrome, android. Unfortunately Safari using devices do not seem to be compatible with the localtesting setup.
+
+By default rack-test and headless_chrome will be used to run system tests in local development.
 ## CMS Instructions
 
 ### Home Page
@@ -79,3 +87,7 @@ slug "bottom".
 ### Process Timeline
 
 To add phases to the process timeline you must create a new page part with the word "Phase" in it. The phases will be ordered in the order that these page parts are added to the page. The page must also use the "Process Timeline" view template.
+
+## Automatated Browser Testing
+Thanks to BrowserStack we have automated testing to make sure this site works on all platforms and is mobile responsive.
+![BrowserStack Logo](https://raw.githubusercontent.com/MAPC/digitalhub/develop/browserstack-logo-600x315.png)
