@@ -53,4 +53,12 @@ window.addEventListener('load', () => {
       }, heroBackgroundSpeed)
     }
   });
+
+  const rotationTest = () => {
+    let defaultImage = "url(/assets/bike-lane-9a390139592f024c13cf339a039dec2e7a7f42b5bb5a1951f59c0f55ddf6ab56.jpg)"
+    let imageDivs = Array.from(getImageElements())
+    return imageDivs[0].style.backgroundImage != defaultImage
+  };
+
+  window.rotationTest = rotationTest;
 });
