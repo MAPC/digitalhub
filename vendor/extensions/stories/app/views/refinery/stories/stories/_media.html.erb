@@ -16,7 +16,9 @@
     </div>
   <% elsif media.response.present? %>
     <div class="story--response">
-      &ldquo;<%= media.response %>&rdquo;
+      <div class="story--response-text">
+        &ldquo;<%= strip_tags(media.response) %>&rdquo;
+      </div>
       <p class="story__response--submitter-name">- <%= media.submitter_name %></p>
     </div>
   <% else %>
