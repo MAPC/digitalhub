@@ -22,8 +22,8 @@
 
     @include media(small) {
       grid-template-columns: auto;
-      margin: initial;
-      padding: 3.75rem 1rem 0;
+      margin: 0 2.6rem 1.5rem .95rem;
+      padding: 3.75rem 0 0;
     }
 
     display: grid;
@@ -104,6 +104,9 @@
     &.container {
       @include media(medium) {
         flex-wrap: nowrap;
+        height: auto;
+        padding: 0;
+        width: 11.9rem;
       }
 
       align-content: center;
@@ -115,6 +118,10 @@
   }
 
   .story {
+    @include media(small) {
+      margin-bottom: 1rem;
+    }
+
     margin: 0 2.5rem 2.5rem 0;
 
     &+.story-meta {
@@ -125,6 +132,14 @@
     }
 
     &--prompt-small {
+      @include media(small) {
+        font-size: $v3_font_size-event-title-mobile;
+        height: 3.75rem;
+        margin-bottom: 1rem;
+        padding: 1rem;
+        width: 11.9rem;
+      }
+
       background: $v3-color_green-dark;
       font-size: $font_size-large;
       height: 7.5rem;
@@ -139,6 +154,15 @@
     }
 
     &--prompt-large {
+      @include media(small) {
+        color: $v3-color_green-dark;
+        font-size: $v3_font_size-event-title-mobile;
+        height: 3.75rem;
+        margin-bottom: 1rem;
+        padding: 1rem;
+        width: 11.9rem;
+      }
+
       background-image: image-url('middlesex-fells-credit-paul-w.jpg');
       font-size: $font_size-xlarge;
       height: 20rem;
@@ -147,6 +171,19 @@
       text-align: center;
       vertical-align: middle;
       width: 24rem;
+
+      &-text {
+        @include media(small) {
+          color: $v3_color_bg-lightest;
+          font-size: $font_size-small;
+          line-height: 1em;
+          margin: 0;
+          padding: 0;
+        }
+
+        color: $v3_color_bg-lightest;
+        font-size: $font_size-xlarge;
+      }
 
       &:hover {
         cursor: pointer;
@@ -158,19 +195,63 @@
       color: $v3_color_bg-lightest;
       font-size: $font_size-small;
       height: 20rem;
-      overflow: hidden;
-      padding: 2.5rem;
-      text-overflow: ellipsis;
-      white-space: wrap;
+      padding: 2.7rem;
       width: 24rem;
+
+      &-text {
+        height: 11rem;
+        margin: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: wrap;
+        width: 18rem;
+      }
+
+      @include media(small) {
+        direction: ltr;
+        display: inline-block;
+        font-size: 12px;
+        height: 3.75rem;
+        padding: .6rem;
+        width: 11.9rem;
+
+        &-text {
+          height: 2rem;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          width: 9rem;
+        }
+      }
     }
 
     &__response--submitter-name {
+      @include media(small) {
+        margin: 0 .3rem .01rem 0;
+        padding: 0;
+      }
+
       color: $v3_color_bg-lightest;
       text-align: right;
-  }
+    }
 
     &--video {
+      @include media(medium) {
+        height: 10rem;
+        padding: 17px 23px 17px 28px;
+        width: 11.9rem;
+
+        video {
+          height: 10rem;
+          left: 0;
+          max-width: initial;
+          object-fit: cover;
+          position: absolute;
+          top: 0;
+          width: 11.9rem;
+        }
+      }
+
       height: 20rem;
       overflow: hidden;
       width: 24rem;
@@ -279,6 +360,13 @@
 
   .media-player {
     &__audio {
+      @include media(small) {
+        height: 3.75rem;
+        margin: 0;
+        padding: 0;
+        width: 11.9rem;
+      }
+
       background-color: $v3-color_slate;
       display: grid;
       grid-template-columns: 60px 1fr;
@@ -287,11 +375,17 @@
     }
 
     &__pause-play {
+      @include media(small) {
+        height: 1rem;
+        margin: 1rem 0 0 1rem;
+        width: 1rem;
+      }
+
       background: no-repeat image-url('play-icon.svg');
       background-size: contain;
       grid-column: 1;
-      height: 28px;
-      width: 28px;
+      height: 1.4rem;
+      width: 1.4rem;
     }
 
     &__pause-play--playing {
@@ -300,12 +394,24 @@
     }
 
     &__speaker {
+      @include media(small) {
+        font-size: $font_size-xsmall;
+        margin: 0;
+        padding: 0;
+      }
+
       color: $color_font-grey;
       font-style: italic;
       grid-column: 2;
     }
 
     &__question-text {
+      @include media(small) {
+        font-size: 1rem;
+        margin-top: .5rem;
+        padding: 0;
+      }
+
       color: $v3-color_light-blue;
       font-size: 1.4rem;
       grid-column: 2;
@@ -314,6 +420,12 @@
     }
 
     &__progress {
+      @include media(small) {
+        height: .1rem;
+        margin-top: 0;
+        width: 50%;
+      }
+
       background-color: $v3-color_green-lightest;
       grid-column: 2;
       height: .2rem;
@@ -329,6 +441,10 @@
     }
 
     &__time {
+      @include media(small) {
+        display: none;
+      }
+
       color: $color_font-grey;
       grid-column: 2;
       justify-self: end;
