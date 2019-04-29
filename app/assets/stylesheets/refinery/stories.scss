@@ -193,19 +193,17 @@
 
     &--response {
       background: $v3_color_weigh-in-response-bg;
-      color: $v3_color_bg-lightest;
       font-size: $font_size-small;
       height: 20rem;
       padding: 2.7rem;
       width: 24rem;
 
-      &-text {
+      &-text a {
+        color: $v3_color_bg-lightest;
         height: 11rem;
         margin: 0;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: wrap;
-        width: 18rem;
+        text-decoration: none;
+        width: 18.95rem;
       }
 
       @include media(small) {
@@ -217,10 +215,7 @@
         width: 11.9rem;
 
         &-text {
-          height: 2rem;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
+          height: auto;
           width: 9rem;
         }
       }
