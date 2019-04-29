@@ -15,9 +15,9 @@
       <div class="media-player__time">0:00</div>
     </div>
   <% elsif media.response.present? %>
-    <div class="story--response">
+    <div id="story<%= media.id %>" class="story--response">
       <div class="story--response-text">
-        &ldquo;<%= strip_tags(media.response) %>&rdquo;
+        <a href="/stories/<%= media.id %>">&ldquo;<%= strip_tags(media.response) %>&rdquo;</a>
       </div>
       <p class="story__response--submitter-name">- <%= media.submitter_name %></p>
     </div>
