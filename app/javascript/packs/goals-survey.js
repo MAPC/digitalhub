@@ -24,7 +24,7 @@ const weighInGoalsLink = () => {
     if (document.documentElement.clientWidth > 770) {
       openGoals()
     } else {
-      openGoalsInNewTab(event.currentTarget.href);
+      openGoalsInNewTab(this.children[0]["href"]);
     }
   })
 }
@@ -32,6 +32,7 @@ const weighInGoalsLink = () => {
 const oneBoxGoalsLink = () => {
   $('a').on('click', (event) => {
     event.preventDefault();
+    event.stopPropagation();
     if (document.documentElement.clientWidth > 770 && event.currentTarget.href == goalsSurveyLink) {
       openGoals()
     } else {
