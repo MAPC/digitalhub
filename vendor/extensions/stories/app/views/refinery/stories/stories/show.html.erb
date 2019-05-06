@@ -1,4 +1,4 @@
-<div class="banner">
+<div class="v2-banner">
   <div class="container">
     <div class="content-column banner-content">
       <h1><%= @page.try(:title) %></h1>
@@ -18,12 +18,7 @@
 
     <div class="button-wrapper">
       <div class="left-buttons">
-        <%= link_to 'Submit', refinery.stories_stories_path, class: 'button' %>
-      </div>
-
-      <div class="right-buttons">
-        <%= link_to 'Edit', refinery.edit_stories_story_path(@story), class: 'button neutral' %>
-        <%= link_to 'Delete', refinery.stories_story_path(@story), method: :delete, class: 'button negative' %>
+        <%= link_to 'Return to Weigh In', refinery.stories_stories_path, class: 'button' %>
       </div>
     </div>
   </section>

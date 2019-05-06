@@ -10,6 +10,40 @@ module Refinery
           'No question was selected.'
         end
       end
+
+      def audio_question_text(enum)
+        if enum === 'question2'
+          'In 2050...'
+        elsif enum === 'question1'
+          'Ask the Future'
+        else
+          'No question was selected.'
+        end
+      end
+
+      def next_prompt(current_prompt, count)
+        if current_prompt.id >= ::Refinery::WeighInPrompts::WeighInPrompt.maximum(:id)
+          next_prompt_id = ::Refinery::WeighInPrompts::WeighInPrompt.minimum(:id)
+        else
+          next_prompt_id = current_prompt.id + 1
+        end
+        ::Refinery::WeighInPrompts::WeighInPrompt.find(next_prompt_id)
+      end
+
+      def insert_prompts(stories, prompts)
+        stories_array = stories.to_a
+        current_prompt = prompts.first
+        stories_array.insert(1, current_prompt)
+        stories_index_array = (0..stories.length-1).to_a
+
+        stories_array.each_with_index do |story, index|
+          if index % 5 == 0 && index != 0
+            current_prompt = next_prompt(current_prompt, prompts.count)
+            stories_array.insert(index, current_prompt)
+          end
+        end
+        stories_array
+      end
     end
   end
 end

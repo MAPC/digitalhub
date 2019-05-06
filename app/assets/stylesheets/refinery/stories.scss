@@ -1,14 +1,74 @@
 .StoriesPage {
 
-  input[type="submit"] {
-    background: $color_bg-lightest;
-    color: $color_green-dark;
-    border: 1px solid $color_green-dark;
+  .banner {
+    background: $color_bg-dark;
+    height: 80px;
+    width: 100%;
   }
 
-  a.button { text-decoration: none; }
+  .weigh-in__header-background {
+    @include media(small) {
+      background: none;
+    }
 
-  .audio-response, .video-response {
+    background-color: $color_bg-lightest;
+    background-image: image-url('group-2111.png');
+  }
+
+  .weigh-in__header {
+    @include media(medium) {
+      grid-template-columns: 2fr 40rem 1fr;
+    }
+
+    @include media(small) {
+      grid-template-columns: auto;
+      margin: 0 2.6rem 1.5rem .95rem;
+      padding: 3.75rem 0 0;
+    }
+
+    display: grid;
+    grid-template-columns: 2fr 54rem 1fr;
+    padding-bottom: 8.3rem;
+    padding-top: 8.3rem;
+
+    &--content {
+      grid-column-start: 2;
+    }
+
+    &--title {
+      @include media(small) {
+        font-size: $v3_font_size-title;
+      }
+
+      color: $v3-color_black-dark;
+      font-size: $v3_font_size-h1;
+    }
+
+    &--text {
+      @include media(small) {
+        font-size: $font_size-small;
+      }
+
+      color: $v3-color_black-dark;
+      font-family: $font_family-primary;
+      font-size: $font_size_medium;
+    }
+  }
+
+  input[type='submit'] {
+    background: $color_bg-lightest;
+    border: 1px solid $color_green-dark;
+    color: $color_green-dark;
+  }
+
+  a {
+    .button {
+      text-decoration: none;
+    }
+  }
+
+  .audio-response,
+  .video-response {
     display: inline-block;
     vertical-align: top;
   }
@@ -17,51 +77,196 @@
     display: inline-block;
   }
 
-  .banner {
-    background: $color_bg-dark;
-    background-repeat: no-repeat;
-    background-size:contain;
-    background-position:center;
-    @include background-2x('story-tool-banner', 'png', contain, contain, center, no-repeat );
-    @include media(small) {
-      background-position: bottom 3rem right;
-    }
-  }
-
   .banner-content {
-    margin-top: 7rem;
     margin-bottom: 7.5rem;
+    margin-top: 7rem;
   }
 
   .content-column {
-    & + .content-column { margin-top: 60px; }
+    &+.content-column {
+      margin-top: 60px;
+    }
   }
 
   .no-content-message {
-    margin-top: 2rem;
-
     color: $color_font-grey;
     font-style: italic;
+    margin-top: 2rem;
   }
 
   .or {
     display: inline-block;
-    vertical-align: center;
     padding: 1.5em 1em;
+    vertical-align: center;
+  }
+
+  .stories {
+    &.container {
+      @include media(medium) {
+        flex-wrap: nowrap;
+        height: auto;
+        padding: 0;
+        width: 15rem;
+      }
+
+      align-content: center;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
   }
 
   .story {
-    padding: 20px 0;
+    @include media(small) {
+      margin-bottom: 1rem;
+      width: 15rem;
+    }
+    margin-bottom: 2.5rem;
+    margin-right: 2.5rem;
+    width: 24rem;
 
-    & + .story { border-top: 1px solid $color_bg-light; }
-  }
+    &+.story-meta {
+      color: $color_green-dark;
+      font-size: $font_size-xsmall;
+      font-style: italic;
+      margin-bottom: $font_size-base;
+    }
 
-  .story-meta {
-    margin-bottom: $font_size-base;
+    &--prompt-small {
+      @include media(small) {
+        font-size: $v3_font_size-event-title-mobile;
+        height: 3.75rem;
+        padding: 1rem;
+      }
 
-    color: $color_green-dark;
-    font-style: italic;
-    font-size: $font_size-xsmall;
+      background: $v3-color_green-dark;
+      font-size: $font_size-large;
+      height: 7.5rem;
+      padding: 1.75rem 2.8rem;
+
+      a {
+        color: $v3_color_bg-lightest;
+        text-decoration: none;
+      }
+    }
+
+    &--prompt-large {
+      @include media(small) {
+        color: $v3-color_green-dark;
+        font-size: $v3_font_size-event-title-mobile;
+        height: 3.75rem;
+        margin-bottom: 0;
+        padding: 1rem;
+      }
+
+      display: flex;
+      font-size: $font_size-xlarge;
+      height: 20rem;
+      padding: 2.7rem;
+      text-align: left;
+      vertical-align: middle;
+
+      &-text {
+        @include media(small) {
+          color: $v3_color_bg-lightest;
+          font-size: $font_size-small;
+          line-height: 1rem;
+          padding: 0;
+          text-decoration: none;
+        }
+        color: $v3_color_bg-lightest;
+        font-size: $font_size-xlarge;
+        margin: auto;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &--question-text {
+      @include media(small) {
+        display: none;
+      }
+
+      color: $v3_color_bg-lightest;
+      font-size: $font_size-large;
+      margin-bottom: 1rem;
+    }
+
+    &--response {
+      background: $v3_color_weigh-in-response-bg;
+      font-size: $font_size-small;
+      height: 20rem;
+      padding: 2.7rem;
+      width: 100%;
+
+      &-text {
+        color: $v3_color_bg-lightest;
+        height: 11rem;
+        margin: 0;
+        text-decoration: none;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      @include media(small) {
+        direction: ltr;
+        display: inline-block;
+        font-size: 12px;
+        height: 3.75rem;
+        padding: .6rem;
+
+        &-text {
+          height: auto;
+        }
+      }
+    }
+
+    &__response--submitter-name {
+      @include media(small) {
+        margin: 0 .3rem .01rem 0;
+        padding: 0;
+      }
+
+      color: $v3_color_bg-lightest;
+      text-align: right;
+    }
+
+    &--video {
+      @include media(small) {
+        height: 10rem;
+        padding: 17px 23px 17px 28px;
+        width: 15rem;
+
+        video {
+          height: 10rem;
+          left: 0;
+          max-width: initial;
+          object-fit: cover;
+          position: absolute;
+          top: 0;
+          width: 24rem;
+        }
+      }
+
+      height: 20rem;
+      overflow: hidden;
+      width: 24rem;
+
+      video {
+        height: 20rem;
+        left: 0;
+        max-width: initial;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        width: 24rem;
+      }
+    }
   }
 
   .transcript {
@@ -69,13 +274,12 @@
   }
 
   .quote-mark {
-    display: inline-block;
-    top: 8px;
-    height: 0;
-
     color: $color_green-dark;
+    display: inline-block;
     font-size: $font_size-large;
     font-style: italic;
+    height: 0;
+    top: 8px;
   }
 
   .video-info {
@@ -85,18 +289,24 @@
 
   .session-info {
     margin-left: 3.2rem;
+
+    &recording {
+      animation: blinking 1s infinite;
+      color: $color_red-medium;
+    }
   }
 
-  .session-info.recording {
-    animation: blinking 1s infinite;
-    color: $color_red-medium;
+  .button-wrapper {
+    @extend %clear;
   }
 
-  .button-wrapper { @extend ._clear; }
+  .left-buttons {
+    float: left;
+  }
 
-  .left-buttons { float: left; }
-  .right-buttons { float: right; }
-
+  .right-buttons {
+    float: right;
+  }
 
   .story-form-wrapper {
     h4 {
@@ -105,52 +315,150 @@
     }
 
     .question {
-      input[type="radio"] {
-            display:none;
+      input[type='radio'] {
+        display: none;
       }
 
       label {
-              display:inline-block;
-              background-color: $color_bg-grey;
-              padding: 10px 20px;
-              font-size:16px;
-              cursor: pointer;
+        background-color: $color_bg-grey;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 16px;
+        padding: 10px 20px;
       }
 
-      input[type="radio"]:checked + label {
-              background-color: $color_green-medium;
+      input[type='radio']:checked+label {
+        background-color: $color_green-medium;
       }
     }
 
     .form-break {
+      color: $color_font-grey;
       display: flex;
-
+      font-size: $font_size-small;
       margin: $font_size-base 0;
 
-      color: $color_font-grey;
-      font-size: $font_size-small;
-
-      &:before, &:after {
-        content: '';
-
-        flex: 1 1;
-        position: relative;
-        display: inline-block;
-
-        height: 1px;
-        width: auto;
-        margin: auto $font_size-base;
-
+      &::before,
+      &::after {
         background: $color_bg-dark;
+        content: '';
+        display: inline-block;
+        flex: 1 1;
+        height: 1px;
+        margin: auto $font_size-base;
+        position: relative;
+        width: auto;
       }
     }
 
     .text-response {
       textarea {
-        width: 100%;
         min-height: 200px;
+        width: 100%;
       }
     }
   }
 
+  .media-player {
+    &__audio {
+      @include media(small) {
+        height: 3.75rem;
+        margin: 0;
+        padding: 0;
+      }
+
+      background-color: $v3-color_slate;
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      padding: 2rem;
+    }
+
+    &__pause-play {
+      @include media(small) {
+        height: 1rem;
+        margin: 1rem 0 0 2rem;
+        width: 1rem;
+      }
+
+      background: no-repeat image-url('play-icon.svg');
+      background-size: contain;
+      grid-column: 1;
+      grid-row: 1;
+      height: 1.4rem;
+      width: 1.4rem;
+    }
+
+    &__pause-play--playing {
+      background: no-repeat image-url('pause-icon.svg');
+      background-size: contain;
+    }
+
+    &__speaker {
+      @include media(small) {
+        display: none;
+      }
+
+      color: $color_font-grey;
+      font-style: italic;
+      grid-column: 2;
+      grid-row: 2;
+    }
+
+    &__question-text {
+      @include media(small) {
+        font-size: 1rem;
+        margin-top: 1rem;
+        padding: 0;
+      }
+
+      color: $v3-color_light-blue;
+      font-size: 1.4rem;
+      grid-column: 2;
+      grid-row: 1;
+      padding-bottom: .5rem;
+      width: 14rem;
+    }
+
+    &__progress {
+      @include media(small) {
+        height: .1rem;
+        margin-top: 0;
+        width: 50%;
+      }
+
+      background-color: $v3-color_green-lightest;
+      grid-column: 2;
+      grid-row: 3;
+      height: .2rem;
+      margin-top: 1rem;
+      width: 100%;
+    }
+
+    &__progress-value {
+      @include media(small) {
+        height: .1rem;
+      }
+
+      background-color: $v3-color_light-blue;
+      grid-column: 2;
+      grid-row: 3;
+      height: .25rem;
+      width: 0%;
+    }
+
+    &__time {
+      @include media(small) {
+        color: $v3-color_gray-dark;
+        font-size: $font_size-xsmall;
+        margin-top: 0;
+        padding-right: 7rem;
+      }
+
+      color: $color_font-grey;
+      grid-column: 2;
+      grid-row: 4;
+      justify-self: end;
+      margin-top: .5rem;
+    }
+  }
 }

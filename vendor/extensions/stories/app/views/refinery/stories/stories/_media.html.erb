@@ -1,21 +1,32 @@
-<div class="media-display">
-  <% if media.video.attached? %>
-    <%= video_tag main_app.rails_blob_path(media.video), autoplay: 'autoplay', muted: 'true', controls: 'true' %>
-  <% elsif media.audio.attached? %>
-    <%= audio_tag main_app.rails_blob_path(media.audio), controls: 'true' %>
-  <% elsif media.response.present? %>
-    <span class="quote-mark">“</span>
-    <%= media.response %>
+<div class="media-player">
+  <% if media&.video&.attached? %>
+    <div class="story--video">
+      <%= video_tag main_app.rails_blob_path(media.video), autoplay: 'autoplay', muted: 'true', controls: 'true' %>
+    </div>
+  <% elsif media&.audio&.attached? %>
+    <div class="media-player__audio">
+      <%= audio_tag main_app.rails_blob_path(media.audio), preload: 'metadata' %>
+      <link
+        rel="preload"
+        as="image"
+        href=<%= image_path('pause-icon.svg') %>>
+      <div class="media-player__pause-play"></div>
+      <div class="media-player__question-text"><%= audio_question_text(media.question) %></div>
+      <div class="media-player__speaker"><%= media.submitter_name %> (Edited)</div>
+      <div class="media-player__progress">
+        <div class="media-player__progress-value"></div>
+      </div>
+      <div class="media-player__time">0:00</div>
+    </div>
+  <% elsif media&.response.present? %>
+    <div id="story<%= media.id %>" class="story--response">
+      <div class="story--question-text"><%= audio_question_text(media.question) %></div>
+      <div class="story--response-text">
+        <q href="/stories/<%= media.id %>"><%= strip_tags(media.response) %></q>
+      </div>
+      <p class="story__response--submitter-name">- <%= media.submitter_name %></p>
+    </div>
   <% else %>
     Sorry, there was an error displaying the content.
   <% end %>
-  <% if (media.video.attached? || media.audio.attached?) && media.response.present? %>
-    <div class="transcript">
-      <p class="accordion-title">Transcript</p>
-      <p class="accordion-content">
-        <span class="quote-mark">“</span>
-        <%= media.response %>
-      </p>
-    </div>
-  <% end %>
-  </div>
+</div>
