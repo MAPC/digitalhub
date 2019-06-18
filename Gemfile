@@ -95,3 +95,6 @@ gem 'refinerycms-hero_images', path: 'vendor/extensions'
 gem 'refinerycms-one_boxes', path: 'vendor/extensions'
 
 gem 'refinerycms-weigh_in_prompts', path: 'vendor/extensions'
+
+gem 'refinerycms-tags', path: 'vendor/extensions'
+gem 'refinerycms-taggings', path: 'vendor/extensions'

@@ -6,5 +6,4 @@ Refinery::I18n.frontend_locales.each do |lang|
       position: (user.plugins.maximum(:position) || -1) +1
     )
   end if defined?(Refinery::User)
-
 end
