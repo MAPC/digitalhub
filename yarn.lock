@@ -2375,6 +2375,11 @@ eslint-plugin-import@^2.14.0:
     read-pkg-up "^2.0.0"
     resolve "^1.10.0"
 
+eslint-plugin-jquery@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jquery/-/eslint-plugin-jquery-1.5.0.tgz#408a804b8f2a1f4ade5f3df84bd45c5b9a28efe0"
+  integrity sha512-+T+8qTML0/HVgdi/C8PFLQhNXyt+/6xz4AqD1g8ucPdma/OLLsJG7/HlnOJhR853nOu2cvwKUefASCl0EkLTXg==
+
 eslint-plugin-jsx-a11y@^6.1.1:
   version "6.2.1"
   resolved "https://registry.yarnpkg.com/eslint-plugin-jsx-a11y/-/eslint-plugin-jsx-a11y-6.2.1.tgz#4ebba9f339b600ff415ae4166e3e2e008831cf0c"
