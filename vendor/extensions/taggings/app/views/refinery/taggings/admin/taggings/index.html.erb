@@ -1,0 +1,24 @@
+<table style="width:100%">
+  <tr>
+    <th colspan=1">tag</th>
+    <th colspan="1">type</th> 
+    <th colspan="1">item</th>
+  </tr>
+  <tr>
+  <% Refinery::Taggings::Tagging.all.each do  |t| %>
+    <td><%= t.tag.title %></td>
+    <td><%= t.tag.tag_type %></td>
+    <% if t.event %>
+      <td><%= t.event.title %></td>
+    <% elsif t.announcement %>
+      <td><%= t.announcement.title %></td>
+    <% end %>
+  </tr>
+  <% end %>
+</table>
+ 
+<aside id='actions'>
+  <%= render 'actions' %>
+</aside>
+<%#= render '/refinery/admin/make_sortable', options: {tree: false} if !searching? and ::Refinery::Taggings::Admin::TaggingsController.sortable? and ::Refinery::Taggings::Tagging.many? %>
+
