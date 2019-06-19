@@ -1,3 +1,4 @@
+
 <%= form_for [refinery, :announcements_admin, @announcement] do |f| -%>
   <%= render '/refinery/admin/error_messages',
               :object => @announcement,
@@ -25,6 +26,12 @@
                :image => @announcement.image,
                :toggle_image_display => false -%>
   </div>
+
+
+    <div class="tags">
+      TAGS GO HERE ...
+    </div>
+ 
 
   <div class='field'>
     <%= f.label :link -%>
