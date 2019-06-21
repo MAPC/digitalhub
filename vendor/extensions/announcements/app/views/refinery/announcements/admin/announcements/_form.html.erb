@@ -1,3 +1,46 @@
+<style>
+  .tags {
+    /* background-color: rgb(192, 220, 245); */
+    border: 1px solid rgb(54, 54, 136);
+    width: 40%;
+  }
+
+  .tags__header {
+    color: red;
+  }
+
+  .tags__selectors {
+    /* border: 1px solid rgb(19, 202, 226); */
+  }
+
+  .tags__selector {
+    border: 1px solid rgb(19, 202, 226);
+    width: 7rem;
+    border-radius: 25px;
+    text-align: center;
+    margin-bottom: 2px;
+  }
+
+  .tags__selector-content-type {
+    background-color: lightgray;
+  }
+
+  .tags__selector-topic-area {
+    background-color: gray;
+  }
+
+  .tags__selector-unselected {
+    background-color: lightgray;
+  }
+      
+  .tags__selector-selected {
+      background-color: lightgreen;
+    }
+  
+  .tags__selector:hover {
+    background-color: pink;
+  }
+</style>
 
 <%= form_for [refinery, :announcements_admin, @announcement] do |f| -%>
   <%= render '/refinery/admin/error_messages',
@@ -27,11 +70,18 @@
                :toggle_image_display => false -%>
   </div>
 
-
-    <div class="tags">
-      TAGS GO HERE ...
+  <div class='tags__header'>EDIT TAGS:</div>
+  <div class="tags">
+    <div class='tags__selectors'>
+      <% content_type_tags = Refinery::Tags::Tag.all.select {|t| t.tag_type == "content_type" } %>
+      <%= f.collection_radio_buttons(:tag_ids, content_type_tags, :id, :title, {allow_blank: true} ) %>
     </div>
- 
+
+    <div class='tags__selectors'>
+      <% topic_area_tags = Refinery::Tags::Tag.all.select {|t| t.tag_type == "topic_area" } %>
+      <%= f.collection_check_boxes(:tag_ids, topic_area_tags, :id, :title, { allow_blank: true} ) %>
+    </div>
+  </div>
 
   <div class='field'>
     <%= f.label :link -%>
