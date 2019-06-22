@@ -1,32 +1,23 @@
 <style>
   .tags {
-    /* background-color: rgb(192, 220, 245); */
-    border: 1px solid rgb(54, 54, 136);
-    width: 40%;
+    margin-top: 2rem;
+    width: 70%;
   }
 
   .tags__header {
-    color: red;
+    color: black;
+    font-weight: bold;
   }
 
-  .tags__selectors {
-    /* border: 1px solid rgb(19, 202, 226); */
-  }
-
-  .tags__selector {
-    border: 1px solid rgb(19, 202, 226);
-    width: 7rem;
-    border-radius: 25px;
-    text-align: center;
-    margin-bottom: 2px;
-  }
-
-  .tags__selector-content-type {
+  span {
     background-color: lightgray;
-  }
-
-  .tags__selector-topic-area {
-    background-color: gray;
+    border: 1px solid lightgray;
+    border-radius: 25px;
+    font-size: 12px;
+    margin-bottom: 2px;
+    padding-right: 1rem;
+    text-align: center;
+    width: 7rem;
   }
 
   .tags__selector-unselected {
@@ -70,18 +61,24 @@
                :toggle_image_display => false -%>
   </div>
 
-  <div class='tags__header'>EDIT TAGS:</div>
   <div class="tags">
-    <div class='tags__selectors'>
-      <% content_type_tags = Refinery::Tags::Tag.all.select {|t| t.tag_type == "content_type" } %>
-      <%= f.collection_radio_buttons(:tag_ids, content_type_tags, :id, :title, {allow_blank: true} ) %>
+    <div class='tags__header'>Choose Content_Type(s)</div>
+    <div>
+      <% Refinery::Tags::Tag.all.select {|t| t.tag_type == "content_type" }.each do |tag| %>
+         <span class="tags_selector"><input type="checkbox" name="tag[tag_ids][]" id="tag_<%= tag.id %>" value="<%= tag.id %>" 
+        <%= 'checked' if @announcement.tags.include?(tag) %> class="tags_selector-selected"><%= tag.title %></input></span>
+      <% end %>
     </div>
+    <br />
 
-    <div class='tags__selectors'>
-      <% topic_area_tags = Refinery::Tags::Tag.all.select {|t| t.tag_type == "topic_area" } %>
-      <%= f.collection_check_boxes(:tag_ids, topic_area_tags, :id, :title, { allow_blank: true} ) %>
+    <div class='tags__header'>Choose Topic_Area(s)</div>
+    <div>
+      <% Refinery::Tags::Tag.all.select {|t| t.tag_type == "topic_area" }.each do |tag| %>
+        <span class="tags_selector"><input type="checkbox" name="tag[tag_ids][]" id="tag_<%= tag.id %>" value="<%= tag.id %>" 
+        <%= 'checked' if @announcement.tags.include?(tag) %> class="tags_selector-selected"><%= tag.title %></input></span>
+      <% end %>
     </div>
-  </div>
+  </div>  
 
   <div class='field'>
     <%= f.label :link -%>
