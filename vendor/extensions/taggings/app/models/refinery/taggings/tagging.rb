@@ -7,6 +7,14 @@ module Refinery
       belongs_to :event, :class_name => '::Refinery::Events::Event', optional: true
       belongs_to :announcement, :class_name => '::Refinery::Announcements::Announcement', optional: true
 
+      def self.total_pages
+        self.count / 12
+      end
+
+      def self.current_page
+        1
+      end
+
       def self.topic_areas
         self.all.select {|t| t.tag.tag_type == 'topic_area'}
       end

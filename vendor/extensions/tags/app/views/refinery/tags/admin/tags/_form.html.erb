@@ -9,10 +9,10 @@
   </div>
 
   <div class='field'>
-    <%= label_tag("Tag Type", "Topic Area") %>
-    <%= radio_button_tag(:tag_type, "topic_area") %>
-    <%= label_tag("Tag Type", "Content Type") %>
-    <%= radio_button_tag(:tag_type, "content_type") %>
+    <%= f.label("Tag Type", "Topic Area") %>
+    <%= f.radio_button(:tag_type, "topic_area") %>
+    <%= f.label("Tag Type", "Content Type") %>
+    <%= f.radio_button(:tag_type, "content_type") %>
   </div>
   
   <%= render '/refinery/admin/form_actions', f: f,

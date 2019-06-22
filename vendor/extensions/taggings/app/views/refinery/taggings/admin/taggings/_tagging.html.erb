@@ -4,7 +4,7 @@
     <% if tagging.event %>
       <%= tagging.event.title %>
       <% tagging.event.tags.each do |t| %>
-        <%= t.title, class: "event_tags" %>
+        <%= t.title %>
       <% end %>
     <% end %>
   </span>

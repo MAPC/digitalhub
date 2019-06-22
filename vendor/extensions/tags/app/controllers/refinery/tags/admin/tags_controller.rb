@@ -5,6 +5,11 @@ module Refinery
 
         crudify :'refinery/tags/tag'
 
+        def create
+          @tag = Refinery::Tags::Tag.create(tag_params)
+          redirect_to tags_admin_tags_path and return
+        end
+
         private
 
         # Only allow a trusted parameter "permit list" through.

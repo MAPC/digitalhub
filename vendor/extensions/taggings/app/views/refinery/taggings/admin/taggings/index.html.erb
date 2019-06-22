@@ -1,8 +1,8 @@
 <table style="width:100%">
   <tr>
-    <th colspan=1">tag</th>
-    <th colspan="1">type</th> 
-    <th colspan="1">item</th>
+    <th colspan=1">tag_title</th>
+    <th colspan="1">tag_type</th> 
+    <th colspan="1">tagged_item</th>
   </tr>
   <tr>
   <% Refinery::Taggings::Tagging.all.each do  |t| %>
@@ -10,15 +10,32 @@
     <td><%= t.tag.tag_type %></td>
     <% if t.event %>
       <td><%= t.event.title %></td>
+      <td><span class='actions'>
+        <%= action_icon(:preview, refinery.taggings_tagging_path(t), t('.view_live_html')) %>
+        <%= action_icon(:edit,    refinery.edit_taggings_admin_tagging_path(t), t('.edit') ) %>
+        <%= action_icon(:delete,  refinery.taggings_admin_tagging_path(t), t('.delete'),
+        { class: "cancel confirm-delete",
+          data: {confirm: t('message',  scope: 'refinery.admin.delete', title: t.title)}}  ) %>
+    </span></td>
     <% elsif t.announcement %>
       <td><%= t.announcement.title %></td>
+      <td><span class='preview'></span></td>
+      <td><span class='actions'>
+        <%= action_icon(:preview, refinery.taggings_tagging_path(t), t('.view_live_html')) %>
+        <%= action_icon(:edit,    refinery.edit_taggings_admin_tagging_path(t), t('.edit') ) %>
+        <%= action_icon(:delete,  refinery.taggings_admin_tagging_path(t), t('.delete'),
+        { class: "cancel confirm-delete",
+          data: {confirm: t('message',  scope: 'refinery.admin.delete', title: t.title)}}  ) %>
+    </span></td>
     <% end %>
   </tr>
   <% end %>
 </table>
  
+<section id='records'>
+  <%#= render 'records' %>
+</section>
 <aside id='actions'>
   <%= render 'actions' %>
 </aside>
-<%#= render '/refinery/admin/make_sortable', options: {tree: false} if !searching? and ::Refinery::Taggings::Admin::TaggingsController.sortable? and ::Refinery::Taggings::Tagging.many? %>
-
+<%= render '/refinery/admin/make_sortable', options: {tree: false} if !searching? and ::Refinery::Taggings::Admin::TaggingsController.sortable? and ::Refinery::Taggings::Tagging.many? %>

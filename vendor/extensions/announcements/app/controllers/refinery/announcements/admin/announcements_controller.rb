@@ -5,7 +5,6 @@ module Refinery
 
         crudify :'refinery/announcements/announcement'
 
-        
         def update
           @announcement = Refinery::Announcements::Announcement.find(params[:id])
           @announcement.taggings.each {|t| t.delete}
