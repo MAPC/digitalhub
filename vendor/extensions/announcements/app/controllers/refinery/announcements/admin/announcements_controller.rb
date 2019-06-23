@@ -5,6 +5,15 @@ module Refinery
 
         crudify :'refinery/announcements/announcement'
 
+        def create
+          @announcement = Refinery::Announcements::Announcement.create(announcement_params)
+          tags = params[:tag][:tag_ids].each do |tid|
+            Refinery::Taggings::Tagging.create(announcement_id: @announcement.id, tag_id: tid.to_i)
+          end
+          @announcement.save
+          redirect_to announcements_admin_announcements_path and return
+        end
+
         def update
           @announcement = Refinery::Announcements::Announcement.find(params[:id])
           @announcement.taggings.each {|t| t.delete}
