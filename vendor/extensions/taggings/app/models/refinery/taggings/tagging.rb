@@ -23,9 +23,32 @@ module Refinery
         self.all.select {|t| t.tag.tag_type == 'content_type'}
       end
 
-      def title
-        self.tag.title
+      def extension_class_name
+        if event 
+          "event"
+        elsif announcement
+          "announcement" 
+        elsif report 
+          "report"
+        else
+        end
       end
+
+      def tag_title
+        return self.tag.title.downcase
+      end
+
+      def tagged_item_title
+        if event 
+          self.event.title.downcase
+        elsif announcement
+          self.announcement.title.downcase 
+        elsif report 
+          self.report.title.downcase
+        else
+        end
+      end
+      
     end
   end
 end

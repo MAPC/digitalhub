@@ -4,7 +4,6 @@ class CreateTaggingsTaggings < ActiveRecord::Migration[5.2]
     create_table :refinery_taggings do |t|
       t.integer :tag_id
       t.integer :event_id
-      t.integer :story_id
       t.integer :announcement_id
       t.integer :position
 
