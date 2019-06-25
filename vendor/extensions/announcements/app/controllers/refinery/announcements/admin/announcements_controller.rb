@@ -7,8 +7,10 @@ module Refinery
 
         def create
           @announcement = Refinery::Announcements::Announcement.create(announcement_params)
-          tags = params[:tag][:tag_ids].each do |tid|
-            Refinery::Taggings::Tagging.create(announcement_id: @announcement.id, tag_id: tid.to_i)
+          if params[:tag]
+            tags = params[:tag][:tag_ids].each do |tid|
+              Refinery::Taggings::Tagging.create(announcement_id: @announcement.id, tag_id: tid.to_i)
+            end
           end
           @announcement.save
           redirect_to announcements_admin_announcements_path and return

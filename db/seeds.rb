@@ -40,9 +40,9 @@ Refinery::Tags::Engine.load_seed
 # Added by Refinery CMS Taggings extension
 Refinery::Taggings::Engine.load_seed
 
-def load_sample_taggings
+def load_default_tag_types
   topic_areas = ["Housing", "Climate", "Transportation", "Land Use", "Development", "Equity"]
-  content_types = ["Events", "Reports", "Projects", "Video", "Action", "Data"]
+  content_types = ["Event", "Report", "Project", "Video", "Action", "Data"]
   
   topic_areas.each do |topic_area_title|
     ::Refinery::Tags::Tag.create(title: topic_area_title, tag_type: "topic_area")

@@ -17,36 +17,3 @@ Refinery::I18n.frontend_locales.each do |lang|
     end
   end if defined?(Refinery::Page)
 end
-  
-  Refinery::Events::Event.create(
-    title: 'MAGIC Litter Fest',
-    start: DateTime.now + 18.days,
-    end: DateTime.now + 18.days + 1.hour,
-    event_type: 'Meeting',
-    address: '544 Main Street',
-    city: 'Wilmington',
-    state: 'MA',
-    zipcode: '02130',
-    location_name: 'Main street plaza')
-
-  Refinery::Events::Event.create(
-    title: 'Regional Planning Conference Survey Workshop Brown Bag Thing',
-    start: DateTime.now + 21.days,
-    end: DateTime.now + 21.days + 1.hour,
-    event_type: 'Meeting',
-    address: '60 Temple Place',
-    city: 'Boston',
-    state: 'MA',
-    zipcode: '02111',
-    location_name: 'MAPC')
-
-  Refinery::Events::Event.create(
-    title: '(NSPC) Breakfast & Lunch',
-    start: DateTime.now + 15.days,
-    end: DateTime.now + 15.days + 1.hour,
-    event_type: 'Meeting',
-    address: '380 Main Street',
-    city: 'Stoneham',
-    state: 'MA',
-    zipcode: '02180',
-    location_name: 'Town Hall')

@@ -7,8 +7,10 @@ module Refinery
 
         def create
           @event = Refinery::Events::Event.create(event_params)
-          tags = params[:tag][:tag_ids].each do |tid|
-            Refinery::Taggings::Tagging.create(event_id: @event.id, tag_id: tid.to_i)
+          if params[:tag]
+            tags = params[:tag][:tag_ids].each do |tid|
+              Refinery::Taggings::Tagging.create(event_id: @event.id, tag_id: tid.to_i)
+            end
           end
           @event.save
           redirect_to events_admin_events_path and return
