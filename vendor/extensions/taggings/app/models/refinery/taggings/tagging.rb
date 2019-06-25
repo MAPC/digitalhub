@@ -27,9 +27,7 @@ module Refinery
         if event 
           "event"
         elsif announcement
-          "announcement" 
-        elsif report 
-          "report"
+          "announcement"
         else
         end
       end
@@ -43,8 +41,6 @@ module Refinery
           self.event.title.downcase
         elsif announcement
           self.announcement.title.downcase 
-        elsif report 
-          self.report.title.downcase
         else
         end
       end
