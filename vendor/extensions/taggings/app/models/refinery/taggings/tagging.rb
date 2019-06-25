@@ -38,13 +38,11 @@ module Refinery
       end
 
       def tagged_item_title
-        if self.event
-          self.event.title.downcase.lstrip
-        elsif self.announcement
-          self.announcement.title.downcase.lstrip
+        if event
+          event.title.downcase.lstrip
+        elsif announcement
+          announcement.title.downcase.lstrip
         else
-          puts "no item present *************************************************************" 
-          binding.pry
         end
       end
 

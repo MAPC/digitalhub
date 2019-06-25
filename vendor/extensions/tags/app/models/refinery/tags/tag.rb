@@ -6,7 +6,7 @@ module Refinery
       acts_as_indexed :fields => [:title]
       validates :title, :presence => true, :uniqueness => true
       validates :tag_type, :presence => true
-      has_many :taggings, :class_name => '::Refinery::Taggings::Tagging'
+      has_many :taggings, :class_name => '::Refinery::Taggings::Tagging', dependent: :destroy
       has_many :events, :class_name => '::Refinery::Events::Event', through: :taggings
       has_many :announcements, :class_name => '::Refinery::Announcements::Announcement', through: :taggings
 
