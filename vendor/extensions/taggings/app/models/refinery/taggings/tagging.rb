@@ -3,6 +3,7 @@ module Refinery
     class Tagging < Refinery::Core::BaseModel
       self.table_name = 'refinery_taggings'
 
+      validates :tagged_item_title, presence: true
       belongs_to :tag, :class_name => '::Refinery::Tags::Tag'
       belongs_to :event, :class_name => '::Refinery::Events::Event', optional: true
       belongs_to :announcement, :class_name => '::Refinery::Announcements::Announcement', optional: true
@@ -37,14 +38,20 @@ module Refinery
       end
 
       def tagged_item_title
-        if event 
-          self.event.title.downcase
-        elsif announcement
-          self.announcement.title.downcase 
+        if self.event
+          self.event.title.downcase.lstrip
+        elsif self.announcement
+          self.announcement.title.downcase.lstrip
         else
+          puts "no item present *************************************************************" 
+          binding.pry
         end
       end
-      
+
+      def self.sort_by_item_title
+        self.all.sort_by(&:tagged_item_title)
+      end
+
     end
   end
 end

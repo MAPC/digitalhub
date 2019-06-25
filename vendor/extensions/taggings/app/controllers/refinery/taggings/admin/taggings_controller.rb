@@ -6,9 +6,16 @@ module Refinery
 
         def index
           # @taggings = Refinery::Taggings::Tagging.all.sort {|a, b| a.tagged_item_title <=> b.tagged_item_title}
-          @taggings = Refinery::Taggings::Tagging.all
+          @taggings = Refinery::Taggings::Tagging.sort_by_item_title
+          # @taggings = Refinery::Taggings::Tagging.all
         end
  
+        def destroy
+          @tagging = Refinery::Taggings::Tagging.find(params[:id])
+          @tagging.delete
+          redirect_to taggings_admin_taggings_path
+        end
+
         private
 
         def tagging_params
