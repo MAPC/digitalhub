@@ -9,6 +9,8 @@ module Refinery
       belongs_to :announcement, :class_name => '::Refinery::Announcements::Announcement', optional: true
       belongs_to :report, :class_name => '::Refinery::Reports::Report', optional: true
 
+      scope :topic_area_taggings, -> { where(tag_type: 'topic_area') }
+
       def self.total_pages
         self.count / 12
       end
@@ -16,28 +18,28 @@ module Refinery
       def self.current_page
         1
       end
-
-      def self.topic_areas
-        self.all.select {|t| t.tag.tag_type == 'topic_area'}
-      end
-      
-      def self.content_types
-        self.all.select {|t| t.tag.tag_type == 'content_type'}
-      end
-
-      def extension_class_name
+ 
+      def content_type
         if event 
-          "event"
+          "events"
         elsif announcement
-          "announcement"
+          "news"
         elsif report
-          "report"
+          "publications"
         else
         end
       end
 
+      def tag_type
+        self.tag.tag_type
+      end
+
       def tag_title
-        return self.tag.title.downcase
+        self.tag.title.downcase
+      end
+
+      def tag_narrative
+        self.tag.narrative
       end
 
       def tagged_item_title
@@ -50,11 +52,33 @@ module Refinery
         else
         end
       end
-
-      def self.sort_by_item_title
-        self.all.sort_by(&:tagged_item_title)
+ 
+      def self.filter_taggings(filters)
+        # these are intentionally harded coded because the names evolve whenever Integrated Comms has a meeting
+        content_type_filter = ["news", "publications", "events"]
+        topic_area_filter = ["transportation", "housing", "environment", "health", "economic development", "arts & culture", "dynamic government"]
+        result = []
+ 
+        # update content_type_filter
+        if filters[0] != "everything"
+         content_type_filter = filters[0]
+        end
+        
+        # update topic_area_filter
+        if filters[1] != "all topic areas"
+          topic_area_filter = filters[1]
+        end
+        
+        # filter for taggings with selected topic_area(s) and content_type tagging(s)
+        Refinery::Taggings::Tagging.all.each do |t|
+          if topic_area_filter.include?(t.tag_title) && content_type_filter.include?(t.content_type)
+            result.push(t)
+          end
+        end
+        
+        # filter out duplicates based on tagged_item_title
+        result.uniq {|r| r.tagged_item_title}
       end
-
     end
   end
 end

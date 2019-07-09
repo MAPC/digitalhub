@@ -1,0 +1,10 @@
+<div class="Announcement AnnouncementIndex">
+  <div class="v2-banner">
+    <div class="container">
+      <div class="content-column banner-content">
+        <h1><%= @announcement.try(:title) %></h1>
+        <p><%= strip_tags(@announcement.try(:body)) %></p>
+      </div>
+    </div>
+  </div>
+</div>

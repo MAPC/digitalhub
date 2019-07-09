@@ -14,7 +14,7 @@ module Refinery
 
         # Only allow a trusted parameter "permit list" through.
         def tag_params
-          params.require(:tag).permit(:title, :tag_type)
+          params.require(:tag).permit(:title, :tag_type, :narrative)
         end
       end
     end

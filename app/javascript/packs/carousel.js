@@ -1,19 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
   const carouselContainer = getCarousel();
 
-  if(carouselContainer) {
+  if (carouselContainer) {
     getData().then(result => populateCarousel(result, carouselContainer));
   }
 });
 
 function getData() {
   return new Promise((resolve, reject) => {
-      const xhr = new XMLHttpRequest();
-      xhr.open("GET", "/announcements");
-      xhr.onload = () => resolve(JSON.parse(xhr.responseText));
-      xhr.onerror = () => reject(xhr.statusText);
-      xhr.send();
-    });
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", "/announcements");
+    xhr.onload = () => resolve(JSON.parse(xhr.responseText));
+    xhr.onerror = () => reject(xhr.statusText);
+    xhr.send();
+  });
 }
 
 function getCarousel() {
@@ -25,12 +25,12 @@ function populateCarousel(announcements, carouselContainer) {
 
   for (i = 0; i < announcements.length; i++) {
     let node = document.createElement("button");
-    if(i == 0) {
+    if (i == 0) {
       node.setAttribute('class', 'announcements__number announcements__number--selected');
     } else {
       node.setAttribute('class', 'announcements__number');
     }
-    let textnode = document.createTextNode((i+1).toString());
+    let textnode = document.createTextNode((i + 1).toString());
     node.appendChild(textnode);
     numberParent.appendChild(node);
   }
@@ -41,18 +41,18 @@ function populateCarousel(announcements, carouselContainer) {
 
 function populateAnnouncement(announcement, carouselContainer) {
   const {
-      data: { attributes: { title, sanitized_body: body, link }},
-      included
-    } = announcement;
+    data: { attributes: { title, sanitized_body: body, link } },
+    included
+  } = announcement;
 
   const {
     attributes: { title: imageTitle = "Default Image",
-                  alt: imageAlt = "A default image.",
-                  image_name: imageName = "default.jpg",
-                  image_width: imageWidth = "0",
-                  image_height: imageHeight= "0",
-                  carousel_thumbnail_url: imageUrl= "",
-                  carousel_thumbnail_2x_url: image2xUrl= "" }
+      alt: imageAlt = "A default image.",
+      image_name: imageName = "default.jpg",
+      image_width: imageWidth = "0",
+      image_height: imageHeight = "0",
+      carousel_thumbnail_url: imageUrl = "",
+      carousel_thumbnail_2x_url: image2xUrl = "" }
   } = included[0]
 
   let titleNode = document.createElement("h2");
@@ -92,18 +92,18 @@ function genDisplay(data, carouselContainer) {
     const selection = parseInt(event.target.textContent) - 1;
     const numbers = event.target.parentElement.children
     const {
-      data: { attributes: { title, sanitized_body: body, link }},
+      data: { attributes: { title, sanitized_body: body, link } },
       included
     } = data[selection];
 
     const {
       attributes: { title: imageTitle = "Default Image",
-                    alt: imageAlt = "A default image.",
-                    image_name: imageName = "default.jpg",
-                    image_width: imageWidth = "0",
-                    image_height: imageHeight= "0",
-                    carousel_thumbnail_url: imageUrl= "",
-                    carousel_thumbnail_2x_url: image2xUrl= "" }
+        alt: imageAlt = "A default image.",
+        image_name: imageName = "default.jpg",
+        image_width: imageWidth = "0",
+        image_height: imageHeight = "0",
+        carousel_thumbnail_url: imageUrl = "",
+        carousel_thumbnail_2x_url: image2xUrl = "" }
     } = included[0]
 
     carouselContainer.querySelector('.announcements__title').innerText = title;
@@ -112,7 +112,7 @@ function genDisplay(data, carouselContainer) {
     carouselContainer.querySelector('.announcements__image').setAttribute('alt', imageAlt);
     carouselContainer.querySelector('.announcements__image').setAttribute('srcset', `${image2xUrl} 2x`);
     for (var i = 0; i < numbers.length; i++) {
-        numbers[i].setAttribute('class', 'announcements__number')
+      numbers[i].setAttribute('class', 'announcements__number')
     }
     event.target.setAttribute('class', 'announcements__number announcements__number--selected');
 

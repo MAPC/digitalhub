@@ -9,7 +9,7 @@ module Refinery
 
       validates :title, :presence => true, :uniqueness => true
       belongs_to :image, :class_name => '::Refinery::Image'
-      has_many :taggings, :class_name => '::Refinery::Taggings::Tagging'
+      has_many :taggings, :class_name => '::Refinery::Taggings::Tagging', dependent: :destroy
       has_many :tags, :class_name => '::Refinery::Tags::Tag', through: :taggings
 
       def self.tagged_with(title)
@@ -29,6 +29,10 @@ module Refinery
         self.tags = titles.split(",").map do |t|
           Refinery::Tags::Tag.where(title: t.strip).first_or_create!
         end
+      end
+
+      def tag_content_type
+        self.tags.where(tag_type: "content_type")[0].title
       end
     end
   end

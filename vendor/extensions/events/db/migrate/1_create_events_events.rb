@@ -12,6 +12,7 @@ class CreateEventsEvents < ActiveRecord::Migration[5.2]
       t.string :zipcode
       t.string :registration_link
       t.integer :position
+      t.text :description
 
       t.timestamps
     end

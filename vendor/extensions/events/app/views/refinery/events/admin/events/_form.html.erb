@@ -36,26 +36,6 @@
                :toggle_image_display => false -%>
   </div>
 
-  <%= f.label :tags -%>
-  <div class="tags">
-    <div class='tags__header'>Choose Content_Type(s)</div>
-    <div>
-      <% Refinery::Tags::Tag.all.select {|t| t.tag_type == "content_type" }.each do |tag| %>
-         <span class="tags__selector"><input type="checkbox" name="tag[tag_ids][]" id="tag_<%= tag.id %>" value="<%= tag.id %>" 
-        <%= 'checked' if @event.tags.include?(tag) %>><%= tag.title %></input></span>
-      <% end %>
-    </div>
-    <br />
-
-    <div class='tags__header'>Choose Topic_Area(s)</div>
-    <div>
-      <% Refinery::Tags::Tag.all.select {|t| t.tag_type == "topic_area" }.each do |tag| %>
-        <span class="tags__selector"><input type="checkbox" name="tag[tag_ids][]" id="tag_<%= tag.id %>" value="<%= tag.id %>" 
-        <%= 'checked' if @event.tags.include?(tag) %> class="tags__selector-selected"><%= tag.title %></input></span>
-      <% end %>
-    </div>
-  </div>  
-
   <div class="field">
     <%= f.label :location_name %>
     <%= f.text_field :location_name %>
@@ -93,17 +73,52 @@
 
   <%= render '/seo_meta/form', :form => f %>
 
-  <%= render '/refinery/admin/form_actions', f: f,
-             continue_editing: false,
-             delete_title: t('delete', scope: 'refinery.events.admin.events.event'),
-             delete_confirmation: t('message', scope: 'refinery.admin.delete', title: @event.title),
-             cancel_url: refinery.events_admin_events_path -%>
+  <%= f.label :tags -%>
+  <div class="tags">
+    <div class='tags__header-content'>Content Type: (should be "events" by default)</div>
+    <div>
+      <% Refinery::Tags::Tag.all.select {|t| t.tag_type == "content_type" }.each do |tag| %>
+          <span class="tags__selector-content"><input type="radio" name="tag[tag_ids][]" id="tag_<%= tag.id %>" value="<%= tag.id %>" 
+        <%= 'checked' if tag.title == "events" %>><%= tag.title %></input></span>
+      <% end %>
+    </div>
+    <br />
+
+    <div class='tags__header-topic'>Topic Area: (At least one required, please check 1 or more topic areas below)</div>
+    <div>
+      <% Refinery::Tags::Tag.all.select {|t| t.tag_type == "topic_area" }.each do |tag| %>
+        <span class="tags__selector-topic"><input type="checkbox" name="tag[tag_ids][]" id="tag_<%= tag.id %>" value="<%= tag.id %>" 
+        <%= 'checked' if @event.tags.include?(tag) %> class="tags__selector-selected"><%= tag.title %></input></span>
+      <% end %>
+    </div>
+  </div>
+
+<%= render '/refinery/admin/form_actions', f: f,
+  continue_editing: false,
+  delete_title: t('delete', scope: 'refinery.events.admin.events.event'),
+  delete_confirmation: t('message', scope: 'refinery.admin.delete', title: @event.title),
+  cancel_url: refinery.events_admin_events_path -%>
 <% end -%>
 
 <% content_for :javascripts do -%>
   <script>
     $(document).ready(function(){
       page_options.init(false, '', '');
+      checkTopicAreas();
     });
+
+    function checkTopicAreas (){
+      $('input#submit_button.wymupdate.button').hide()
+      const topicAreas = Array.from(document.getElementsByClassName('tags__selector-topic'))
+
+      topicAreas.forEach(topic => {
+        if(topic.firstChild.checked){
+          $('input#submit_button.wymupdate.button').show()
+        }
+      })
+      $('.tags__selector-topic').on('click', function(){
+        checkTopicAreas()
+      })
+    }
   </script>
 <% end -%>

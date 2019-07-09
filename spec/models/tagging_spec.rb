@@ -16,6 +16,14 @@ RSpec.describe Refinery::Taggings::Tagging, :type => :model do
 
     expect(new_tag.announcements.first).to eq(new_announcement)
   end
+    
+  it "it can have an associated instance of the REPORT model" do
+    new_tag = FactoryBot.create(:tag, title: 'animals', tag_type: "topic_area")
+    new_report = FactoryBot.create(:report, title: 'Reporting the following report!')
+    Refinery::Taggings::Tagging.create(tag_id: new_tag.id, report_id: new_report.id)
+
+    expect(new_tag.reports.first).to eq(new_report)
+  end
   
   it "it MUST have an associated model instance" do
     new_tag = FactoryBot.create(:tag, title: 'animals', tag_type: "topic_area")
