@@ -135,9 +135,9 @@
     grid-template-columns: 1fr 1fr 1fr;
     padding: 3.8rem;
 
-    @media screen and (max-width: 414px){
+    @media screen and (max-width: 331.2px){
       grid-template-columns: 1fr 1fr;
-      padding: 1rem;
+      padding: 0.95rem .975rem;
     }
 
     &-message-none {
@@ -197,11 +197,14 @@
       }
 
       &-event {
-        //height: 22rem;
+        height: 22rem;
         margin: 0 2.5rem 5rem 0;
-        //width: 23.95rem;
-        @media screen and (max-width: 414px){
-          margin: 0 0.5rem 0.5rem .5rem;
+        width: 23.95rem;
+
+        @media screen and (max-width: 331.2px){
+          width: 8.75rem;
+          margin: 0.6rem .275rem;
+          height: auto;
         }
 
 
@@ -211,9 +214,10 @@
           object-fit: cover;
           width: 100%;
 
-          @media screen and (max-width: 414px){
-            height: 6rem;
+          @media screen and (max-width: 331.2px){
+            height: 3.75rem;
           }
+
         }
 
         &-info {
