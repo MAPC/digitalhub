@@ -1,11 +1,33 @@
 .footer {
-  display: flex;
-  flex-wrap: wrap;
+  //display: flex;
+  //flex-wrap: wrap;
   background-color: $color_bg-dark;
   font-size: $font_size-xsmall;
   color: $color_font-light;
   line-height: $font_size-small;
   transition-duration: 1.5s;
+
+  background: lightblue;
+
+  & > .container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 1fr 1fr;
+
+    @include media(small){
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(3fr);
+    }
+
+  }
+
+  &__section{
+    &--two-col{
+      @include media(small){
+        grid-column: 1 / span 2;
+      }
+    }
+  }
 
   // Override normal green coloring
   a {
@@ -26,17 +48,24 @@
     }
   }
 
+  .footer__section--image{
+    width: 72px;
+    height:36px;
+  }
+
   .footer__row {
      display: flex;
      flex-basis: 100%;
      justify-content: space-between;
      padding-bottom: 1rem;
+     border: 1px solid red;
      @include media(small) {
        display: block;
   }
 
   .footer__column {
     flex-basis: 22%;
+    border: 1px solid blue;
     .button {
       text-transform: uppercase;
       font-family: "CalibreWeb-Semibold";
