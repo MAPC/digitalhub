@@ -1,6 +1,4 @@
 .footer {
-  //display: flex;
-  //flex-wrap: wrap;
   background-color: $color_bg-dark;
   font-size: $font_size-xsmall;
   color: $color_font-light;
@@ -21,10 +19,53 @@
 
   }
 
+  // .footer-mapc-brand {
+  //   display: flex;
+  //   align-items: center;
+  //   .logo {
+  //     width: 72px;
+  //     height: 36px;
+  //     margin-right: 1em;
+  //   }
+
+  //   @include media(medium) {
+  //     display: block;
+  //     & > *:not(:last-child) {
+  //       margin-bottom: 0.5rem;
+  //     }
+  //   }
+  // }
+
   &__section{
-    &--two-col{
+    &-about{
       @include media(small){
         grid-column: 1 / span 2;
+      }
+    }
+
+    &-images{
+
+      &-logo{
+        display: flex;
+        align-items: center;
+        width: 72px;
+        height: 36px;
+        margin-right: 1em;
+
+        @include media(medium) {
+          display: block;
+          & > *:not(:last-child) {
+            margin-bottom: 0.5rem;
+          }
+        }
+      }
+
+      &-cta{
+        grid-column: 2;
+      }
+
+      &-social{
+        grid-column: 4;
       }
     }
   }
@@ -91,21 +132,6 @@
     }
   }
 
-  .footer-mapc-brand {
-    display: flex;
-    align-items: center;
-    .logo {
-      width: 72px;
-      height: 36px;
-      margin-right: 1em;
-    }
-
-    @include media(medium) {
-      display: block;
-      & > *:not(:last-child) {
-        margin-bottom: 0.5rem;
-      }
-    }
-  }
+  
 }
 }
