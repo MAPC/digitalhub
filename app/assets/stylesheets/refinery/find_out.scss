@@ -174,14 +174,24 @@
 
       &-report {
         height: 22rem;
-        margin: 0 2.5rem 5rem 0;
         width: 23.95rem;
+        margin: 0 1.25rem 5rem 1.25rem;
+
+        @include media(small){
+          width: 8.75rem;
+          margin: 0.6rem .275rem;
+          height: auto;
+        }
 
         &-image {
-          max-height: 90%;
+          height: 90%;
           margin: 0 0 .5rem;
           object-fit: cover;
-          max-width: 100%;
+          width: 100%;
+
+          @include media(small){
+            height: 3.75rem;
+          }
         }
 
         &-info {
@@ -220,7 +230,7 @@
 
       &-event {
         height: 22rem;
-        max-width: 23.95rem;
+        width: 23.95rem;
         margin: 0 1.25rem 5rem 1.25rem;
 
         @include media(small){
@@ -277,14 +287,24 @@
 /* tagged items display area ****************************/
       &-announcement {
         height: 22rem;
-        margin: 0 2.5rem 5rem 0;
         width: 23.95rem;
+        margin: 0 1.25rem 5rem 1.25rem;
+
+        @include media(small){
+          width: 8.75rem;
+          margin: 0.6rem .275rem;
+          height: auto;
+        }
 
         &-image {
           height: 90%;
           margin: 0 0 .5rem;
           object-fit: cover;
           width: 100%;
+
+          @include media(small){
+            height: 3.75rem;
+          }
         }
 
         &-info {
