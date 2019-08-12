@@ -148,12 +148,16 @@
 
   /* tagged items display area,  when "all topic areas" selected,****************************/
   .find-out__results {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-rows: auto;
+
     justify-items: center;
     padding: 3.8rem;
 
-    @include media(small){
+    @include media(medium){
       grid-template-columns: 1fr 1fr;
       padding: 0.95rem .975rem;
     }
@@ -174,10 +178,10 @@
         width: 23.95rem;
 
         &-image {
-          height: 90%;
+          max-height: 90%;
           margin: 0 0 .5rem;
           object-fit: cover;
-          width: 100%;
+          max-width: 100%;
         }
 
         &-info {
@@ -216,15 +220,14 @@
 
       &-event {
         height: 22rem;
-        margin: 0 2.5rem 5rem 0;
-        width: 23.95rem;
+        max-width: 23.95rem;
+        margin: 0 1.25rem 5rem 1.25rem;
 
         @include media(small){
           width: 8.75rem;
           margin: 0.6rem .275rem;
           height: auto;
         }
-
 
         &-image {
           height: 90%;
@@ -235,7 +238,6 @@
           @include media(small){
             height: 3.75rem;
           }
-
         }
 
         &-info {
