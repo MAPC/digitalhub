@@ -4,6 +4,7 @@
   border: 1px solid $v3-color_green-light;
   overflow: hidden;
 <<<<<<< HEAD
+<<<<<<< HEAD
   padding: 2.1rem 1.8rem;
 =======
 
@@ -13,6 +14,9 @@
 >>>>>>> Match mobile XD design for homepage cards
 =======
 >>>>>>> Match mobile XD design for homepage cards
+=======
+  padding: 2.1rem 1.8rem;
+>>>>>>> Refactor event box HTML and CSS
 
   &__header {
     @media (max-width: 1400px) { font-size: $font-size-xlarge; }
@@ -37,6 +41,7 @@
       @include triangle(50px, 'right', $v3-color_green-light);
       margin-left: 1rem;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
       @include media(medium) {
@@ -50,6 +55,8 @@
     @include media(medium) {
       justify-content: center;
 >>>>>>> Match mobile XD design for homepage cards
+=======
+>>>>>>> Refactor event box HTML and CSS
     }
   }
 
