@@ -1,3 +1,92 @@
+# This migration comes from refinery_tags (originally 1)
+class CreateTagsTags < ActiveRecord::Migration[5.2]
+  def up
+    create_table :refinery_tags do |t|
+      t.string :title
+      t.string :tag_type
+      t.integer :position
+      t.timestamps
+    end
+  end
+
+  def down
+    if defined?(::Refinery::UserPlugin)
+      ::Refinery::UserPlugin.destroy_all({:name => "refinerycms-tags"})
+    end
+
+    if defined?(::Refinery::Page)
+      ::Refinery::Page.delete_all({:link_url => "/tags/tags"})
+    end
+
+    drop_table :refinery_tags
+  end
+end
+
+# This migration comes from refinery_taggings (originally 1)
+class CreateTaggingsTaggings < ActiveRecord::Migration[5.2]
+  def up
+    create_table :refinery_taggings do |t|
+      t.integer :tag_id
+      t.integer :event_id
+      t.integer :announcement_id
+      t.integer :position
+
+      t.timestamps
+    end
+  end
+
+  def down
+    if defined?(::Refinery::UserPlugin)
+      ::Refinery::UserPlugin.destroy_all({:name => "refinerycms-taggings"})
+    end
+
+    if defined?(::Refinery::Page)
+      ::Refinery::Page.delete_all({:link_url => "/taggings/taggings"})
+    end
+
+    drop_table :refinery_taggings
+  end
+end
+
+# This migration comes from refinery_reports (originally 1)
+class CreateReportsReports < ActiveRecord::Migration[5.2]
+  def up
+    create_table :refinery_reports do |t|
+      t.string :title
+      t.text :body
+      t.datetime :date
+      t.integer :image_id
+      t.integer :position
+
+      t.timestamps
+    end
+  end
+
+  def down
+    if defined?(::Refinery::UserPlugin)
+      ::Refinery::UserPlugin.destroy_all({:name => "refinerycms-reports"})
+    end
+
+    if defined?(::Refinery::Page)
+      ::Refinery::Page.delete_all({:link_url => "/reports/reports"})
+    end
+
+    drop_table :refinery_reports
+  end
+end
+
+class AddReportIdToTaggings < ActiveRecord::Migration[5.2]
+  def change
+    add_column :refinery_taggings, :report_id, :integer
+  end
+end
+
+class AddNarrativeToTags < ActiveRecord::Migration[5.2]
+  def change
+    add_column :refinery_tags, :narrative, :text
+  end
+end
+
 class SeedDefaultTags < ActiveRecord::Migration[5.2]
   def up
     content_types = ["publications", "news", "events", "calls to action", "datasets"]
@@ -32,5 +121,17 @@ class SeedDefaultTags < ActiveRecord::Migration[5.2]
 
   def down
     ::Refinery::Tags::Tag.all {|t| t.destroy!}
+  end
+end
+
+class AddDescriptionToEvents < ActiveRecord::Migration[5.2]
+  def change
+    add_column :refinery_events, :description, :text
+  end
+end
+
+class AddPublishedDateToAnnouncements < ActiveRecord::Migration[5.2]
+  def change
+    add_column :refinery_announcements, :published_date, :datetime
   end
 end
