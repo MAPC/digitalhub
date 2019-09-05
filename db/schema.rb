@@ -251,16 +251,6 @@ ActiveRecord::Schema.define(version: 2019_09_05_182535) do
     t.index ["rgt"], name: "index_refinery_pages_on_rgt"
   end
 
-  create_table "refinery_reports", force: :cascade do |t|
-    t.string "title"
-    t.text "body"
-    t.datetime "date"
-    t.integer "image_id"
-    t.integer "position"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "refinery_resource_translations", id: :serial, force: :cascade do |t|
     t.string "resource_title"
     t.string "locale", null: false
@@ -308,7 +298,6 @@ ActiveRecord::Schema.define(version: 2019_09_05_182535) do
     t.integer "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "report_id"
   end
 
   create_table "refinery_tags", force: :cascade do |t|
