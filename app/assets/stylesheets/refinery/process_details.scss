@@ -1,0 +1,240 @@
+.ProcessDetails {
+  height: 100%;
+
+  .container::after {
+    display: none;
+  }
+
+  .clickable {
+    border: 2px solid $v3_color_green-light !important;
+    cursor: pointer;
+
+    .card__download {
+      background-color: $v3-color_green-light !important;
+    }
+  }
+
+  .process-details {
+    @include media (large) {
+      margin: 2rem 9rem 1rem;
+      width: 45rem;
+    }
+    @include media (medium) {
+      margin: 2rem 6rem 1rem;
+      width: 25rem;
+    }
+    @include media (x-small) {
+      margin: 0 1rem 1rem;
+      width: 22rem;
+    }
+    margin: 2rem 13.5rem 0;
+    padding: 0 1rem;
+    width: 53rem;
+
+    &__title {
+      @include media (x-small) {font-size: $font_size-large;}
+      color: $v3-color_green-dark;
+      font-family: $font_family-primary;
+    }
+
+    &__subtitle {
+      color: $v3-color_green-dark;
+      font-family: $font_family-primary;
+      font-style: italic;
+    }
+
+    &__text {
+      color: $v3-color_gray-dark;
+      font-family: $font_family-secondary-light;
+    }
+  }
+
+  .about-the-plan {
+    @include media (large) {
+      margin: 2rem 9rem 1rem;
+      width: 45rem;
+    }
+    @include media (medium) {
+      margin: 2rem 6rem 1rem;
+      width: 25rem;
+    }
+    @include media (x-small) {
+      margin: 0 1rem 1rem;
+      width: 22rem;
+    }
+    margin: 2rem 13.5rem 0;
+    padding: 1rem;
+    width: 47rem;
+
+    &__title {
+      @include media (x-small) {font-size: $font_size-large;}
+      color: $v3-color_green-dark;
+      font-family: $font_family-primary;
+    }
+
+    &__video {
+      @include media (x-large) {width: 48rem;}
+      @include media (medium) {width: 23rem;}
+      @include media (x-small) {width: 18rem;}
+      width: 47rem;
+    }
+
+    &__video-arrow {
+      img {
+        @include media (medium) {
+          bottom: 5rem;
+          left: -2rem;
+          width: 4rem;
+        }
+        @include media (x-small) {
+          bottom: 4.5rem;
+          left: -1.5rem;
+          width: 3rem;
+        }
+        bottom: 8rem;
+        height: auto;
+        left: -3rem;
+        width: 6rem;
+      }
+    }
+  }
+
+  .external-advisors {
+    @include media (large) {
+      margin: 2rem 9rem 1rem;
+      width: 45rem;
+    }
+    @include media (medium) {
+      margin: 2rem 6rem 1rem;
+      width: 25rem;
+    }
+    @include media (x-small) {
+      margin: 0 1rem 1rem;
+      width: 22rem;
+    }
+    margin: 2rem 13.5rem 1rem;
+    padding: 1rem;
+    width: 53rem;
+
+    &__title {
+      @include media (x-small) {font-size: $font_size-large;}
+      color: $v3-color_green-dark;
+      font-family: $font_family-primary;
+    }
+
+    &__text {
+      color: $v3-color_gray-dark;
+      font-family: $font_family-secondary-light;
+      margin-bottom: 4rem;
+    }
+
+    .cards {
+      width: 77vw;
+    }
+
+    .card {
+      display: inline-grid;
+      font-size: $font_size-xsmall;
+      grid-template-columns: 20% 80%;
+      line-height: 1.05rem;
+      margin: 0 .3rem 1rem 0;
+      width: 17rem;
+
+      &__download {
+        background-color: $v3_color_bg-lightest;
+        border: .0625rem solid $v3-color_green-dark;
+        display: inline-block;
+        height: 100%;
+        text-align: center;
+
+        img {
+          height: 2rem;
+          margin: 24% 0;
+        }
+      }
+
+      &__body {
+        background: $v3-color_green-dark;
+        color: $v3_color_bg-lightest;
+        font-family: $font_family-primary;
+        grid-column: 2;
+        padding: .5rem;
+      }
+    }
+  }
+
+  .process-timeline {
+    &__slides {
+      @include media (large) {
+        margin: 2rem 9rem 1rem;
+        width: 45rem;
+      }
+      @include media (medium) {
+        height: 18rem;
+        margin: 0 5rem 3rem;
+        width: 37rem;
+      }
+      @include media (x-small) {
+        height: 13.35rem;
+        margin: 0 1rem 2rem 0;
+        width: 22rem;
+      }
+      height: 27rem;
+      margin: 0 0 10rem 13.5rem;
+      padding: 1rem;
+      width: 53rem;
+    }
+  }
+
+  .process-documents {
+    background-color: $v3-color_green-dark;
+    margin-top: 2rem;
+    padding: 1rem;
+
+    .container {
+      width: 90%;
+    }
+
+    &__title {
+      @include media (x-small) {font-size: $font_size-large;}
+      color: $v3_color_bg-lightest;
+      font-family: $font_family-primary;
+      grid-row: 1;
+    }
+
+    .cards {
+      width: 100%;
+    }
+
+    .card {
+      border: .0625rem solid $v3_color_bg-lightest;
+      display: inline-grid;
+      font-size: $font_size-xsmall;
+      grid-template-columns: 20% 80%;
+      line-height: 1.05rem;
+      margin: 0 .3rem 1rem 0;
+      width: 17rem;
+
+      &__download {
+        background-color: $v3_color_bg-lightest;
+        border: 0;
+        display: inline-block;
+        height: 100%;
+        text-align: center;
+
+        img {
+          height: 2rem;
+          margin: 24% 0;
+        }
+      }
+
+      &__body {
+        background: $v3-color_green-dark;
+        color: $v3_color_bg-lightest;
+        font-family: $font_family-primary;
+        grid-column: 2;
+        padding: .5rem;
+      }
+    }
+  }
+}

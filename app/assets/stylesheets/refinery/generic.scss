@@ -1,0 +1,55 @@
+.Generic {
+  height: 100%;
+
+  h1 {
+    color: darkgreen;
+  }
+
+  .container:after {
+    display: none;
+  }
+
+  .gitbook {
+    border: 2px solid rgb(27, 75, 27);
+    border-radius: 15px;
+    padding: 1rem;
+    margin-top: 2rem;
+    height: 90rem;
+  }
+
+  .slides {
+    border: 2px solid rgb(27, 75, 27);
+    border-radius: 15px;
+    padding: 1rem;
+    margin-top: 2rem;
+    height: 90rem;
+  }
+
+  .airtable {
+    border: 2px solid rgb(27, 75, 27);
+    border-radius: 15px;
+    padding: 1rem;
+    margin-top: 2rem;
+    height: 90rem;
+  }
+
+  .storymap {
+    border: 2px solid rgb(27, 75, 27);
+    border-radius: 15px;
+    padding: 1rem;
+    margin-top: 2rem;
+    height: 90rem;
+  }
+
+
+  .map {
+    border: 2px solid rgb(27, 75, 27);
+    border-radius: 15px;
+    padding: 1rem;
+    margin-top: 2rem;
+    height: 90rem;
+    &__description {
+      background-color: rgb(225, 225, 225);
+    }
+  }
+}
