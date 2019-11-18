@@ -1,0 +1,106 @@
+<script type="text/javascript">
+  window.addEventListener('load', () => {
+    $('.card').mouseover(function(event) {
+      $(this).addClass('clickable');
+    });
+
+    $('.card').mouseout(function(event) {
+      $(this).removeClass('clickable');
+    });
+
+    $('.card').click(function(event) {
+       window.location = $(this).find("a").attr("href");
+    });
+  })
+</script>
+
+<div class="ProcessDetails">
+  <section class="v2-banner">
+    <div class="container"></div>
+  </section>
+  <div class="container">
+    <div class="process-details">
+      <h1 class="process-details__title">Process Details</h1>
+      <h2 class="process-details__subtitle">How We'll Shape the Region Together</h2>
+      <p class="process-details__text">MetroCommon 2050 is a two-year undertaking that involves multiple phases, topics, and ideas; scores of planners; dozens of external advisors; and hundreds of state and local officials. Most important, it involves thousands of people from all over Metro Boston. It’s a complicated project, but running it smoothly is not enough – the entire point is the result. We must end up with an actionable plan, and one that makes change for the better.</p>
+      <p class="process-details__text">On this page, you’ll find information about the process behind MetroCommon. Timelines, advisory committees, and more. It’s the structure that undergirds the process. Keep checking back: it’s here we’re telling the story of “the how” of MetroCommon. Remember, if you have questions or comments, or if you’d like to get involved, <a href = "mailto: communications@mapc.org">please let us know.</a> It will take many of us who live, work, and play in the region to create the future we all want. Join us!</p>
+    </div>
+    <div class="about-the-plan">
+      <h1 class="about-the-plan__title">About The Plan</h1>
+      <div class="about-the-plan__video">
+        <iframe src="https://www.youtube.com/embed/bApghSqlbYc?start=9" height="100%" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="external-advisors">
+      <h1 class="external-advisors__title">External Advisors</h1>
+      <div class="external-advisors__text">
+        <p>From the start, MAPC has had two overriding goals for MetroCommon 2050. First, that the plan, when completed, would be more than an artifact. Instead of just collecting dust, it would be used – turned into policy. And second, that MetroCommon would not only be implemented, but that in the end, it would be worth implementing.</p>
+        <p>We’ve always known we couldn’t do this alone. We would need a large, diverse, committed group of stakeholders to lend us their opinions, impressions, and connections. Experts in policy, planning, analysis, outreach, and other technical matters; and experts in our communities and the lived realities of the kinds of topics the plan would discuss.</p>
+        <p>One of the structures through which we have been fortunate enough to tap such expertise is our external advisory groups. We are very thankful for the time and dedication our external advisors have devoted to this project. If you’d like to get involved, <a href = "mailto: communications@mapc.org">please contact us.</a> Let’s plan the region together!</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="card__download"><%= link_to image_tag('download.svg'), 'https://github.com/MAPC/digitalhub/files/3762906/MetroCommon.2050.External.Advisory.Committee.2019-01-30.docx' %></div>
+          <div class="card__body">
+            <div class="card__title">The External Advisory Committee</div>
+            <div class="card__subtitle">(EAC) Members of the External Advisory Committee</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__download dark-border"><%= link_to image_tag('download.svg'), 'https://github.com/MAPC/digitalhub/files/3762907/MetroCommon.2050.Community.Engagement.Advisory.Committee.2019-05-17.docx' %></div>
+          <div class="card__body">
+            <div class="card__title">Community Engagement Advisory Committee (CEAC)</div>
+            <div class="card__subtitle">Members of the CEAC</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__download dark-border"><%= link_to image_tag('link.svg'), 'https://docs.google.com/spreadsheets/d/1pExG9EHL9iOGgo8WX-uiWEBJnZY8UnviIRa4hmGwwb0/edit?ts=5db1bc2b#gid=0', alt: 'google doc' %></div>
+          <div class="card__body">
+            <div class="card__title">Related Meeting Notes</div>
+            <div class="card__subtitle">Related Meeting Notes tagline</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="process-timeline">
+      <div class="process-timeline__slides">
+        <iframe src="https://slides.com/mapc/process-details/embed" height="150%" width="200%" scrolling="no" frameborder="0"></iframe>
+      </div>
+    </div>
+  </div>
+  <div class="process-documents">
+    <div class="container">
+      <h1 class="process-documents__title">Process Documents</h1>
+        <div class="cards">
+          <div class="card">
+            <div class="card__download"><%= link_to image_tag('download.svg'), 'https://metrocommon.mapc.org/system/refinery/resources/W1siZiIsIjIwMTkvMDkvMDQvNHI0bTAycnhhYl9NQ19WYWx1ZXN2MDdEcmFmdF8yMDE5XzAxXzMwLnBkZiJdXQ/MC%20Valuesv07Draft_2019-01-30.pdf' %></div>
+            <div class="card__body">
+              <div class="card__title">MetroCommon Values</div>
+              <div class="card__subtitle">Values and Commitments that Guide MAPC and MetroCommon</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__download"><%= link_to image_tag('download.svg'), 'https://metrocommon.mapc.org/system/refinery/resources/W1siZiIsIjIwMTkvMDIvMDUvOHFqNnNjMTA1bl8xN19NZXRyb0NvbW1vbl9Qcm9jZXNzX0Rlc2lnbl8yMDE4LnBkZiJdXQ/17%20MetroCommon%20Process%20Design%202018.pdf' %></div>
+            <div class="card__body">
+              <div class="card__title">Regional Plan Process Design</div>
+              <div class="card__subtitle">Roadmap for MetroCommon Planning Process</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__download"><%= link_to image_tag('download.svg'), 'https://github.com/MAPC/digitalhub/files/3762891/RPU_ResearchAgenda_Projects_Approved_20181219.docx' %></div>
+            <div class="card__body">
+              <div class="card__title">Research Agenda</div>
+              <div class="card__subtitle">Initial List of MetroCommon Research Projects</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__download"><%= link_to image_tag('download.svg'), '#' %></div>
+            <div class="card__body">
+              <div class="card__title">Local Plans Memo</div>
+              <div class="card__subtitle">TBD</div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
