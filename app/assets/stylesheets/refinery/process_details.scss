@@ -44,8 +44,7 @@
     }
 
     &__text {
-      color: $v3-color_gray-dark;
-      font-family: $font_family-secondary-light;
+      font-family: $font_family-primary;
     }
   }
 
@@ -123,13 +122,12 @@
     }
 
     &__text {
-      color: $v3-color_gray-dark;
-      font-family: $font_family-secondary-light;
+      font-family: $font_family-primary;
       margin-bottom: 4rem;
     }
 
     .cards {
-      width: 77vw;
+      width: 55vw;
     }
 
     .card {
