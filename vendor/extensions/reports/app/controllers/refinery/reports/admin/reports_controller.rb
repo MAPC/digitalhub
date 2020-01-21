@@ -6,21 +6,23 @@ module Refinery
         crudify :'refinery/reports/report'
 
         def create
-          @report = Refinery::Reports::Report.create(report_params)
-          if params[:tag]
-            tags = params[:tag][:tag_ids].each do |tid|
-              Refinery::Taggings::Tagging.create(report_id: @report.id, tag_id: tid.to_i)
-            end
+          @report = Refinery::Reports::Report.new(report_params)
+          params[:tag][:tag_ids].each do |tid|
+            @report.tags << Refinery::Tags::Tag.find(tid)
           end
-          @report.save
-          redirect_to reports_admin_reports_path and return
+          if @report.save
+            flash[:notice] = "Report was successfully created!"
+            redirect_to reports_admin_reports_path
+          else
+            render action: 'new'
+          end
         end
 
         def update
           @report = Refinery::Reports::Report.find(params[:id])
           @report.update(report_params)
           @report.taggings.each {|t| t.delete}
-          tags = params[:tag][:tag_ids].each do |tid|
+          params[:tag][:tag_ids].each do |tid|
             new_tagging = Refinery::Taggings::Tagging.create(report_id: @report.id, tag_id: tid.to_i)
           end
           @report.save
