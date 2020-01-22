@@ -17,13 +17,14 @@
       margin: 0;
       padding: 0;
     }
-    
+
     .content__content-type {
       @include media (small) {
         grid-row: 2;
         margin-top: 1rem;
         padding: 1rem 1.35rem 0;
       }
+
       appearance: none;
       color: $v3-color_gray-dark;
       font-family: $font_family-secondary;
