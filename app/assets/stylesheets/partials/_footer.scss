@@ -1,23 +1,27 @@
 .footer {
-  @include media(medium) {
-    grid-template-columns: 1fr 1fr;
-    padding: 1.55rem 1.25rem;
-  }
-
-  -ms-grid-columns: 1fr 1fr 1fr 1fr;
-  -ms-grid-rows: auto;
   background-color: $color_bg-dark;
   bottom: 0;
   color: $color_font-light;
-  display: grid;
-  display: -ms-grid;
   font-size: $font_size-xsmall;
-  grid-template-columns: repeat(4,1fr);
-  grid-template-rows: auto;
-  line-height: $font_size-small;
-  padding: 3.4rem 6rem;
   transition-duration: 1.5s;
   width: 100%;
+
+  &__container {
+    @include media(medium) {
+      grid-template-columns: 1fr 1fr;
+      padding: 1.55rem 1.25rem;
+    }
+
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+    -ms-grid-rows: auto;
+    display: grid;
+    display: -ms-grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: auto;
+    margin: 0 auto;
+    max-width: 90rem;
+    padding: 3.4rem 6rem;
+  }
 
   &__section {
     &-about{
@@ -172,7 +176,7 @@
   }
 
   .footer__section--image{
+    height: 36px;
     width: 72px;
-    height:36px;
   }
 }
