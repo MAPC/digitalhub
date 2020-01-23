@@ -9,7 +9,7 @@
   &__container {
     @include media(medium) {
       grid-template-columns: 1fr 1fr;
-      padding: 1.55rem 1.25rem;
+      padding: 1.55rem 1.35rem;
     }
 
     -ms-grid-columns: 1fr 1fr 1fr 1fr;
@@ -20,7 +20,7 @@
     grid-template-rows: auto;
     margin: 0 auto;
     max-width: 90rem;
-    padding: 3.4rem 6rem;
+    padding: 3.4rem 1.35rem;
   }
 
   &__section {
