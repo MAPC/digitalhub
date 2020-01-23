@@ -270,12 +270,14 @@ Event.prototype.eventCardHtml = function eventCardHtml() {
     }
   }).join('');
 
+  const eventType = new Date(this.end) > new Date()  ? 'UPCOMING EVENT' : 'PAST EVENT';
+
   return (`
     <div class="card" data-sortdate="${Date.parse(this.start)}">
       <a href="/events/${this.id}">
         <img class="card__image" src=${this.image_url} />
       </a>
-      <div class="card__content-type">EVENT</div>
+      <div class="card__content-type">${eventType}</div>
       <div class="card__title">
         <a class="card__link" href="/events/${this.id}">${this.title}</a>
         <div class="card__tags">tags: ${tags}</div>
