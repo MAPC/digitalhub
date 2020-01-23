@@ -81,7 +81,10 @@ const fetchTaggings = (dropdownsObject) => {
 
     const nextThreeEvents = () => {
       if (dropdownsObject.content_type === 'events') {
-        loadNextThreeEvents(response.next_three_events, $('.results'));
+        const nextThree = response.next_three_events.map(event => {
+          return new Event(event);
+        });
+        $('.results').prepend(Event.nextThreeHtml(nextThree));
       }
     };
 
@@ -147,14 +150,6 @@ const loadInitialCards = (taggings, resultsDiv, dropdownsObject) => {
       $('#load-more').hide();
     }
   }
-};
-
-const loadNextThreeEvents = (events, resultsDiv) => {
-  const nextThree = events.map(event => {
-    return new Event(event);
-  });
-  const nextThreeEventsHtml = Event.nextThree(nextThree);
-  resultsDiv.prepend(nextThreeEventsHtml);
 };
 
 const loadRemainingCards = (taggings, resultsDiv) => {
@@ -225,7 +220,7 @@ class Event {
     this.zipcode = eventResponse.data.attributes.zipcode;
   }
 
-  static nextThree(events) {
+  static nextThreeHtml(events) {
     const receiveUpdatesUrl = $('.next-three-events__receive-updates-url')[0].innerHTML;
     const noEventsMessageHtml = (`
       <div>
