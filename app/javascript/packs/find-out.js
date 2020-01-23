@@ -142,7 +142,7 @@ const loadInitialCards = (taggings, resultsDiv, dropdownsObject) => {
   } else {
     createCards(taggings.slice(0, 9), resultsDiv);
     if (taggings.length > 9) {
-      showLoadMoreButton(taggings.slice(9, taggings.length - 1), resultsDiv);
+      showLoadMoreButton(taggings.slice(9, taggings.length), resultsDiv);
     } else {
       $('#load-more').hide();
     }
