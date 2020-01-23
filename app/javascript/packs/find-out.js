@@ -93,7 +93,8 @@ const fetchTaggings = (dropdownsObject) => {
       $('.results').empty()
         .removeClass('results--cards-high')
         .addClass('results--cards-high');
-      $('.find-out__header').removeClass('find-out__header--large')
+      $('.find-out__header')
+        .removeClass('find-out__header--large')
         .addClass('find-out__header--large');
     };
 
