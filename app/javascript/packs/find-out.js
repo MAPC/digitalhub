@@ -64,7 +64,7 @@ const onDropdownChange = () => {
       topic_area: dropdownSelections[1].innerText,
     };
     fetchTaggings(dropdownsObject);
-    $('div#find-out__overlay').removeClass('find-out__overlay');
+    $('#find-out__overlay').removeClass('find-out__overlay');
   });
 };
 
@@ -158,14 +158,12 @@ const loadRemainingCards = (taggings, resultsDiv) => {
 };
 
 const showLoadMoreButton = (remainingCards, resultsDiv) => {
-  $('#load-more').show();
-  $('#load-more').unbind('click');
-  $('#load-more').bind('click', (event) => {
-    loadRemainingCards(remainingCards, resultsDiv);
-  });
+  $('#load-more')
+    .show()
+    .unbind('click')
+    .bind('click', () => { loadRemainingCards(remainingCards, resultsDiv); });
 };
 
-// Report class
 class Report {
   constructor(reportResponse) {
     this.title = reportResponse.data.attributes.title;
@@ -281,7 +279,6 @@ Event.prototype.eventCardHtml = function eventCardHtml() {
   `);
 };
 
-// Announcement class
 class Announcement {
   constructor(announcementResponse) {
     this.id = announcementResponse.data.id;
