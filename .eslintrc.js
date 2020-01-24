@@ -9,11 +9,13 @@ module.exports = {
     "jquery": true
   },
   "rules": {
-    "no-use-before-define": "off",
     "arrow-body-style": "off",
     "arrow-parens": "off",
-    "semi": "off",
-    "max-len": "off",
-    "comma-dangle": "off"
+    "max-len": ['error', {
+      "ignoreStrings": true,
+      "tabWidth": 2,
+      "ignoreTemplateLiterals": true,
+      "ignoreUrls": true
+    }]
   }
 };
