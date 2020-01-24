@@ -11,5 +11,11 @@ module.exports = {
   "rules": {
     "arrow-body-style": "off",
     "arrow-parens": "off",
+    "max-len": ['error', {
+      "ignoreStrings": true,
+      "tabWidth": 2,
+      "ignoreTemplateLiterals": true,
+      "ignoreUrls": true
+    }]
   }
 };
