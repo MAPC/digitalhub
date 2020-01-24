@@ -162,7 +162,10 @@ const showLoadMoreButton = (remainingCards, resultsDiv) => {
   $('#load-more')
     .show()
     .unbind('click')
-    .bind('click', () => { loadRemainingCards(remainingCards, resultsDiv); });
+    .bind('click', (event) => {
+      event.preventDefault();
+      loadRemainingCards(remainingCards, resultsDiv);
+    });
 };
 
 class Report {
