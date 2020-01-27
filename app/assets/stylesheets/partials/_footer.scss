@@ -151,6 +151,11 @@
     }
   }
 
+  &__links {
+    list-style: none;
+    padding-left: 0;
+  }
+
   & h2 {
     color: $color_font-light;
   }
