@@ -15,9 +15,9 @@ module Refinery
         report_json = ReportSerializer.new(@report, { :include => [:image] }).serializable_hash
         @tags = @report.tags.map {|t| t.tag_type == 'topic_area' ? t.title : nil }.compact.join(', ')
 
-        respond_to do |f|
-          f.html { render '/refinery/reports/show'}
-          f.json { render json: report_json}
+        respond_to do |format|
+          format.html { present(@page) }
+          format.json { render json: report_json }
         end
       end
 
