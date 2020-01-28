@@ -1,61 +1,67 @@
 html {
   overflow-x: hidden;
 }
+
 body {
   font-family: $font_family-primary;
-  overflow-x: hidden;
   min-height: 100vh;
+  overflow-x: hidden;
+
   &.menu-open {
     height: 100vh;
   }
 }
 
 h1 {
-  font-size: $font_size-xlarge;
   color: $color_font-light;
+  font-size: $font_size-xlarge;
   font-weight: 400;
 }
+
 h2 {
-  font-size: $font_size-medium;
   color: $color_green-dark;
+  font-size: $font_size-medium;
   font-weight: 400;
 }
 
 h3 {
-  font-size: $font_size-small;
   color: $color_font-grey;
+  font-size: $font_size-small;
   font-weight: 400;
 }
 
 p {
-  line-height: 1.5em;
   color: $color_font-grey;
+  line-height: 1.5em;
 }
 
 a {
   color: $color_bg-dark;
+
   &.focus--keyboard {
-    outline-style: solid;
-    outline-color: $color_blue-medium;
-    outline-width: 2px;
-    outline-offset: 4px;
     background-color: $color_yellow-light;
-    box-shadow: 0px 0px 0px 8px $color_yellow-light;
+    box-shadow: 0 0 0 8px $color_yellow-light;
     color: $color_blue-medium;
+    outline-color: $color_blue-medium;
+    outline-offset: 4px;
+    outline-style: solid;
+    outline-width: 2px;
   }
+
   &.link-button-row {
-    margin: 0;
-    display: block;
-    width: 100%;
     background-color: $color_green-dark;
     color: $color_font-light;
-    padding: 0.5em 1em;
-    text-align: center;
+    display: block;
     font-size: $font_size-large;
+    margin: 0;
+    padding: .5em 1em;
+    text-align: center;
     text-decoration: none;
+    width: 100%;
 
     &:nth-child(even) { background-color: $color_green-medium; }
   }
+
   &:hover {
     color: $color_green-light;
   }
@@ -67,25 +73,23 @@ address {
 
 button {
   &.focus--keyboard {
-    outline-style: solid;
-    outline-color: $color_blue-medium;
-    outline-width: 2px;
-    outline-offset: 4px;
     background-color: $color_yellow-light;
-    box-shadow: 0px 0px 0px 8px $color_yellow-light;
+    box-shadow: 0 0 0 8px $color_yellow-light;
     color: $color_blue-medium;
+    outline-color: $color_blue-medium;
+    outline-offset: 4px;
+    outline-style: solid;
+    outline-width: 2px;
   }
 }
 
-button, img { outline: none; }
+button,
+img {
+  outline: none;
+  }
 
 main {
   transition: 1.5s;
-}
-
-ul {
-  padding: 0;
-  list-style: none;
 }
 
 #page_container {
@@ -99,52 +103,56 @@ ul {
 }
 
 .hidden-text {
-  position: absolute;
+  height: 1em;
   left: -1000px;
+  overflow: hidden;
+  padding-left: 1px;
+  position: absolute;
   top: auto;
   width: 1px;
-  height: 1em;
-  padding-left: 1px;
-  overflow: hidden;
 }
 
 .container {
   margin: auto;
   max-width: 90rem;
-  width: 100%;
   padding: 2rem 1.35rem;
+  width: 100%;
 }
 
 .content-column {
-  margin-left: calc((((100% - 6rem) / 7) * 3) + 3rem);
-  margin-right: calc((((100% - 6rem) / 7) * 1) + 1rem);
   @include media(medium) {
     margin-left: 0;
     margin-right: 0;
   }
+
+  margin-left: calc((((100% - 6rem) / 7) * 3) + 3rem);
+  margin-right: calc((((100% - 6rem) / 7) * 1) + 1rem);
 }
 
 .event-content-column {
-  margin-left: calc((((100% - 6rem) / 7) * 3) + 3rem);
-  margin-right: calc((((100% - 6rem) / 7) * 0.5) + 1rem);
   @include media(medium) {
     margin-left: 0;
     margin-right: 0;
   }
+
+  margin-left: calc((((100% - 6rem) / 7) * 3) + 3rem);
+  margin-right: calc((((100% - 6rem) / 7) * .5) + 1rem);
 }
 
 .skip-header {
   width: 100%;
+
   a {
-    width: calc(100% - 0.5rem);
+    box-sizing: border-box;
+    display: block;
     height: 0;
     padding: 0;
-    display: block;
-    box-sizing: border-box;
+    width: calc(100% - .5rem);
+
     &:focus {
       height: max-content;
-      padding: 0.25rem;
-      margin: 0.5rem;
+      margin: .5rem;
+      padding: .25rem;
     }
   }
 }
@@ -159,16 +167,15 @@ video {
 
 .v2-banner {
   background-color: $color_bg-dark;
-  position: relative;
-  padding-top: 2em;
+  background-size: 40%;
   color: $color_font-light;
   font-size: 20px;
   font-weight: normal;
-  background: $color_bg-dark;
-  background-size: 40%;
+  padding-top: 2rem;
+  position: relative;
 
   .center {
-    margin: 8rem auto 0 auto;
+    margin: 8rem auto 0;
     width: fit-content;
   }
 
@@ -178,101 +185,99 @@ video {
   }
 
   .logo {
-    width: 6rem;
+    @include media(small) {
+      bottom: 1rem;
+      right: 1.5rem;
+    }
+
+    bottom: 2.5rem;
     height: auto;
     position: absolute;
     right: 4.5rem;
-    bottom: 2.5rem;
-
-    @include media(small) {
-      right: 1.5rem;
-      bottom: 1rem;
-    }
+    width: 6rem;
   }
 
   .banner-content {
-    margin-top: 11rem;
+    @include media(medium) {
+      margin-bottom: 3rem;
+      margin-top: 3rem;
+    }
+
     margin-bottom: 11rem;
+    margin-top: 11rem;
+
     & > * {
       margin: 0;
+
       &:not(:last-child) {
-        margin-bottom: 0.5rem;
+        margin-bottom: .5rem;
       }
     }
+
     .search-form {
       margin-top: 3rem;
-    }
-    @include media(medium) {
-      margin-top: 3rem;
-      margin-bottom: 3rem;
     }
   }
 
   &.small {
     .banner-content {
-      margin-top: 6rem;
-      margin-bottom: 6rem;
-
       @include media(medium) {
-        margin-top: 2rem;
         margin-bottom: 2rem;
+        margin-top: 2rem;
       }
+
+      margin-bottom: 6rem;
+      margin-top: 6rem;
     }
   }
 
   .container {
-    &:after {
+    &::after {
+      @include media(small) {
+        border-left: 12.5px solid transparent;
+        border-right: 12.5px solid transparent;
+        border-top: 25px solid $color_green-light;
+        bottom: -15px;
+        right: 4rem;
+      }
+
+      border-left: 25px solid transparent;
+      border-right: 25px solid transparent;
+      border-top: 50px solid $color_green-light;
+      bottom: -25px;
       content: ' ';
       display: block;
       position: absolute;
-      bottom: -25px;
       right: 6rem;
-      border-top: 50px solid $color_green-light;
-      border-left: 25px solid transparent;
-      border-right: 25px solid transparent;
-
-      @include media(small) {
-        border-top: 25px solid $color_green-light;
-        border-left: 12.5px solid transparent;
-        border-right: 12.5px solid transparent;
-        right: 4rem;
-        bottom: -15px;
-      }
     }
-  }
-}
-
-.user-video {
-  margin: 1rem auto;
-  @include media(medium) {
-    width: 100%;
   }
 }
 
 .actions {
-  width: 0.1px;
-  height: 0.1px;
+  height: .1px;
   opacity: 0;
   overflow: hidden;
   position: absolute;
+  width: .1px;
   z-index: -1;
 }
 
 .button {
-  display: inline-block;
-  cursor: pointer;
-  width: max-content;
   background-color: $color_green-medium;
-  color: $color_font-light;
-  padding: 0.5em 2.5em;
   border: 0;
+  color: $color_font-light;
+  cursor: pointer;
+  display: inline-block;
+  padding: .5em 2.5em;
   text-decoration: none;
+  width: max-content;
+
   &:hover {
-      background-color: $color_green-light;
-      color: $color_font-grey;
-      outline: 1px dotted #000;
-      outline: -webkit-focus-ring-color auto 5px;
-    }
+    background-color: $color_green-light;
+    color: $color_font-grey;
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+  }
 
   &.neutral {
     background-color: $color_bg-dark;
@@ -284,27 +289,8 @@ video {
     background-color: $color_bg-grey;
 
     &:hover {
-      color: $color_font-light;
       background-color: $color_bg-darkgrey;
+      color: $color_font-light;
     }
   }
-}
-
-#story_video + label {
-    display: inline-block;
-    cursor: pointer;
-    margin: 1rem 0;
-    width: max-content;
-    background-color: $color_green-medium;
-    color: $color_font-light;
-    padding: 0.5em 1em;
-    border: 0;
-}
-
-#story_video:focus + label,
-#story_video + label:hover {
-    background-color: $color_green-light;
-    color: $color_font-grey;
-    outline: 1px dotted #000;
-    outline: -webkit-focus-ring-color auto 5px;
 }

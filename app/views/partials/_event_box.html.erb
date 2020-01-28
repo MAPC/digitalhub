@@ -4,7 +4,7 @@
   <%= link_to "Join us for an event!", events_events_path, class: "event-box__header" %>
   <div class="event-box__content">
   <% if events.size > 0 %>
-    <ul>
+    <ul class="event-box__list">
       <% events.each do |event| %>
         <a href="/events/<%= event.id %>"><li>
         <h4><%= event.title %></h4>

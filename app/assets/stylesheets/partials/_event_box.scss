@@ -43,6 +43,11 @@
     @media (max-width: 670px) { display: none; }
   }
 
+  &__list {
+    list-style-type: none;
+    padding: 0;
+  }
+
   li {
     color: $color_font-light;
     font-size: $v3_font_size-event;

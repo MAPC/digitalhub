@@ -3,6 +3,11 @@
     color: white;
   }
 
+  &__list {
+    list-style-type: none;
+    padding: 0;
+  }
+
   @include media(small) {
     font-size: 12px;
   }
