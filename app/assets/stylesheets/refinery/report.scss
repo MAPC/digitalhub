@@ -5,10 +5,6 @@
     .v2-banner {
       padding-bottom: 2rem;
     }
-
-    p {
-      margin: 0;
-    }
   }
 
   .container {
@@ -18,8 +14,10 @@
       padding: 0;
     }
 
+    max-width: 60rem;
+
     .content__content-type {
-      @include media (small) {
+      @include media(small) {
         grid-row: 2;
         margin-top: 1rem;
         padding: 1rem 1.35rem 0;
@@ -30,7 +28,7 @@
       font-family: $font_family-secondary;
       font-size: $font_size-small;
       grid-row-start: 1;
-      letter-spacing: .2rem;
+      letter-spacing: 0.2rem;
       padding: 1rem 0 0;
       text-transform: uppercase;
     }
@@ -40,6 +38,7 @@
         grid-row: 4;
         padding: 1rem 1.35rem 0;
       }
+
       appearance: none;
       color: $v3-color_gray-dark;
       font-family: $font_family-secondary-light;
@@ -50,55 +49,49 @@
     .content__title {
       @include media(small) {
         grid-row: 3;
-        padding: .5rem 1.35rem 0;
+        padding: 0.5rem 1.35rem 0;
       }
+
       color: $v3-color_green-medium;
       font-family: $font_family-primary;
       font-size: $font_size-xlarge;
-      padding: .5rem 0 0;
+      padding: 0.5rem 0 0;
     }
 
     .content__tags {
       @include media(small) {
         grid-row: 5;
-        padding: .5rem 1.35rem 0;
+        padding: 0.5rem 1.35rem 0;
       }
+
       color: $color_bg-darkgrey;
       font-family: $font_family-primary;
       font-size: $font_size-small;
       font-style: italic;
-      padding: .5rem 0;
+      padding: 0.5rem 0;
     }
 
     .content__body {
-      @include media (small) {
+      @include media(small) {
         grid-row: 6;
         margin-bottom: 1rem;
         min-height: unset;
-        padding: .5rem 1.35rem 1rem;
+        padding: 0.5rem 1.35rem 1rem;
       }
+
       color: $v3-color_gray-dark;
       font-size: $font_size-small;
       line-height: 1.5rem;
       min-height: 27.85rem;
-      padding: .5rem 0 1rem;
+      padding: 0.5rem 0 1rem;
     }
 
     .content__image {
-      @include media(small) {
-        float: unset;
-        grid-row: 1;
-        margin: 0;
-        max-height: 20rem;
-        max-width: unset;
-        padding: 0;
-        width: 100%;
-      }
+      @include mobile-image;
+
       float: right;
-      height: auto;
-      margin: 10.25rem 0 .6rem .8rem;
-      max-width: 30rem;
-      padding: 0 1.35rem 1rem 1rem;
+      margin: 0 0 0.6rem 0.8rem;
+      max-width: 50%;
     }
   }
 }

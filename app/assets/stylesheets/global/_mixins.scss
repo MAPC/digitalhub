@@ -62,3 +62,13 @@
         border-bottom: $off_size solid transparent;
     }
 }
+
+@mixin mobile-image {
+  @include media(small) {
+    float: unset;
+    margin: 0;
+    max-height: 20rem;
+    max-width: 100%;
+    width: 100%;
+  }
+}
