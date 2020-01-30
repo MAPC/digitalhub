@@ -1,4 +1,4 @@
-const custom_visual_editor_boot_options = {
+var custom_visual_editor_boot_options = {
   classesItems: [
     {
       name: 'text-align',
