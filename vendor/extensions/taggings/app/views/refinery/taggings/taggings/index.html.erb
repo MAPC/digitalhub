@@ -1,6 +1,16 @@
 <% content_for :javascript_packs do %>
-<%= javascript_pack_tag 'find-out' %>
+  <%= javascript_pack_tag 'find-out' %>
 <% end %>
+
+<% content_for :head do %>
+  <meta property="og:title" content="MetroCommon 2050 - Find Out" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="<%= image_url("mapc-social-sharing-image.png") %>" />
+  <meta property="og:description" content="Find out about Greater Boston’s next regional plan. Led by the Metropolitan Area Planning Council (MAPC)." />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.js"></script>
+<% end %>
+
 
 <div class="FindOut">
   <section class="v2-banner">
