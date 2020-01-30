@@ -7,7 +7,10 @@ module Refinery
 
       def index
         reports_json = @reports.map { |report| ReportSerializer.new(report, { :include => [:image] }).serializable_hash }
-        render json: reports_json
+        respond_to do |format|
+          format.html { redirect_to "/find-out" }
+          format.json { render json: reports_json }
+        end
       end
 
       def show
