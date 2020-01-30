@@ -2,25 +2,25 @@ en:
   refinery:
     plugins:
       announcements:
-        title: Announcements
+        title: News
     announcements:
       admin:
         announcements:
           actions:
             create_new: Add New Announcement
-            reorder: Reorder Announcements
-            reorder_done: Done Reordering Announcements
+            reorder: Reorder News
+            reorder_done: Done Reordering News
           records:
-            title: Announcements
+            title: News
             sorry_no_results: Sorry! There are no results found.
-            no_items_yet: There are no Announcements yet. Click "Add New Announcement" to add your first announcement.
+            no_items_yet: There is no news yet. Click "Add New News" to add your first news.
           announcement:
-            view_live_html: View this announcement live <br/><em>(opens in a new window)</em>
-            edit: Edit this announcement
-            delete: Remove this announcement forever
+            view_live_html: View this news live <br/><em>(opens in a new window)</em>
+            edit: Edit this news
+            delete: Remove this news forever
       announcements:
         show:
-          other: Other Announcements
+          other: Other News
   activerecord:
     attributes:
       'refinery/announcements/announcement':
