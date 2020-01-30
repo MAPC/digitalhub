@@ -2,25 +2,25 @@ en:
   refinery:
     plugins:
       reports:
-        title: Reports
+        title: Publications
     reports:
       admin:
         reports:
           actions:
             create_new: Add New Report
             reorder: Reorder Reports
-            reorder_done: Done Reordering Reports
+            reorder_done: Done Reordering Publications
           records:
-            title: Reports
+            title: Publications
             sorry_no_results: Sorry! There are no results found.
-            no_items_yet: There are no Reports yet. Click "Add New Report" to add your first report.
+            no_items_yet: There are no Reports yet. Click "Add New Publications" to add your first report.
           report:
-            view_live_html: View this report live <br/><em>(opens in a new window)</em>
-            edit: Edit this report
-            delete: Remove this report forever
+            view_live_html: View this publication live <br/><em>(opens in a new window)</em>
+            edit: Edit this publication
+            delete: Remove this publication forever
       reports:
         show:
-          other: Other Reports
+          other: Other Publications
   activerecord:
     attributes:
       'refinery/reports/report':
