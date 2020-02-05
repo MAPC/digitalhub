@@ -1,5 +1,5 @@
 .map__container {
-  $mobile-legend-height: 150px;
+  $mobile-legend-height: 195px;
   @include media(small) {
     height: 333px + $mobile-legend-height;
     width: 400px;
