@@ -1,8 +1,7 @@
 $(() => {
-  const urlParams = window.location.pathname.split('/').slice(2);
-  console.log(urlParams)
+  const urlParams = window.location.pathname.split('/').slice(2).map(filter => filter.replace(/%20/g, " "));
   let initialTaggings;
-  if (urlParams[0]) {
+  if (urlParams[0] && urlParams[1]) {
     initialTaggings = {
       content_type: urlParams[0],
       topic_area: urlParams[1],
@@ -23,20 +22,26 @@ function loadDropdowns(initialTaggings) {
     url: '/tags.json',
     dataType: 'json',
   }).done((response) => {
-    const contentTypeSelectOptions = response.filter(tag => tag.data.attributes.tag_type === 'content_type')
-      .slice(0, 3)
-      .map(tag => `<option data-id=${tag.data.attributes.id} value=${tag.data.attributes.title} class="find-out__tag-title">${tag.data.attributes.title}</option>`)
-      .join('');
-    const contentTypeDropdown = (`<select class="content-type__select content-type__dropdown"><option id='all-content-types' value='everything' selected>everything</option>${contentTypeSelectOptions}</select>`)
+    const contentTypeDropdown = (`<select class="content-type__select content-type__dropdown">
+      <option id='all-content-types' value='everything' ${initialTaggings.content_type === 'everything' ? 'selected' : ''}>everything</option>`
+      + response.filter(tag => tag.data.attributes.tag_type === 'content_type')
+        .slice(0, 3)
+        .map((tag) => (`<option data-id=${tag.data.attributes.id} value=${tag.data.attributes.title} class="find-out__tag-title" ${initialTaggings.content_type == tag.data.attributes.title ? 'selected' : 'ex'}>
+        ${tag.data.attributes.title}
+      </option>`))
+      .join('')
+    + `</select>`)
     $('.content-type')[0].innerHTML = `You're looking for ${contentTypeDropdown}`;
 
-    const topicAreaSelectOptions = response.filter(tag => tag.data.attributes.tag_type === 'topic_area')
-      .map(tag => `<option data-id=${tag.data.attributes.id} value=${tag.data.attributes.title} class="find-out__tag-title">${tag.data.attributes.title}</option>`)
-      .join('');
-    const topicAreaDropdown = (`<select class="topic-area__select topic-area__dropdown"><option id='all-topic-areas' value='all topic areas' selected>all topic areas</option>${topicAreaSelectOptions}</select>`);
-    console.log(topicAreaDropdown)
-    $('.topic-area')[0].innerHTML = `in ${topicAreaDropdown}`;
-
+    const topicAreaDropdown = (`<select class="topic-area__select topic-area__dropdown">
+      <option id='all-topic-areas' value='all topic areas' ${initialTaggings.topic_area === 'all-topic-areas' ? 'selected' : ''}>all topic areas</option>`
+      + response.filter(tag => tag.data.attributes.tag_type === 'topic_area')
+        .map(tag => `<option data-id=${tag.data.attributes.id} value=${tag.data.attributes.title} class="find-out__tag-title" ${initialTaggings.topic_area === tag.data.attributes.title ? 'selected' : ''}>
+          ${tag.data.attributes.title}
+        </option>`)
+        .join('')
+      + `</select>`);
+      $('.topic-area')[0].innerHTML = `in ${topicAreaDropdown}`;
     onDropdownChange();
     cueOverlay();
   });
