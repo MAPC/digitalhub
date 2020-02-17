@@ -1,10 +1,10 @@
 $(() => {
-  const urlParams = window.location.pathname.split('/').slice(2).map(filter => filter.replace(/%20/g, " "));
+  const urlPathVariables = window.location.pathname.split('/').slice(2).map(filter => filter.replace(/%20/g, " "));
   let initialTaggings;
-  if (urlParams[0] && urlParams[1]) {
+  if (urlPathVariables[0] && urlPathVariables[1]) {
     initialTaggings = {
-      content_type: urlParams[0],
-      topic_area: urlParams[1],
+      content_type: urlPathVariables[0],
+      topic_area: urlPathVariables[1],
     };
   } else {
     initialTaggings = {
@@ -36,7 +36,7 @@ function loadDropdowns(initialTaggings) {
     const topicAreaDropdown = (`<select class="topic-area__select topic-area__dropdown">
       <option id='all-topic-areas' value='all topic areas' ${initialTaggings.topic_area === 'all-topic-areas' ? 'selected' : ''}>all topic areas</option>`
       + response.filter(tag => tag.data.attributes.tag_type === 'topic_area')
-        .map(tag => `<option data-id=${tag.data.attributes.id} value=${tag.data.attributes.title} class="find-out__tag-title" ${initialTaggings.topic_area === tag.data.attributes.title ? 'selected' : ''}>
+        .map(tag => `<option data-id=${tag.data.attributes.id} value=${tag.data.attributes.title}  class="find-out__tag-title" ${initialTaggings.topic_area === tag.data.attributes.title ? 'selected' : ''}>
           ${tag.data.attributes.title}
         </option>`)
         .join('')
@@ -76,10 +76,11 @@ const onDropdownChange = () => {
     openOverlay();
     const dropdownSelections = Array.from($('option')).filter(tag => tag.selected);
     const dropdownsObject = {
-      content_type: dropdownSelections[0].innerText,
-      topic_area: dropdownSelections[1].innerText,
+      content_type: dropdownSelections[0].text,
+      topic_area: dropdownSelections[1].text,
     };
     fetchTaggings(dropdownsObject);
+    history.pushState(null, '', `/find-out/${dropdownsObject.content_type}/${dropdownsObject.topic_area}`)
     $('#find-out__overlay').removeClass('find-out__overlay');
   });
 };
@@ -88,7 +89,10 @@ const fetchTaggings = (dropdownsObject) => {
   $.get({
     url: '/taggings.json',
     dataType: 'json',
-    data: dropdownsObject,
+    data: {
+      content_type: dropdownsObject.content_type,
+      topic_area: dropdownsObject.topic_area.replace("%20", " ")
+    },
   }).done(response => {
     const headerSmallCardsLow = () => {
       $('.find-out__header').removeClass('find-out__header--large');
