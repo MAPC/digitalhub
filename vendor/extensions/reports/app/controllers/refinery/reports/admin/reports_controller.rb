@@ -33,7 +33,7 @@ module Refinery
 
         # Only allow a trusted parameter "permit list" through.
         def report_params
-          params.require(:report).permit(:title, :body, :date, :image_id, :link, :tag)
+          params.require(:report).permit(:title, :body, :date, :image_id, :link, :tag, :image_credit)
          end
       end
     end

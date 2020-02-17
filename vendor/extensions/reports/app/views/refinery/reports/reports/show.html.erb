@@ -10,7 +10,10 @@
     <div class="v2-banner"></div><!-- top green bar -->
       <div class="content container">
         <% if @report.image %>
-          <%= image_tag(@report.image.url, class: "content__image ") %>
+          <div className="image__wrapper">
+            <%= image_tag(@report.image.url, class: "content__image ") %>
+            <div class="content__image-credit"><%= @report.image_credit %></div>
+          </div>
         <% end %>
         <div class="content__content-type">Publication</div>
         <div class="content__title"><%= @report.title %></div>
