@@ -86,12 +86,23 @@
       padding: 0.5rem 0 1rem;
     }
 
+    .image__wrapper {
+      @include mobile-image-wrapper;
+      float: right;
+      margin: 0 0 .6rem .8rem;
+    }
+
     .content__image {
       @include mobile-image;
+    }
 
-      float: right;
-      margin: 0 0 0.6rem 0.8rem;
-      max-width: 50%;
+    .content__image-credit {
+      color: $color_bg-darkgrey;
+      font-family: $font_family-primary;
+      font-size: $font_size-small;
+      font-style: italic;
+      padding: .5rem 0;
+      text-align: center;
     }
   }
 }
