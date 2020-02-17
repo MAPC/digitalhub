@@ -1,5 +1,6 @@
 Refinery::Core::Engine.routes.draw do
 
+  get '/find-out/:content_type/:topic_area', to: 'taggings/taggings#index'
   get '/find-out', to: 'taggings/taggings#index'
   get '/data_validation', to: 'taggings/taggings#data_validation'
 

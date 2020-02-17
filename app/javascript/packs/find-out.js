@@ -1,14 +1,24 @@
 $(() => {
-  const allTaggings = {
-    content_type: 'everything',
-    topic_area: 'all topic areas',
-  };
-  fetchTaggings(allTaggings);
-  loadDropdowns();
+  const urlParams = window.location.pathname.split('/').slice(2);
+  console.log(urlParams)
+  let initialTaggings;
+  if (urlParams[0]) {
+    initialTaggings = {
+      content_type: urlParams[0],
+      topic_area: urlParams[1],
+    };
+  } else {
+    initialTaggings = {
+      content_type: 'everything',
+      topic_area: 'all topic areas',
+    };
+  }
+  fetchTaggings(initialTaggings);
+  loadDropdowns(initialTaggings);
   $('title')[0].text = 'MetroCommon 2050';
 });
 
-function loadDropdowns() {
+function loadDropdowns(initialTaggings) {
   $.get({
     url: '/tags.json',
     dataType: 'json',
@@ -17,13 +27,14 @@ function loadDropdowns() {
       .slice(0, 3)
       .map(tag => `<option data-id=${tag.data.attributes.id} value=${tag.data.attributes.title} class="find-out__tag-title">${tag.data.attributes.title}</option>`)
       .join('');
-    const contentTypeDropdown = (`<select class="content-type__select content-type__dropdown"><option id='all-content-types' value='everything' selected>everything</option>${contentTypeSelectOptions}</select>`);
+    const contentTypeDropdown = (`<select class="content-type__select content-type__dropdown"><option id='all-content-types' value='everything' selected>everything</option>${contentTypeSelectOptions}</select>`)
     $('.content-type')[0].innerHTML = `You're looking for ${contentTypeDropdown}`;
 
     const topicAreaSelectOptions = response.filter(tag => tag.data.attributes.tag_type === 'topic_area')
       .map(tag => `<option data-id=${tag.data.attributes.id} value=${tag.data.attributes.title} class="find-out__tag-title">${tag.data.attributes.title}</option>`)
       .join('');
     const topicAreaDropdown = (`<select class="topic-area__select topic-area__dropdown"><option id='all-topic-areas' value='all topic areas' selected>all topic areas</option>${topicAreaSelectOptions}</select>`);
+    console.log(topicAreaDropdown)
     $('.topic-area')[0].innerHTML = `in ${topicAreaDropdown}`;
 
     onDropdownChange();
