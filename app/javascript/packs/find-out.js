@@ -80,7 +80,11 @@ const onDropdownChange = () => {
       topic_area: dropdownSelections[1].text,
     };
     fetchTaggings(dropdownsObject);
-    history.pushState(null, '', `/find-out/${dropdownsObject.content_type}/${dropdownsObject.topic_area}`)
+    if (dropdownsObject.content_type === 'everything' && dropdownsObject.topic_area === 'all topic areas') {
+      history.pushState(null, '', '/find-out');
+    } else {
+      history.pushState(null, '', `/find-out/${dropdownsObject.content_type}/${dropdownsObject.topic_area}`);
+    }
     $('#find-out__overlay').removeClass('find-out__overlay');
   });
 };
