@@ -95,6 +95,8 @@
 
     .content__image {
       @include mobile-image;
+      height: auto;
+      max-width: 30rem;
     }
 
     .content__image-credit {
