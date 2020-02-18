@@ -84,14 +84,28 @@
       padding: .5rem 0 1rem;
     }
 
-    .content__image {
-      @include mobile-image;
-
+    .image__wrapper {
+      @include mobile-image-wrapper;
       float: right;
       height: auto;
       margin: 11.25rem 0 .6rem .8rem;
       max-width: 30rem;
       padding: 0 1.35rem 1rem 1rem;
+    }
+
+    .content__image {
+      @include mobile-image;
+      height: auto;
+      max-width: 30rem;
+    }
+
+    .content__image-credit {
+      color: $color_bg-darkgrey;
+      font-family: $font_family-primary;
+      font-size: $font_size-small;
+      font-style: italic;
+      padding: .5rem 0;
+      text-align: center;
     }
   }
 }

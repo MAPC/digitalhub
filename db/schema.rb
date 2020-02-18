@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_05_182539) do
+ActiveRecord::Schema.define(version: 2020_02_17_181316) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2019_09_05_182539) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "published_date"
+    t.string "image_credit"
   end
 
   create_table "refinery_authentication_devise_roles", id: :serial, force: :cascade do |t|
@@ -259,6 +260,7 @@ ActiveRecord::Schema.define(version: 2019_09_05_182539) do
     t.integer "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_credit"
   end
 
   create_table "refinery_resource_translations", id: :serial, force: :cascade do |t|

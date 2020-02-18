@@ -42,6 +42,8 @@
         :image => @announcement.image,
         :toggle_image_display => false -%>
     </div>
+    <%= f.label :image_credit -%>
+    <%= f.text_field :image_credit -%>
     <div class='tags__header-topic'>Select at least one (1) Topic Area tag</div>
       <% Refinery::Tags::Tag.all.select {|t| t.tag_type == "topic_area" }.each do |tag| %>
         <span class="tags__selector-topic"><input type="checkbox" name="tag[tag_ids][]" id="tag_<%= tag.id %>" value="<%= tag.id %>"
