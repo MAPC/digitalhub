@@ -24,7 +24,7 @@
 
   <div class='field'>
     <%= f.label :link -%>
-    <%= f.text_field :link, :class => 'widest' -%>
+    <%= f.text_field :link, :class => 'widest', placeholder: '/reports/4' -%>
   </div>
 
 <%# note: this section is not exposed to user, but retained in case of future need to apply multiple "content_type" tags to a taggable item %>
@@ -56,27 +56,25 @@
       :field => :image_id,
       :image => @announcement.image,
       :toggle_image_display => false -%>
-    </div>
     <%= f.label :image_credit -%>
     <%= f.text_field :image_credit -%>
     <div class='tags__header-topic'>Select at least one (1) Topic Area tag</div>
-      <% Refinery::Tags::Tag.all.select {|t| t.tag_type == "topic_area" }.each do |tag| %>
-        <span class="tags__selector-topic">
-          <input type="checkbox"
-                 name="announcement[tags][]"
-                 id="tag_<%= tag.id %>"
-                 value="<%= tag.id %>"
-                 <%= 'checked' if @announcement.tags.include?(tag) %>
-                 class="tags__selector-selected"
-            >
-            <label for="tag_<%= tag.id %>"
-                   class="tags__label"
-            >
-              <%= tag.title %>
-            </label>
-        </span>
-      <% end %>
-    </div>
+    <% Refinery::Tags::Tag.all.select {|t| t.tag_type == "topic_area" }.each do |tag| %>
+      <span class="tags__selector-topic">
+        <input type="checkbox"
+               name="announcement[tags][]"
+               id="tag_<%= tag.id %>"
+               value="<%= tag.id %>"
+               <%= 'checked' if @announcement.tags.include?(tag) %>
+               class="tags__selector-selected"
+          >
+          <label for="tag_<%= tag.id %>"
+                 class="tags__label"
+          >
+            <%= tag.title %>
+          </label>
+      </span>
+    <% end %>
   </div>
 
   <%= render '/refinery/admin/form_actions', f: f,
