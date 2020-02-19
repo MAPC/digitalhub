@@ -6,9 +6,11 @@ module Refinery
         crudify :'refinery/reports/report'
 
         def create
-          @report = Refinery::Reports::Report.new(report_params)
-          params[:tag][:tag_ids].each do |tid|
-            @report.tags << Refinery::Tags::Tag.find(tid)
+          @report = Refinery::Reports::Report.new(report_params.except(:tags))
+          if report_params[:tags]
+            report_params[:tags].each do |tag_id|
+              @report.tags <<  Refinery::Tags::Tag.find(tag_id)
+            end
           end
           if @report.save
             flash[:notice] = "Report was successfully created!"
@@ -20,20 +22,26 @@ module Refinery
 
         def update
           @report = Refinery::Reports::Report.find(params[:id])
-          @report.update(report_params)
-          @report.taggings.each {|t| t.delete}
-          params[:tag][:tag_ids].each do |tid|
-            new_tagging = Refinery::Taggings::Tagging.create(report_id: @report.id, tag_id: tid.to_i)
+          @report.update(report_params.except(:tags))
+          if report_params[:tags]
+            @report.tags = [Refinery::Tags::Tag.find(8)]
+            report_params[:tags].each do |tag_id|
+              @report.tags <<  Refinery::Tags::Tag.find(tag_id)
+            end
           end
-          @report.save
-          redirect_to reports_admin_reports_path and return
+          if @report.save
+            flash[:notice] = "Report was successfully updated!"
+            redirect_to reports_admin_reports_path
+          else
+            render action: 'update'
+          end
         end
 
         private
 
         # Only allow a trusted parameter "permit list" through.
         def report_params
-          params.require(:report).permit(:title, :body, :date, :image_id, :link, :tag, :image_credit)
+          params.require(:report).permit(:title, :body, :date, :image_id, :link, :image_credit, tags: [])
          end
       end
     end

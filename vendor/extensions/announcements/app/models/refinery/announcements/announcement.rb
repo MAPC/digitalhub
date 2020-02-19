@@ -7,11 +7,12 @@ module Refinery
       extend Mobility
       translates :title, :body
 
-      validates :title, :presence => true, :uniqueness => true
-      validates :published_date, :presence => true
       belongs_to :image, :class_name => '::Refinery::Image'
       has_many :taggings, :class_name => '::Refinery::Taggings::Tagging', dependent: :destroy
       has_many :tags, :class_name => '::Refinery::Tags::Tag', through: :taggings
+      validates :title, :presence => true, :uniqueness => true
+      validates :published_date, :presence => true
+      validate :tags_length
 
       def self.tagged_with(title)
         Refinery::Tags::Tag.find_by_title!(title).announcements
@@ -35,6 +36,13 @@ module Refinery
       def tag_content_type
         self.tags.where(tag_type: "content_type")[0].title
       end
+
+      def tags_length
+        if tags.length < 2
+          errors.add(:missing_tags, "please select at least one tag")
+        end
+      end
+
     end
   end
 end

@@ -8,6 +8,7 @@ module Refinery
       translates :title, :description, :accessibility_note, :translation_note
       validates :title, :presence => true, :uniqueness => true
       validates :start, :presence => true
+      validate :tags_length
       belongs_to :image, :class_name => '::Refinery::Image'
 
       has_many :taggings, :class_name => '::Refinery::Taggings::Tagging', dependent: :destroy
@@ -39,6 +40,14 @@ module Refinery
       def self.next_three_events
         next_three = ::Refinery::Events::Event.where('start > ?', DateTime.now).order(start: :asc).first(3)
         next_three_json = next_three.map {|event| EventSerializer.new(event, { :include => [:image] }).serializable_hash }
+      end
+
+      private
+
+      def tags_length
+        if tags.length < 2
+          errors.add(:missing_tags, "please select at least one tag")
+        end
       end
     end
   end
