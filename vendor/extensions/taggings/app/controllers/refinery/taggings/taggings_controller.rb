@@ -13,11 +13,13 @@ module Refinery
           .map {|t| TaggingSerializer.new(t).serializable_hash }
 
         respond_to do |f|
-          f.html { present(@page) }
+          f.html {
+            present(@page)
+          }
           f.json { render json: {
             taggings: filtered_taggings_json,
             topic_area_narrative: topic_area_narrative,
-            next_three_events: Refinery::Events::Event.next_three_events
+            next_three_events: Refinery::Events::Event.next_three_events,
             }}
         end
       end
