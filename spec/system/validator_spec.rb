@@ -4,9 +4,7 @@ RSpec.describe "Validator", :type => :system do
   let(:test_date) { Time.zone.now }
 
   it "finds an invalid announcement" do
-    tag_news = Refinery::Tags::Tag.create(title: 'news', narrative: "We do announcements.", tag_type: "content_type")
     announcement = FactoryBot.build(:announcement, title: 'Test Announcement Title', published_date: nil)
-    announcement.tags.push(tag_news)
     announcement.save(:validate => false)
 
     visit "/data_validation"
@@ -16,15 +14,12 @@ RSpec.describe "Validator", :type => :system do
   it "confirms all announcements valid" do
     tag_news = Refinery::Tags::Tag.create(title: 'news', narrative: "We do announcements.", tag_type: "content_type")
     announcement1 = FactoryBot.build(:announcement, title: 'Test Announcement Title1', published_date: test_date)
-    announcement1.tags.push(tag_news)
     announcement1.save
 
     announcement2 = FactoryBot.build(:announcement, title: 'Test Announcement Title2', published_date: test_date + 1)
-    announcement2.tags.push(tag_news)
     announcement2.save
 
     announcement3 = FactoryBot.build(:announcement, title: 'Test Announcement Title3', published_date: test_date + 3)
-    announcement3.tags.push(tag_news)
     announcement3.save
 
     visit "/data_validation"
@@ -34,7 +29,6 @@ RSpec.describe "Validator", :type => :system do
   it "finds an invalid event" do
     tag_event = Refinery::Tags::Tag.create(title: 'publication', narrative: "Read the report.", tag_type: "content_type")
     event = FactoryBot.build(:event, title: 'Test Event Title', start: nil)
-    event.tags.push(tag_event)
     event.save(:validate => false)
 
     visit "/data_validation"
@@ -44,15 +38,12 @@ RSpec.describe "Validator", :type => :system do
   it "confirms all events valid" do
     tag_event = Refinery::Tags::Tag.create(title: 'event', narrative: "We do events.", tag_type: "content_type")
     event1 = FactoryBot.build(:event, title: 'Test Announcement Title1', start: test_date)
-    event1.tags.push(tag_event)
     event1.save
 
     event2 = FactoryBot.build(:event, title: 'Test Announcement Title2', start: test_date + 1)
-    event2.tags.push(tag_event)
     event2.save
 
     event3 = FactoryBot.build(:event, title: 'Test Announcement Title3', start: test_date + 3)
-    event3.tags.push(tag_event)
     event3.save
 
     visit "/data_validation"
@@ -106,15 +97,12 @@ RSpec.describe "Validator", :type => :system do
   it "confirms all reports valid" do
     tag_publication = Refinery::Tags::Tag.create(title: 'publication', narrative: "We do reports.", tag_type: "content_type")
     report1 = FactoryBot.build(:report, title: 'Test Announcement Title1', date: test_date)
-    report1.tags.push(tag_publication)
     report1.save
 
     report2 = FactoryBot.build(:report, title: 'Test Announcement Title2', date: test_date + 1)
-    report2.tags.push(tag_publication)
     report2.save
 
     report3 = FactoryBot.build(:report, title: 'Test Announcement Title3', date: test_date + 3)
-    report3.tags.push(tag_publication)
     report3.save
 
     visit "/data_validation"
