@@ -81,6 +81,8 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 end
 
+Rails.application.load_seed
+
 class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
   driven_by :selenium, using: :chrome, screen_size: [1400, 1400]
 end
