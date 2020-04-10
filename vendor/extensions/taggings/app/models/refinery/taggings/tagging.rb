@@ -84,9 +84,8 @@ module Refinery
       end
 
       def self.filter_taggings(filters)
-        # these are intentionally harded coded because the names evolve whenever Integrated Comms has a meeting
-        content_type_filter = ["news", "publications", "events"]
-        topic_area_filter = ["transportation", "housing", "environment", "health", "economic development", "arts & culture", "dynamic government"]
+        content_type_filter = Refinery::Tags::Tag.where(tag_type: 'content_type').pluck(:title)
+        topic_area_filter = Refinery::Tags::Tag.where(tag_type: 'topic_area').pluck(:title)
         result = []
 
         # update content_type_filter
