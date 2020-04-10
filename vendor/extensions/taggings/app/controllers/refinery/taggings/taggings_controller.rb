@@ -1,26 +1,31 @@
+# frozen_string_literal: true
+
 module Refinery
   module Taggings
     class TaggingsController < ::ApplicationController
-
       before_action :find_all_taggings
       before_action :find_page
 
       def index
-        filters = [params[:content_type] || "everything", params[:topic_area] || "all topic areas"]
-        topic_area_narrative = Refinery::Tags::Tag.all.find_by(title: filters[1]).narrative if filters[1] != "all topic areas"
+        filters = [params[:content_type] || 'everything', params[:topic_area] || 'all topic areas']
+        if filters[1] != 'all topic areas'
+          topic_area_narrative = Refinery::Tags::Tag.all.find_by(title: filters[1]).narrative
+        end
         filtered_taggings_json = Refinery::Taggings::Tagging.filter_taggings(filters)
-          .sort { |a, b| b.sort_date <=> a.sort_date }
-          .map {|t| TaggingSerializer.new(t).serializable_hash }
+                                                            .sort { |a, b| b.sort_date <=> a.sort_date }
+                                                            .map { |t| TaggingSerializer.new(t).serializable_hash }
 
         respond_to do |f|
-          f.html {
+          f.html do
             present(@page)
-          }
-          f.json { render json: {
-            taggings: filtered_taggings_json,
-            topic_area_narrative: topic_area_narrative,
-            next_three_events: Refinery::Events::Event.next_three_events,
-            }}
+          end
+          f.json do
+            render json: {
+              taggings: filtered_taggings_json,
+              topic_area_narrative: topic_area_narrative,
+              next_three_events: Refinery::Events::Event.next_three_events
+            }
+          end
         end
       end
 
@@ -30,7 +35,7 @@ module Refinery
 
         respond_to do |f|
           f.html { present(@page) }
-          f.json { render json: tagging_json}
+          f.json { render json: tagging_json }
         end
       end
 
@@ -39,14 +44,14 @@ module Refinery
         render json: @data_exceptions.to_json
       end
 
-    protected
+      protected
 
       def find_all_taggings
         @taggings = Tagging.order('position ASC')
       end
 
       def find_page
-        @page = ::Refinery::Page.where(link_url: "/taggings").first
+        @page = ::Refinery::Page.where(link_url: '/taggings').first
       end
     end
   end
