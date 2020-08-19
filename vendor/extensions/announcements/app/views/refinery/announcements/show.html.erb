@@ -15,7 +15,7 @@
         <% end %>
         <div class="content__tags">tags: <%= @tags %></div>
         <div class="content__body">
-          <%= strip_tags @announcement.body %>
+          <%= raw @announcement.body %>
         </div>
       </div>
     </div>
