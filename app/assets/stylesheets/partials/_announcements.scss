@@ -115,6 +115,10 @@
     }
   }
 
+  &__link {
+    color: white;
+  }
+
   @include media(medium) {
     margin: 1.75rem auto .6rem auto;
     // Fix below counteracts refinery putting an :after elemnt after sections with a height of 0.

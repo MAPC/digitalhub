@@ -6,6 +6,6 @@ class AnnouncementSerializer
   has_many :tags, :class_name => '::Refinery::Tags::Tag', through: :taggings
 
   attribute :sanitized_body do |record|
-    Rails::Html::WhiteListSanitizer.new.sanitize(record.body)
+    Rails::Html::WhiteListSanitizer.new.sanitize(record.body, tags: %w(a), attributes: %w(href title))
   end
 end

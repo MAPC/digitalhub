@@ -65,6 +65,8 @@ function populateAnnouncement(announcement, carouselContainer) {
   paragraphNode.innerHTML = body
   carouselContainer.firstElementChild.appendChild(paragraphNode)
 
+  styleLinks();
+
   let imageNode = document.createElement("img")
   imageNode.setAttribute('src', imageUrl)
   imageNode.setAttribute('srcset', `${image2xUrl} 2x`)
@@ -95,7 +97,6 @@ function genDisplay(data, carouselContainer) {
       data: { attributes: { title, sanitized_body: body, link }},
       included
     } = data[selection];
-
     const {
       attributes: { title: imageTitle = "Default Image",
                     alt: imageAlt = "A default image.",
@@ -107,10 +108,12 @@ function genDisplay(data, carouselContainer) {
     } = included[0]
 
     carouselContainer.querySelector('.announcements__title').innerText = title;
-    carouselContainer.querySelector('.announcements__paragraph').innerText = body;
+    carouselContainer.querySelector('.announcements__paragraph').innerHTML = body;
     carouselContainer.querySelector('.announcements__image').setAttribute('src', imageUrl);
     carouselContainer.querySelector('.announcements__image').setAttribute('alt', imageAlt);
     carouselContainer.querySelector('.announcements__image').setAttribute('srcset', `${image2xUrl} 2x`);
+    styleLinks();
+
     for (var i = 0; i < numbers.length; i++) {
         numbers[i].setAttribute('class', 'announcements__number')
     }
@@ -119,4 +122,11 @@ function genDisplay(data, carouselContainer) {
     carouselContainer.querySelector('.announcements__button').setAttribute('href', link)
   };
   return displayAnnouncement;
+}
+
+function styleLinks() {
+  let linkNodes = document.querySelectorAll('.announcements__paragraph > a')
+  for (let linkIndex = 0; linkIndex < linkNodes.length; linkIndex++) {
+    linkNodes[linkIndex].setAttribute('class', 'announcements__link')
+  }
 }
