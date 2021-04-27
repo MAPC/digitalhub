@@ -3,7 +3,7 @@
 ## Setup
 `./bin/setup` will setup your local version.
 
-You will need to procure `master.key` from a trusted user and place it in `config` in order to use the encrypted credentials. Or update `storage.yml` with your Google Cloud Service credentials.
+You will need to procure `master.key` from a trusted user (check Digital Services Dashlane) and place it in `config` in order to use the encrypted credentials. Or update `storage.yml` with your Google Cloud Service credentials.
 
 When testing the audio upload feature locally you will need to Disable Cross Origin Restrictions in your web browser. In Safari you can do this from the Develop menu.
 
@@ -14,6 +14,8 @@ You will need to setup Sidekiq on your server for running background jobs. To do
 You will also need to install ffmpeg for the AudioExtraction `sudo apt-get install ffmpeg`
 
 When testing locally you will want to run sidekiq in addition to `bundle exec rails s` by running `bundle exec sidekiq` to enable the Audio and Video transcription tasks.
+
+Content (reports, announcements, etc.) is managed through the Refinery CMS (further details below). To set up your local login, navigate to `localhost:3000/hubadmin`.
 
 On production you will want to setup a service to run Sidekiq in `/lib/systemd/system/sidekiq-digitalhub.service`
 
@@ -88,7 +90,10 @@ This will create 3 invalid objects (an Announcement, a Report and an Event) with
 
 Correct invalid data in `/hubadmin`, and check your results by clicking on `Validate Data` in `/hubadmin/taggings`
 
-
+## Deployment
+1. In one terminal window, ssh into either the staging (prep) or production (live) server
+2. In another terminal window, run either `cap staging deploy` or `cap production deploy` from either the `develop` or `master` branch, depending on whether you want to push to live or to staging.
+*Note: staging deploys from Github's `develop` branch and production deploys from the `master` branch. Make sure your work is up-to-date!
 
 ## CMS Instructions
 
