@@ -229,4 +229,109 @@
       }
     }
   }
+
+  .about-plan {
+    font-family: $font_family-primary;
+    background-color: #ffffff;
+
+    @include media(medium) {
+      margin-bottom: 4.56rem;
+    }
+
+    @include media(small) {
+      padding: 0;
+      margin-bottom: 4.56rem;
+    }
+
+    &__content {
+      width: 75%;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 6.5rem 1fr;
+      padding: 7rem 0;
+
+      @include media(medium) {
+        margin: 0;
+        width: initial;
+        display: initial;
+      }
+    }
+
+    &--description {
+      grid-row: 1;
+      grid-column: 1;
+
+      &-title {
+        font-family: $font_family-primary;
+        color: $v3-color_green-dark;
+        font-size: 2.2rem;
+
+        @include media(medium) {
+          font-size: 2.125rem;
+          padding-right: 6rem;
+          width: 20rem;
+        }
+      }
+
+      &-text, p{
+        font-family: $font_family-primary;
+        color: $v3-color_green-dark;
+
+        @include media(medium) {
+          font-size: .9375rem;
+        }
+      }
+
+      &__button {
+        border: 1px solid $v3-color_green-dark;
+        color: $color_font-light;
+        font-family: $font_family-secondary;
+        font-size: $v3_font_size-button;
+        letter-spacing: 0.0035rem;
+        margin-top: 1.4rem;
+        padding: 1rem 3.1rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        text-align: center;
+        white-space: nowrap;
+        width: 12.625rem;
+
+        a {
+          text-decoration: none;
+        }
+
+        @include media(medium) {
+          width: 9.9375rem;
+          padding: 0.59rem 1.75rem;
+        }
+      }
+    }
+
+    &--links {
+      grid-row: 1;
+      grid-column: 3;
+      margin: 5.2rem 0 0;
+
+      ul > li::marker {
+        content: url(li-marker.png);
+        padding-top: 0.125rem;
+      }
+
+      ul > li > a {
+        text-decoration: none;
+        color: $v3-color_green-light;
+        text-transform: uppercase;
+        font-family: $font_family-secondary;
+        font-size: 1.5rem;
+        line-height: 2.25rem;
+        position: relative;
+        left: 20px;
+        bottom: 6px;
+      }
+
+      @include media(medium) {
+        display: block;
+      }
+    }
+  }
 }
