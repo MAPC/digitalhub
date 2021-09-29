@@ -139,99 +139,8 @@
     }
   }
 
-  .regional-plan {
-    font-family: $font_family-primary;
-    background-color: #ffffff;
-
-    @include media(medium) {
-      margin-bottom: 4.56rem;
-    }
-
-    @include media(small) {
-      padding: 0;
-      margin-bottom: 4.56rem;
-    }
-
-    &__content {
-      width: 75%;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 6.5rem 1fr;
-      padding: 7rem 0;
-
-      @include media(medium) {
-        margin: 0;
-        width: initial;
-        display: initial;
-      }
-    }
-
-    &--triangle {
-      grid-row: 1;
-      grid-column: 1;
-
-      img {
-        width: 100%;
-        max-height: 100%;
-      }
-
-      @include media(medium) {
-        display: none;
-      }
-    }
-
-    &--description {
-      grid-row: 1;
-      grid-column: 3;
-
-      &-title {
-        font-family: $font_family-primary;
-        color: $v3-color_green-dark;
-        font-size: 2.2rem;
-
-        @include media(medium) {
-          font-size: 2.125rem;
-          padding-right: 6rem;
-          width: 20rem;
-        }
-      }
-
-      &-text, p{
-        font-family: $font_family-primary;
-        color: $v3-color_green-dark;
-
-        @include media(medium) {
-          font-size: .9375rem;
-        }
-      }
-
-      &__button {
-        border: 1px solid $v3-color_green-dark;
-        color: $color_font-light;
-        font-family: $font_family-secondary;
-        font-size: $v3_font_size-button;
-        letter-spacing: 0.0035rem;
-        margin-top: 1.4rem;
-        padding: 1rem 3.1rem;
-        text-decoration: none;
-        text-transform: uppercase;
-        white-space: nowrap;
-        width: 12.625rem;
-
-        a {
-          text-decoration: none;
-        }
-
-        @include media(medium) {
-          width: 9.9375rem;
-          padding: 0.59rem 1.75rem;
-        }
-      }
-    }
-  }
-
   .about-plan {
-    font-family: $font_family-primary;
+    font-family: $font_family-secondary-light;
     background-color: #ffffff;
 
     @include media(medium) {
@@ -247,7 +156,7 @@
       width: 75%;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 2fr 6.5rem 1fr;
+      grid-template-columns: 3fr 3rem 1fr;
       padding: 7rem 0;
 
       @include media(medium) {
@@ -262,7 +171,7 @@
       grid-column: 1;
 
       &-title {
-        font-family: $font_family-primary;
+        font-family: $font_family-secondary-light;
         color: $v3-color_green-dark;
         font-size: 2.2rem;
 
@@ -274,7 +183,7 @@
       }
 
       &-text, p{
-        font-family: $font_family-primary;
+        font-family: $font_family-secondary-light;
         color: $v3-color_green-dark;
 
         @include media(medium) {
@@ -295,9 +204,17 @@
         text-align: center;
         white-space: nowrap;
         width: 12.625rem;
+        transition: all 0.4s ease-in-out;
 
         a {
           text-decoration: none;
+        }
+
+        &:hover {
+          background-color: $v3-color_green-light;
+          border-color: #ffffff;
+          cursor: pointer;
+          a {color: #ffffff;}
         }
 
         @include media(medium) {
@@ -305,6 +222,7 @@
           padding: 0.59rem 1.75rem;
         }
       }
+
     }
 
     &--links {
@@ -312,21 +230,36 @@
       grid-column: 3;
       margin: 5.2rem 0 0;
 
-      ul > li::marker {
-        content: url(li-marker.png);
-        padding-top: 0.125rem;
+      ul > li {
+        list-style: none;
+        padding-left: 2em;
+        padding-bottom: 0.25em;
+        text-indent: -2.2em;
+      }
+      
+      ul > li > svg {
+        height: 30px;
+        width: 30px;
+        enable-background:new 0 0 32 32;
+        .st0{display:none;}
+        .st1{display:inline;}
+        fill: #4fb965;
+        // fill: $v3-color_green-dark;
       }
 
       ul > li > a {
         text-decoration: none;
-        color: $v3-color_green-light;
+        color: $v3-color_green-medium;
         text-transform: uppercase;
-        font-family: $font_family-secondary;
-        font-size: 1.5rem;
-        line-height: 2.25rem;
+        font-family: $font_family-secondary-light;
+        font-size: 1.25rem;
+        line-height: 1.5rem;
         position: relative;
         left: 20px;
         bottom: 6px;
+        &:hover {
+          color: $v3-color_green-light;
+        }
       }
 
       @include media(medium) {
@@ -334,4 +267,123 @@
       }
     }
   }
+
+  .scenario-section {
+    font-family: $font_family-secondary-light;
+    background-color: $v3-color_green-dark;
+
+    @include media(medium) {
+      margin-bottom: 4.56rem;
+    }
+
+    @include media(small) {
+      padding: 0;
+      margin-bottom: 4.56rem;
+    }
+
+    &__content {
+      width: 75%;
+      margin: 0 auto;
+      padding: 2rem 0;
+      display: grid;
+      grid-template-columns: 3fr 3rem 1fr;
+      // grid-template-rows: auto auto;
+
+      @include media(medium) {
+        margin: 0;
+        width: initial;
+        display: initial;
+      }
+    }
+
+    &--description {
+      grid-row: 1;
+      grid-column: 1;
+
+      &-title {
+        font-family: $font_family-secondary-light;
+        color: #ffffff;
+        font-size: 2.2rem;
+        width: 50%;
+
+        @include media(medium) {
+          font-size: 2.125rem;
+          padding-right: 6rem;
+          width: 20rem;
+        }
+      }
+
+      &-text, p {
+        color: #ffffff;
+        font-family: $font_family-secondary-light;
+
+        @include media(medium) {
+          font-size: .9375rem;
+        }
+      }
+
+    }
+
+    &__content-wide {
+      width: 75%;
+      height: 20rem;
+      display: flex;
+      margin: 0 auto;
+      padding: 2rem 0;
+      overflow: hidden;
+
+      img {
+        position: absolute;
+        top: -9999px;
+        right: -9999px;
+        bottom: -9999px;
+        left: -9999px;
+        margin: auto;
+        width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+      }
+
+      @include media(medium) {
+        display: none;
+      }
+    }
+
+    &__button {
+      width: 12.625rem;
+      position: relative;
+      display: flex;
+      margin: 4rem auto;
+      padding: 1rem 3.1rem;
+      border: 1px solid #ffffff;
+      font-family: $font_family-secondary;
+      font-size: $v3_font_size-button;
+      letter-spacing: 0.0035rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      justify-content: center;
+      align-items: center;
+      white-space: nowrap;
+      transition: all 0.4s ease-in-out;
+
+      a {
+        text-decoration: none;
+        color: #ffffff;
+      }
+
+      &:hover {
+        background-color: $v3-color_green-light;
+        border-color: $v3-color_green-dark;
+        cursor: pointer;
+        a {color: #ffffff;}
+      }
+
+      @include media(medium) {
+        width: 9.9375rem;
+        padding: 0.59rem 1.75rem;
+      }
+    }
+  }
+
 }
+
