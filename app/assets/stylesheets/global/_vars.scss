@@ -1,10 +1,10 @@
 $font_size-base: 16px;
-$font_size-xsmall: .75rem;    // 12px
-$font_size-small: 1rem;       // 16px
-$font_size-medium: 1.125rem;  // 18px
-$font_size-large: 1.5rem;     // 24px
+$font_size-xsmall: .75rem; // 12px
+$font_size-small: 1rem; // 16px
+$font_size-medium: 1.125rem; // 18px
+$font-size-md-large: 1.25rem; // 20px
+$font_size-large: 1.5rem; // 24px
 $font_size-xlarge: 2.1875rem; // 35px
-
 // font sizes in v3 home page
 $v3_font_size-h1: 2.6875rem;
 $v3_font_size-h1-mobile: 1.7rem;
@@ -14,16 +14,19 @@ $v3_font_size-title: 1.8rem; // announcements title
 $v3_font_size-number: 1.25rem; // announcements number
 $v3_font_size-event: .9rem; // event text
 $v3_font_size-home-section-title: 2.1875rem; // home page section title
+$v3_font_size_aatitle: 2.25rem; //action area title (36px)
 $v3_font_size-event-title-mobile: .85rem;
-
-
-$font_family-primary: 'SwiftNeueLTPro', Georgia, serif;
-$font_family-secondary: 'CalibreWeb-Semibold', Helvetica, sans-serif;
-$font_family-secondary-light: 'CalibreWeb', Helvetica, sans-serif;
-
+$font_family-primary: 'SwiftNeueLTPro',
+Georgia,
+serif;
+$font_family-secondary: 'CalibreWeb-Semibold',
+Helvetica,
+sans-serif;
+$font_family-secondary-light: 'CalibreWeb',
+Helvetica,
+sans-serif;
 $font_weight-normal: 400;
 $font_weight-bold: 700;
-
 $v3_color_bg-lightest: #fff;
 $v3_color_weigh-in-response-bg: #4cc1b9;
 $v3-color_black-dark: #111436;
@@ -31,14 +34,15 @@ $v3-color_green-dark: #03332d;
 $v3-color_green-medium: #00613f;
 $v3-color_green-light: #4fb965;
 $v3-color_green-lightest: #f0f8f3;
-
+$v3-color_blue-light: #67cbe4;
+$v3-color_purple-light: #9067ac;
+$v3-color_red-light: #f15b52;
+$v3-color_yellow-light: #fdb521;
 $v3-color_green-light--dark: mix($v3-color_black-dark, $v3-color_green-light, 15);
 $v3-color_gray-dark: #707070;
-
-$v3-color_light-blue: #4cc1b9;
+$v3-color_light-teal: #4cc1b9;
 $v3-color_slate: #f0efe7;
 $v3-color_overlay-dark-green: #03332d;
-
 // OLD VARS: Try not to touch until we have removed all old interfaces.
 $color_bg-lightest: #fff;
 $color_bg-light: #efefe7;
@@ -46,20 +50,15 @@ $color_bg-dark: #006e47;
 $color_bg-grey: #aaa;
 $color_bg-darkgrey: #888;
 $color_bg-black: #000;
-
 $color_green-dark: #006e47;
 $color_green-medium: #00bf64;
 $color_green-light: #00f099;
 $color_green-bg: #ecfffa;
-
 $color_yellow-light: #fcf8ed;
 $color_blue-medium: #0063e6;
-
 $color_red-medium: #e23131;
-
 $color_font-light: #fff;
 $color_font-grey: #4a4a4a;
-
 $break_xsmall: 500px;
 $break_small: 670px;
 $break_medium: 960px;

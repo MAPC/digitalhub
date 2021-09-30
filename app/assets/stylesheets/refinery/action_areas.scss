@@ -1,0 +1,79 @@
+.ActionAreas {
+    height: 100%;
+    & .v2-banner {
+        padding: 0;
+    }
+    .container::after {
+        display: none;
+    }
+    .clickable {
+        border: 2px solid $v3_color_green-light !important;
+        cursor: pointer;
+        .card__download {
+            background-color: $v3-color_green-light !important;
+        }
+    }
+    .action-areas-banner {
+        background-color: #03332D;
+        background-image: image-url('action_areas.png');
+        background-position-x: right;
+        background-position-y: top;
+        background-repeat: no-repeat;
+        background-size: 100% 400px;
+        height: 530px;
+        padding-top: 275px;
+        & .leader-line {
+            border-top: solid 5px $v3_color_bg-lightest;
+            display: inline-flex;
+            width: 20%;
+        }
+        & .container {
+            display: inline-flex;
+            flex-direction: column;
+            padding: 1rem;
+            width: 60%;
+        }
+        &__title {
+            color: $v3_color_bg-lightest;
+            font-family: $font_family-secondary-light;
+            text-transform: uppercase;
+        }
+        &__intro {
+            font-family: $font_family-primary;
+            font-size: $font_size-xsmall;
+        }
+    }
+    .action-areas {
+        @include media (large) {
+            margin: 2rem 9rem 1rem;
+            width: 45rem;
+        }
+        @include media (medium) {
+            margin: 2rem 6rem 1rem;
+            width: 25rem;
+        }
+        @include media (x-small) {
+            margin: 0 1rem 1rem;
+            width: 22rem;
+        }
+        margin: 2rem 13.5rem 0;
+        padding: 0 1rem;
+        width: 848px;
+        &__title {
+            @include media (x-small) {
+                font-size: $font_size-large;
+            }
+            color: $v3-color_green-dark;
+            font-family: $font_family-primary;
+            border-bottom: solid 5px $v3-color_green-dark;
+        }
+        &__subtitle {
+            color: $v3-color_green-dark;
+            font-family: $font_family-primary;
+            font-style: italic;
+        }
+        &__text {
+            font-family: $font_family-primary;
+        }
+    }
+}
