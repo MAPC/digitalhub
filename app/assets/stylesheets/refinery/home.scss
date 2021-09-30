@@ -207,16 +207,15 @@
   }
 
   .one-box-grid {
-    background-color: $v3-color_green-dark;
+    background: $v3_color_bg-lightest;
     margin: 0 auto;
-    padding-bottom: 10.25rem;
 
     p {
-      color: $v3_color_bg-lightest;
+      color: $v3-color_green-dark;
     }
 
     &__content {
-      width: 75%;
+      width: 100%;
       margin: 0 auto;
 
       @include media(medium) {
@@ -244,11 +243,21 @@
     }
 
     &__content {
-      display: grid;
-      grid-template-columns: 3fr 3rem 1fr;
       margin: 0 auto;
       padding: 2rem 0;
       width: 75%;
+      
+      @include media(medium) {
+        display: initial;
+        margin: 0;
+        width: initial;
+      }
+    }
+
+    &__grid {
+      display: grid;
+      grid-template-columns: 3fr 3rem 1fr;
+      padding: 2rem 0;
       
       @include media(medium) {
         display: initial;
@@ -386,11 +395,21 @@
     }
 
     &__content {
+      margin: 0 auto;
+      padding: 7rem 0;
+      width: 75%;
+      
+      @include media(medium) {
+        display: initial;
+        margin: 0;
+        width: initial;
+      }
+    }
+
+    &__grid {
       display: grid;
       grid-template-columns: 3fr 3rem 1fr;
-      margin: 0 auto;
       padding: 2rem 0;
-      width: 75%;
       
       @include media(medium) {
         display: initial;
@@ -427,13 +446,13 @@
 
     }
 
-    &__content-wide {
+    &__banner {
       display: flex;
       height: 20rem;
       margin: 0 auto;
       overflow: hidden;
       padding: 2rem 0;
-      width: 75%;
+      width: 100%;
       
       img {
         bottom: -9999px;
@@ -458,9 +477,11 @@
       display: flex;
       font-family: $font_family-secondary;
       font-size: $v3_font_size-button;
+      grid-column: 3;
+      grid-row: 1;
       justify-content: center;
       letter-spacing: 0.0035rem;
-      margin: 4rem auto;
+      margin: auto;
       padding: 1rem 3.1rem;
       position: relative;
       text-decoration: none;
