@@ -232,9 +232,9 @@
 
       ul > li {
         list-style: none;
-        padding-bottom: 0.25em;
-        padding-left: 2em;
-        text-indent: -2.2em;
+        padding-bottom: 0.25rem;
+        padding-left: 0.6rem;
+        text-indent: -1.85rem;
       }
       
       ul > li > svg {
@@ -245,10 +245,10 @@
         width: 25px;
         
         .st0 {
-          display:none;
+          display: none;
         }
         .st1 {
-          display:inline;
+          display: inline;
         }
       }
 
