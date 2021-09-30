@@ -5,31 +5,28 @@
     z-index: 1;
 
     &__arrow {
-      $triangle_size: 42px;
       $image_size: 72px;
-
-      position: absolute;
+      $triangle_size: 42px;
       bottom: -($image_size - ($triangle_size / 2));
       left: 0;
+      position: absolute;
       right: 0;
-
+      
       img {
-        width: $image_size;
         margin-bottom: 12px;
+        width: $image_size;
         z-index: 1;
       }
 
       &:after {
-        @extend ._pseudo;
-        @include triangle($triangle_size, 'down', $v3-color_green-light);
-
         margin-left: ($image_size - $triangle_size) / 4;
         z-index: 1;
+        @extend ._pseudo;
+        @include triangle($triangle_size, 'down', $v3-color_green-light);
       }
     }
 
     .styled-box {
-
       padding: 0;
       text-align: center;
       cursor: default;
@@ -40,8 +37,8 @@
       &__background-image {
         position: absolute;
         top: 0;
-
-         &:first-of-type {
+        
+        &:first-of-type {
           background-image: image-url('bike-lane.jpg');
         }
       }
@@ -61,52 +58,53 @@
 
       @include media(medium) {
         &__content {
+          background-image: none;
           display: flex;
           flex-direction: column;
           justify-content: center;
           margin: 0;
-          background-image: none;
 
           h1 { margin: 0; }
 
           .sub-header {
-            font-size: 17px;
+            font-size: $font_size-medium;
             font-display: italic;
             width: 236px;
           }
 
           p {
-            font-size: 16px;
+            font-size: $font_size-small;
             width: 345px;
           }
 
           .hero-banner-actions {
             margin: 0;
             width: 345px;
-            //align-self: center;
           }
 
           a.button {
             height: 45px;
             margin-bottom: 1rem;
-            width: 100%;
             padding-top: .7rem;
+            width: 100%;
           }
 
           button.button {
-            height: 45px;
             border: 3px solid $v3-color_green-light;
-            padding: 0;
+            height: 45px;
             margin: 0 0 1rem 0;
+            padding: 0;
             width: 100%;
           }
         }
       }
+
       @media (max-width: 425px){
         .hero-banner-actions{
           align-self: center;
         }
       }
+
       @media (max-width: 374px){
         p, .hero-banner-actions {
           width: 275px;
@@ -116,12 +114,12 @@
   }
 
   .one-box-grid {
-    margin: 0 auto;
     background: $v3-color_green-dark;
+    margin: 0 auto;
     padding-bottom: 10.25rem;
 
     p {
-      color: #ffffff;
+      color: $v3_color_bg-lightest;
     }
 
     &__content {
@@ -140,40 +138,40 @@
   }
 
   .about-plan {
+    background-color: $v3_color_bg-lightest;
     font-family: $font_family-secondary-light;
-    background-color: #ffffff;
 
     @include media(medium) {
       margin-bottom: 4.56rem;
     }
 
     @include media(small) {
-      padding: 0;
       margin-bottom: 4.56rem;
+      padding: 0;
     }
 
     &__content {
-      width: 75%;
-      margin: 0 auto;
       display: grid;
       grid-template-columns: 3fr 3rem 1fr;
+      margin: 0 auto;
       padding: 7rem 0;
-
+      width: 75%;
+      
       @include media(medium) {
+        display: initial;
         margin: 0;
         width: initial;
-        display: initial;
       }
     }
 
     &--description {
-      grid-row: 1;
       grid-column: 1;
+      grid-row: 1;
 
       &-title {
-        font-family: $font_family-secondary-light;
         color: $v3-color_green-dark;
-        font-size: 2.2rem;
+        font-family: $font_family-secondary-light;
+        font-size: $v3_font_size-home-section-title;
 
         @include media(medium) {
           font-size: 2.125rem;
@@ -183,8 +181,8 @@
       }
 
       &-text, p{
-        font-family: $font_family-secondary-light;
         color: $v3-color_green-dark;
+        font-family: $font_family-secondary-light;
 
         @include media(medium) {
           font-size: .9375rem;
@@ -199,64 +197,72 @@
         letter-spacing: 0.0035rem;
         margin-top: 1.4rem;
         padding: 1rem 3.1rem;
+        text-align: center;
         text-decoration: none;
         text-transform: uppercase;
-        text-align: center;
+        transition: all 0.4s ease-in-out;
         white-space: nowrap;
         width: 12.625rem;
-        transition: all 0.4s ease-in-out;
-
+        
         a {
           text-decoration: none;
         }
 
         &:hover {
           background-color: $v3-color_green-light;
-          border-color: #ffffff;
+          border-color: $v3_color_bg-lightest;
           cursor: pointer;
-          a {color: #ffffff;}
+          
+          a {
+            color: $v3_color_bg-lightest;
+          }
         }
 
         @include media(medium) {
-          width: 9.9375rem;
           padding: 0.59rem 1.75rem;
+          width: 9.9375rem;
         }
       }
-
     }
 
     &--links {
-      grid-row: 1;
       grid-column: 3;
+      grid-row: 1;
       margin: 5.2rem 0 0;
 
       ul > li {
         list-style: none;
-        padding-left: 2em;
         padding-bottom: 0.25em;
+        padding-left: 2em;
         text-indent: -2.2em;
       }
       
       ul > li > svg {
-        height: 30px;
-        width: 30px;
         enable-background:new 0 0 32 32;
-        .st0{display:none;}
-        .st1{display:inline;}
         fill: #4fb965;
-        // fill: $v3-color_green-dark;
+        //  fill: $v3-color_green-dark; for some reason, fill does not recognize var
+        height: 25px;
+        width: 25px;
+        
+        .st0 {
+          display:none;
+        }
+        .st1 {
+          display:inline;
+        }
       }
 
       ul > li > a {
-        text-decoration: none;
+        bottom: 6px;
         color: $v3-color_green-medium;
-        text-transform: uppercase;
         font-family: $font_family-secondary-light;
-        font-size: 1.25rem;
+        font-size: $font_size-medium;
+        left: 20px;
         line-height: 1.5rem;
         position: relative;
-        left: 20px;
-        bottom: 6px;
+        text-decoration: none;
+        text-transform: uppercase;
+        
         &:hover {
           color: $v3-color_green-light;
         }
@@ -269,41 +275,40 @@
   }
 
   .scenario-section {
-    font-family: $font_family-secondary-light;
     background-color: $v3-color_green-dark;
+    font-family: $font_family-secondary-light;
 
     @include media(medium) {
       margin-bottom: 4.56rem;
     }
 
     @include media(small) {
-      padding: 0;
       margin-bottom: 4.56rem;
+      padding: 0;
     }
 
     &__content {
-      width: 75%;
-      margin: 0 auto;
-      padding: 2rem 0;
       display: grid;
       grid-template-columns: 3fr 3rem 1fr;
-      // grid-template-rows: auto auto;
-
+      margin: 0 auto;
+      padding: 2rem 0;
+      width: 75%;
+      
       @include media(medium) {
+        display: initial;
         margin: 0;
         width: initial;
-        display: initial;
       }
     }
 
     &--description {
-      grid-row: 1;
       grid-column: 1;
+      grid-row: 1;
 
       &-title {
+        color: $v3_color_bg-lightest;
         font-family: $font_family-secondary-light;
-        color: #ffffff;
-        font-size: 2.2rem;
+        font-size: $v3_font_size-home-section-title;
         width: 50%;
 
         @include media(medium) {
@@ -314,7 +319,7 @@
       }
 
       &-text, p {
-        color: #ffffff;
+        color: $v3_color_bg-lightest;
         font-family: $font_family-secondary-light;
 
         @include media(medium) {
@@ -325,23 +330,23 @@
     }
 
     &__content-wide {
-      width: 75%;
-      height: 20rem;
       display: flex;
+      height: 20rem;
       margin: 0 auto;
-      padding: 2rem 0;
       overflow: hidden;
-
+      padding: 2rem 0;
+      width: 75%;
+      
       img {
-        position: absolute;
-        top: -9999px;
-        right: -9999px;
         bottom: -9999px;
         left: -9999px;
         margin: auto;
-        width: 100%;
         min-height: 100%;
         object-fit: cover;
+        position: absolute;
+        right: -9999px;
+        top: -9999px;
+        width: 100%;
       }
 
       @include media(medium) {
@@ -350,40 +355,41 @@
     }
 
     &__button {
-      width: 12.625rem;
-      position: relative;
+      align-items: center;
+      border: 1px solid $v3_color_bg-lightest;
       display: flex;
-      margin: 4rem auto;
-      padding: 1rem 3.1rem;
-      border: 1px solid #ffffff;
       font-family: $font_family-secondary;
       font-size: $v3_font_size-button;
+      justify-content: center;
       letter-spacing: 0.0035rem;
+      margin: 4rem auto;
+      padding: 1rem 3.1rem;
+      position: relative;
       text-decoration: none;
       text-transform: uppercase;
-      justify-content: center;
-      align-items: center;
-      white-space: nowrap;
       transition: all 0.4s ease-in-out;
-
+      white-space: nowrap;
+      width: 12.625rem;
+      
       a {
+        color: $v3_color_bg-lightest;
         text-decoration: none;
-        color: #ffffff;
       }
 
       &:hover {
         background-color: $v3-color_green-light;
         border-color: $v3-color_green-dark;
         cursor: pointer;
-        a {color: #ffffff;}
+        
+        a {
+          color: $v3_color_bg-lightest;
+        }
       }
 
       @include media(medium) {
-        width: 9.9375rem;
         padding: 0.59rem 1.75rem;
+        width: 9.9375rem;
       }
     }
   }
-
 }
-
