@@ -139,7 +139,7 @@
 
   .about-plan {
     background-color: $v3_color_bg-lightest;
-    font-family: $font_family-secondary-light;
+    font-family: $font_family-primary;
 
     @include media(medium) {
       margin-bottom: 4.56rem;
@@ -170,7 +170,7 @@
 
       &-title {
         color: $v3-color_green-dark;
-        font-family: $font_family-secondary-light;
+        font-family: $font_family-primary;
         font-size: $v3_font_size-home-section-title;
 
         @include media(medium) {
@@ -182,7 +182,7 @@
 
       &-text, p{
         color: $v3-color_green-dark;
-        font-family: $font_family-secondary-light;
+        font-family: $font_family-primary;
 
         @include media(medium) {
           font-size: .9375rem;
@@ -276,7 +276,7 @@
 
   .scenario-section {
     background-color: $v3-color_green-dark;
-    font-family: $font_family-secondary-light;
+    font-family: $font_family-primary;
 
     @include media(medium) {
       margin-bottom: 4.56rem;
@@ -307,7 +307,7 @@
 
       &-title {
         color: $v3_color_bg-lightest;
-        font-family: $font_family-secondary-light;
+        font-family: $font_family-primary;
         font-size: $v3_font_size-home-section-title;
         width: 50%;
 
@@ -320,7 +320,7 @@
 
       &-text, p {
         color: $v3_color_bg-lightest;
-        font-family: $font_family-secondary-light;
+        font-family: $font_family-primary;
 
         @include media(medium) {
           font-size: .9375rem;
