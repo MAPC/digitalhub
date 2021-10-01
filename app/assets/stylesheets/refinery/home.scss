@@ -113,8 +113,13 @@
     }
   }
 
+  .hero {
+    background-color: $v3-color_green-dark;
+    min-height: 70vh;
+  }
+
   .one-box-grid {
-    background: $v3-color_green-dark;
+    background-color: $v3-color_green-dark;
     margin: 0 auto;
     padding-bottom: 10.25rem;
 
