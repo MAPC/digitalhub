@@ -139,6 +139,8 @@
 
   .about-plan {
     background-color: $v3_color_bg-lightest;
+    background-image: url(icons-bg.svg);
+    background-repeat: repeat;
     font-family: $font_family-primary;
 
     @include media(medium) {
@@ -190,6 +192,7 @@
       }
 
       &__button {
+        background-color: $v3_color_bg-lightest;
         border: 1px solid $v3-color_green-dark;
         color: $color_font-light;
         font-family: $font_family-secondary;
