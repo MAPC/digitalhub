@@ -130,6 +130,11 @@
       z-index: 1;
     }
 
+    &-banner {
+      margin: 0 auto;
+      width: 75%;
+    }
+
     &-banner__arrow {
       $image_size: 72px;
       $triangle_size: 42px;
@@ -254,7 +259,7 @@
 
       &-container {
         margin: auto;
-        width: 95%;
+        width: 90rem;
       }
     }
   }
