@@ -4,78 +4,41 @@
 <% end %>
 
 <div class="HomePage">
-  <section class="hero-banner">
-    <div class="styled-box styled-box--extended">
-    <div class="styled-box__background">
-      <div class="styled-box__background-image active"></div>
-      <div class="styled-box__background-image"></div>
-    </div>
-      <div class="container">
-        <div class="styled-box__content">
-          <h1>MetroCommon 2050</h1>
-
-          <p class="sub-header">
-            Greater Boston's next regional plan <br>
-            Led by the Metropolitan Area Planning Council (MAPC)
-          </p>
-
-          <p class="styled-box__content-paragraph">
-            Welcome to the digital hub of MetroCommon 2050, Greater Boston's next regional long-range plan!
-            Here you'll find everything MetroCommon. Every month, there will be new research, information,
-            events, and ways to share your thoughts.
-          </p>
-
-          <p class="styled-box__content-paragraph">
-            Get involved. With your help and your voice, we'll create the common future we want - together.
-          </p>
-
-          <div class="hero-banner-actions">
-            <a class="button" href="/find-out">Find Out</a>
-            <a class="button button--hollow button--with-arrow" href="https://mapc.ma/MC2050videos" target="_blank">Watch Videos</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="hero-banner__arrow container">
-      <%= image_tag("mapc-logo.svg", class: "logo", alt: t('logo_alt')) %>
-    </div>
-  </section>
+  
 
   <section class="hero">
-    <div class="container">
-      <div class="styled-box__content">
+    <div class="hero-bg">
+      <div class="hero-banner__arrow container">
+        <%= image_tag("mapc-logo.svg", class: "logo", alt: t('logo_alt')) %>
+      </div>
+    </div>
+    <%= image_tag("arrow-map.svg", class: "logo", alt: t('logo_alt')) %>
+    <div class="container hero-content">
+      <div class="hero-header">
         <h1>MetroCommon 2050</h1>
-
         <p class="sub-header">
           Greater Boston's next regional plan <br>
           Led by the Metropolitan Area Planning Council (MAPC)
         </p>
-
-        <p class="styled-box__content-paragraph">
-          Welcome to the digital hub of MetroCommon 2050, Greater Boston's next regional long-range plan!
-          Here you'll find everything MetroCommon. Every month, there will be new research, information,
-          events, and ways to share your thoughts.
-        </p>
-
-        <p class="styled-box__content-paragraph">
-          Get involved. With your help and your voice, we'll create the common future we want - together.
-        </p>
-
-        <div class="hero-banner-actions">
-          <a class="button" href="/find-out">Find Out</a>
-          <a class="button button--hollow button--with-arrow" href="https://mapc.ma/MC2050videos" target="_blank">Watch Videos</a>
-        </div>
       </div>
     </div>
-    <div class="hero-banner__arrow container">
-      <%= image_tag("mapc-logo.svg", class: "logo", alt: t('logo_alt')) %>
+    <div class="hero-styled-box">
+      <h2>Shaping our region together</h2>
+      <p>Summary of the plan, how it’s broken up, etc. Croissant pudding icing sesame snaps gingerbread jelly sugar plum toffee. Jujubes muffin powder marshmallow topping jelly croissant sugar plum. Sweet sweet icing powder jelly beans sesame snaps chupa chups pastry. Pastry fruitcake chocolate bar. Cheesecake danish cake dragée pudding sweet tiramisu dragée. Tart chocolate halvah marzipan jelly chocolate danish sesame snaps tiramisu. Gingerbread caramels gummi bears. Bonbon cotton candy cookie bonbon brownie pastry biscuit. Jujubes marzipan cheesecake oat cake dragée tart gummies chocolate bar chupa chups. Soufflé topping ice cream macaroon marshmallow toffee icing bear claw chocolate cake. Cake cake cookie topping jelly danish gummi bears. Tart gingerbread oat cake pastry. Oat cake chupa chups danish sweet roll carrot cake macaroon tootsie roll dessert.</p>
+      <div class="hero-styled-box__button">
+        <a href="" target="_blank">Read Plan</a>
+      </div>
+    </div>
+    <div class="hero-carousel-header">
+      <p>Achieving the goals of MetroCommon will require focused efforts to enact change in five, interrelated topics, which we call “Action Areas”. The Action Areas in MetroCommon are:</p>
+    </div>
+    <div class="container hero-carousel">
+      <%= render "/refinery/shared/action_areas_carousel" %>
     </div>
   </section>
 
   <section class="about-plan">
     <div class="container">
-      <%= render "/refinery/shared/action_areas_carousel" %>
       <div class="about-plan__content">
         <div class="about-plan--description">
           <h2 class="about-plan--description-title">Research</h2>
