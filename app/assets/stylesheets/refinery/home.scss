@@ -124,19 +124,19 @@
 
     .arrow-map {
       @media (max-width: 425px){
-        height: 24rem;
+        height: 34rem;
       }
     }
 
     &-bg {
       background-color: $v3-color_green-dark;
-      min-height: 28rem;
+      min-height: 34rem;
       position: absolute;
       width: 100%;
       z-index: 1;
 
       @media (max-width: 425px){
-        min-height: 24rem;
+        min-height: 34rem;
       }
     }
 
@@ -178,7 +178,7 @@
       z-index: 2;
 
       @media (max-width: 425px){
-        min-height: 24rem;
+        min-height: 34rem;
         padding: 2rem 1.35rem;
         width: 100%;
       }
