@@ -219,7 +219,7 @@
 
     &-styled-box {
       background-color: $v3-color_green-lightest;
-      height: auto;
+      min-height: 33rem;
       margin: 4rem 0 auto auto;
       padding: 3rem;
       position: absolute;
