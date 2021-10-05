@@ -57,10 +57,9 @@
     }
 
     &-content {
-      align-items: center;
       display: flex;
       margin: 0 auto;
-      min-height: 28rem;
+      min-height: 34rem;
       padding: 7rem 0;
       width: 75%;
       z-index: 2;
@@ -95,7 +94,8 @@
       color: $color_bg-lightest;
       font-family: $font_family-primary;
       font-size: $font_size-large;
-      
+      line-height: 1.8rem;
+
       @media (max-width: 425px){
         font-size: $font_size-medium;
       }
@@ -176,7 +176,7 @@
       position: relative;
 
       &-header {
-        padding-top: 7rem;
+        padding-top: 2rem;
         margin: 0 auto;
         width: 75%;
 
@@ -361,7 +361,7 @@
 
       ul > li > a {
         bottom: 6px;
-        color: $v3-color_green-medium;
+        color: $v3-color_green-dark;
         font-family: $font_family-secondary-light;
         font-size: $font_size-medium;
         left: 20px;
