@@ -1,0 +1,24 @@
+<% events = events[0..2] if events.size > 3 %>
+
+<div class="event-box">
+  <%= link_to "See All Research Reports", events_events_path, class: "event-box__header" %>
+  <div class="event-box__content">
+  <% if events.size > 0 %>
+    <ul class="event-box__list">
+      <% events.each do |event| %>
+        <a href="/events/<%= event.id %>"><li>
+        <h4><%= event.title %></h4>
+          <div class="event-box__event-info">
+            <span class="event-box__event-info-time"><%= local_time(event.start, '%b %-d, %l:%M%P') %> - <%= local_time(event.end, '%l:%M%P') %></span>
+            <span class="event-box__event-info-city"><%= event.city %></span>
+          </div>
+        </li></a>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>
+      Click here to see an index of all research reports.
+    </p>
+  <% end %>
+  </div>
+</div>
