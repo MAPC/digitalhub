@@ -7,58 +7,58 @@
         display: none;
     }
     .clickable {
-        border: 2px solid $v3_color_green-light !important;
-        cursor: pointer;
-        .card__download {
-            background-color: $v3-color_green-light !important;
-        }
+      border: 2px solid $v3_color_green-light !important;
+      cursor: pointer;
+      .card__download {
+          background-color: $v3-color_green-light !important;
+      }
     }
     .action-areas-banner {
-        background-color: #03332D;
-        background-image: image-url('action_areas.png');
-        background-position-x: right;
-        background-position-y: top;
-        background-repeat: no-repeat;
-        background-size: 100% 400px;
-        height: 530px;
-        padding-top: 275px;
-        & .leader-line {
-            border-top: solid 5px $v3_color_bg-lightest;
-            display: inline-flex;
-            width: 20%;
-        }
-        & .container {
-            display: inline-flex;
-            flex-direction: column;
-            padding: 1rem;
-            width: 60%;
-        }
-        &__title {
-            color: $v3_color_bg-lightest;
-            font-family: $font_family-secondary-light;
-            text-transform: uppercase;
-        }
-        &__intro {
-            font-family: $font_family-primary;
-            font-size: $font_size-xsmall;
-        }
+      background-color: #03332D;
+      background-image: image-url('action_areas.png');
+      background-position-x: right;
+      background-position-y: top;
+      background-repeat: no-repeat;
+      background-size: 100% 400px;
+      height: 530px;
+      padding-top: 275px;
+      & .leader-line {
+          border-top: solid 5px $v3_color_bg-lightest;
+          display: inline-flex;
+          width: 20%;
+      }
+      & .container {
+          display: inline-flex;
+          flex-direction: column;
+          padding: 1rem;
+          width: 60%;
+      }
+      &__title {
+          color: $v3_color_bg-lightest;
+          font-family: $font_family-secondary-light;
+          text-transform: uppercase;
+      }
+      &__intro {
+          font-family: $font_family-primary;
+          font-size: $font_size-xsmall;
+      }
     }
     .action-areas {
-        @include media (large) {
-            margin: 2rem 9rem 1rem;
-            width: 45rem;
-        }
-        @include media (medium) {
-            margin: 2rem 6rem 1rem;
-            width: 25rem;
-        }
-        @include media (x-small) {
-            margin: 0 1rem 1rem;
-            width: 22rem;
-        }
-        margin: 2rem 13.5rem 0;
-        padding: 0 1rem;
-        width: 848px;
+      @include media (large) {
+          margin: 2rem 9rem 1rem;
+          width: 45rem;
+      }
+      @include media (medium) {
+          margin: 2rem 6rem 1rem;
+          width: 25rem;
+      }
+      @include media (x-small) {
+          margin: 0 1rem 1rem;
+          width: 22rem;
+      }
+      margin: 2rem 13.5rem 0;
+      padding: 0 1rem;
+      width: 848px;
         &__title {
             @include media (x-small) {
                 font-size: $font_size-large;
@@ -76,4 +76,264 @@
             font-family: $font_family-primary;
         }
     }
+
+    &_Equity {
+      .action-areas-banner {
+        background-image: url(action-area-equity-wealth-health.jpg);
+        background-position-x: right;
+        background-position-y: 60%;
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+    
+        &:after {
+          background: $v3-color_purple-light;
+        }
+      }
+      .action-areas-content {
+        margin-left: 140px;
+        margin-top: -175px;
+        z-index: 1;
+        &__title {
+          background: $v3-color_purple-light;
+        }
+      }
+    }
+  
+    &_Climate {
+      .action-areas-banner {
+        background-image: url(action-area-climate.jpg);
+        background-position-x: right;
+        background-position-y: 45%;
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+    
+        &:after {
+          background: $v3-color_yellow-light;
+        }
+      }
+      .action-areas-content {
+        margin-left: 140px;
+        margin-top: -245px;
+        z-index: 1;
+        &__title {
+          background: $v3-color_yellow-light;
+        }
+      }
+    }
+  
+    &_Growth {
+      .action-areas-banner {
+        background-image: url(action-area-growth-mobility.jpg);
+        background-position-x: right;
+        background-position-y: 75%;
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+    
+        &:after {
+          background: $v3-color_green-light;
+        }
+      }
+      .action-areas-content {
+        margin-left: 140px;
+        margin-top: -175px;
+        z-index: 1;
+        &__title {
+          background: $v3-color_green-light;
+        }
+      }
+    }
+  
+    &_Housing {
+      .action-areas-banner {
+        background-image: url(action-area-housing.png);
+        background-position-x: right;
+        background-position-y: 75%;
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+    
+        &:after {
+          background: $v3-color_blue-light;
+        }
+      }
+      .action-areas-content {
+        margin-left: 140px;
+        margin-top: -175px;
+        z-index: 1;
+        &__title {
+          background: $v3-color_blue-light;
+        }
+      }
+    }
+  
+    &_Governance {
+      .action-areas-banner {
+        background-image: url(action-area-governance.jpg);
+        background-position-x: right;
+        background-position-y: 40%;
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+    
+        &:after {
+          background: $v3-color_red-light;
+        }
+      }
+      .action-areas-content {
+        margin-left: 140px;
+        margin-top: -245px;
+        z-index: 1;
+        &__title {
+          background: $v3-color_red-light;
+        }
+      }
+    }
+}
+
+.action-areas {
+  .v2-banner {
+    padding-bottom: 2rem;
+  }
+  &-banner {
+    height: 250px;
+
+    &:after {
+      content: '\A';
+      height: 100%;
+      opacity: 40%;
+      position: absolute;
+      width: 100%; 
+    }
+
+    .container::after {
+      border: none;
+    }
+  }
+
+  &-content {
+    &__title {
+      color: $v3_color_bg-lightest;
+      display: flex;
+      margin-left: 100px;
+      padding: 10px 30px;
+      position: relative;
+      top: 50px;
+      width: 530px;
+      z-index: 2;
+    }
+    
+    &__arrow {
+      $image_size: 35px;
+      $triangle_size: 21px;
+      bottom: 150px;
+      left: 125px;
+      position: absolute;
+      right: 0;
+      
+      img {
+        margin-bottom: 12px;
+        width: $image_size;
+        z-index: 1;
+      }
+
+      &:after {
+        margin-left: ($image_size - $triangle_size) / 4;
+        z-index: 3;
+        @extend ._pseudo;
+        @include triangle($triangle_size, 'down', $v3-color_green-medium);
+      }
+    }
+
+    &__list {
+      background-color: white;
+      list-style: none;
+      padding: 40px 120px;
+      width: 600px;
+    }
+    &__list_item {
+      align-items: center;
+      color: $v3-color_green-medium;
+      display: flex;
+      font-family: $font_family-secondary;
+      font-size: $font_size-small;
+      margin-bottom: .5em;
+      padding-left: 80px;
+      position: relative;
+
+      &:before {
+        background-image: url('medium_green_bullet.svg');
+        background-size: 100% 100%;
+        content: " ";
+        display: block;
+        height: 20px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 80px;
+      }
+    }
+  }
+
+  .container {
+    padding: 0;
+    margin-top: -135px;
+  }
+  
+  &-vision {
+    background-color: $v3-color_slate;
+    padding-bottom: 2rem;
+    padding-top: 150px;
+    
+    & .leader-line {
+      border-top: solid 5px $v3-color_green-dark;
+      display: inline-flex;
+      padding-bottom: 5px;
+      width: 20%;
+    }
+
+    &__title {
+      color: $v3-color_green-dark;
+      display: inline-flex;
+      font-family: $font_family-secondary-light;
+      margin-right: 10px;
+      text-transform: uppercase;
+    }
+
+    &__list {
+      list-style: none;
+      margin: 10px 10% 10px 20%;
+
+      li {
+        align-items: flex-start;
+        display: flex;
+        font-family: $font_family-primary;
+        line-height: 1.5rem;
+        padding-bottom: 2rem;
+        position: relative;
+
+        &:before {
+          color: $v3-color_green-dark;
+          content: "In 2050,";
+          font-family: $font_family-secondary;
+          font-size: $font_size-large;
+          padding: 0 10px;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+  &-recommendations,
+  &-history,
+  &-challenges {
+    padding: 10px 30% 10px 20%;
+    &__title {
+      color: $v3-color_green-dark;
+      font-family: $font_family-primary;
+      font-size: $font_size-large;
+    }
+    &__copy {
+      color: $v3-color_gray-dark;
+      font-family: $font_family-primary;
+      font-size: $font_size-small;
+    }
+  }
 }
