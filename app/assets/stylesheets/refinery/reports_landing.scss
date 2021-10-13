@@ -1,0 +1,254 @@
+.ReportsPage {
+
+  // Landing Title
+  h1 {
+      color: $color_font-light;
+      font-family: $font_family-primary; // Swift
+      font-size: $font_size-xxlarge; // 60px
+      margin: 0;
+  }
+
+  // Section Titles
+  h2 {
+    border-bottom: 4px solid $v3-color_green-dark;
+    color: $v3-color_green-dark;
+    display: inline-block;
+    font-family: $font_family-primary;
+    font-size: $font_size-xlarge; // 35px
+    width: 75%;
+  }
+
+  // Section Subtitles
+  h3 {
+    color: $v3-color_green-light;
+    font-family: $font_family-primary;
+    font-size: $font_size-large; // 24px
+  }
+
+  // Index   
+  h4 {
+    color: $v3-color_green-light;
+    font-family: $font_family-secondary; // Calibre
+    font-size: $font-size-md-large; // 20px
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  .margins {
+    margin: 0 auto;
+    width: 75%;
+    @media (max-width: 425px){
+      padding: 2rem 1.35rem;
+      width: 100%;
+    }
+  }
+     
+  .reports-hero {
+    background-color: $v3-color_green-dark;
+
+    &-container {
+      background-image: url(arrow-map.svg);
+      background-position-x: right;
+      background-repeat: no-repeat;
+      height: auto;
+      min-height: 90vh;
+    }
+
+    &-content {
+      padding: 7rem 0;
+
+      h3, p {
+        color: $color_font-light;
+      }
+
+      &__header {
+        display: flex;
+        flex-direction: column;
+      }
+
+      &__body {
+        margin: 0 auto;
+        width: 75%;
+
+        p {
+          width: 50%;
+        }
+      } 
+
+      &__button {
+        border: 1px solid $color_bg-lightest;
+        color: $color_bg-lightest;
+        font-family: $font_family-secondary;
+        font-size: $v3_font_size-button;
+        letter-spacing: 0.0035rem;
+        margin-top: 1.4rem;
+        padding: 1rem 3.1rem;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: all 0.4s ease-in-out;
+        white-space: nowrap;
+        width: 12.625rem;
+                
+        a {
+          color: $color_bg-lightest;
+          text-decoration: none;
+        }
+        
+        &:hover {
+          background-color: $v3-color_green-light;
+          border-color: $v3_color_bg-lightest;
+          cursor: pointer;
+          
+          a {
+            color: $v3_color_bg-lightest;
+          }
+        }
+      }
+    }
+  }
+
+  // MAPC logo and triangle section break
+  .hero-banner {
+    z-index: 1;
+    
+    &__arrow {
+      $image_size: 72px;
+      $triangle_size: 42px;
+      bottom: -($image_size - ($triangle_size / 2));
+      left: 0;
+      position: absolute;
+      right: 0;
+          
+      img {
+        margin-bottom: 12px;
+        width: $image_size;
+        z-index: 1;
+      }
+    
+      &:after {
+        margin-left: ($image_size - $triangle_size) / 4;
+        z-index: 1;
+        @extend ._pseudo;
+        @include triangle($triangle_size, 'down', $v3-color_green-light);
+      }
+    }
+  }
+
+  .reports-content{
+
+    &-goals {
+
+      &-grid {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+      }
+
+      &-card {
+        margin: 0.3125rem;
+        min-height: 269px;
+        padding: 0.625rem;
+        flex-basis: 18%;
+        flex-grow: 1;
+        text-decoration: none;
+        transition: all 0.4s ease-in-out;
+
+        @media (max-width: 425px){
+          flex-basis: 40%;
+        }
+
+        img {
+          width: 100%;
+        }
+        h5 {
+          font-size: $font-size-small;
+          margin-bottom: 0;
+        }
+        p {
+          font-size: $font_size-xsmall;
+          line-height: 0.9rem;
+        }
+        &-red {
+          background-color: $color_red-lightest;
+          h5 {
+            color: $v3-color_red-light;
+          }
+        }
+        &-yellow {
+          background-color: $color_yellow-light;
+          h5 {
+            color: $v3-color_yellow-light;
+          }
+        }
+        &-green {
+          background-color: $color_green-lightest;
+          h5 {
+            color: $v3-color_green-light;
+          }
+        }
+        &-blue {
+          background-color: $color_blue-lightest;
+          h5 {
+            color: $v3-color_blue-light;
+          }
+        }
+        &-purple {
+          background-color: $color_purple-lightest;
+          h5 {
+            color: $v3-color_purple-light;
+          }
+        }
+      }
+    }
+
+    a.reports-content-goals-card-red:hover {
+      background-color: $v3-color_red-light;
+      * {color: white;}
+    }
+    a.reports-content-goals-card-yellow:hover {
+      background-color: $v3-color_yellow-light;
+      * {color: white;}
+    }
+    a.reports-content-goals-card-green:hover {
+      background-color:  $v3-color_green-light;
+      * {color: white;}
+    }
+    a.reports-content-goals-card-blue:hover {
+      background-color: $v3-color_blue-light;
+      * {color: white;}
+    }
+    a.reports-content-goals-card-purple:hover {
+      background-color: $v3-color_purple-light;
+      * {color: white;}
+    }
+
+    &-action-areas-nesting-viz {
+      img {
+        top: 0.25rem;
+      }
+      h4 {
+        border-bottom: 2px solid $color_bg-black;
+        padding: 0.2rem 0;
+        // width: 75%;
+      }
+    }
+
+    &-action-areas-carousel {
+      display: none;
+      @media (max-width: 425px){
+        display: block;
+      }
+    }
+
+    &-action-areas-accordion {
+      @media (max-width: 425px){
+        display: none;
+      }
+    }
+  }
+
+
+  
+
+}

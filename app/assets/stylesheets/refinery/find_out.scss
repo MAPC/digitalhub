@@ -121,7 +121,7 @@
       width: 8.75rem;
     }
     background-image: linear-gradient($v3_color_bg-lightest, $v3_color_bg-lightest);
-    border: .06rem solid $v3-color_green-medium;
+    border: .06rem solid $v3-color_green-dark;
     height: 24rem;
     padding: 3.25rem 0 2.75rem 2.45rem;
     width: 24rem;
@@ -143,14 +143,14 @@
       @extend ._pseudo;
 
       @include media(medium) {
-        @include triangle(2.25rem, 'right', $v3-color_green-medium);
+        @include triangle(2.25rem, 'right', $v3-color_green-dark);
       }
 
       @include media(small) {
         display: none;
       }
 
-      @include triangle(3.4rem, 'right', $v3-color_green-medium);
+      @include triangle(3.4rem, 'right', $v3-color_green-dark);
       margin: 1.1rem 0 0 2.4rem;
     }
 
@@ -217,7 +217,7 @@
   }
 
   .message--none {
-    color: $v3-color_green-medium;
+    color: $v3-color_green-dark;
     font-family: $font_family-primary;
     font-size: $font_size-large;
   }
@@ -263,7 +263,7 @@
 
     &__title {
       appearance: none;
-      color: $v3-color_green-medium;
+      color: $v3-color_green-dark;
       cursor: pointer;
       font-family: $font_family-primary;
       font-size: $font_size-medium;
@@ -293,7 +293,7 @@
 
     &__link {
       background-color: $v3_color_bg-lightest;
-      border: 2px solid $v3-color_green-medium;
+      border: 2px solid $v3-color_green-dark;
       color: $v3-color_gray-dark;
       display: none;
       font-family: $font_family-secondary;

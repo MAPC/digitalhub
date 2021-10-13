@@ -1,0 +1,282 @@
+.accordion-container {
+  margin: 3rem 0;
+  width: 100%;
+
+  button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+
+  h1 {
+    svg {
+      enable-background:new 0 0 32 32;
+      fill: $color_bg-lightest;
+      height: $font_size-xlarge;
+      width: $font_size-xlarge;
+      .st0 {
+        display: none;
+      }
+      .st1 {
+        display: inline;
+      }
+    }
+  }
+
+  hr {
+    margin: 0;
+  }
+
+  // Recommendations 
+  > ul {
+    padding-inline-start: 0;
+  }
+  > ul > li {
+    list-style: none;
+
+    .accordion-recommendations-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 2rem;
+
+      img {
+        height: $font_size-large;
+        margin: 1.3rem 1rem 0 0;
+        width: $font_size-large;
+      }
+
+      &-copy {
+        border-bottom: none;
+        color: $v3-color_green-dark;
+        font-size: $font_size-large;
+        width: 75%;
+      }
+
+      &-link {
+        display: flex;
+        font-size: $font_size-large;
+        justify-content: end;
+        margin: 1.2rem 0 0;
+        text-decoration: none;
+        width: 25%;
+        &:hover {
+          color: $v3-color_green-light;
+          text-decoration: underline;
+          svg {
+            fill: $v3-color_green-light;
+          }
+        }
+        svg {
+          enable-background:new 0 0 32 32;
+          fill: $v3-color_green-dark;
+          height: $font_size-medium;
+          margin: 0.2rem 0.2rem 0 0;
+          width: $font_size-medium;
+          .st0 {
+            display: none;
+          }
+          .st1 {
+            display: inline;
+          }
+        }
+      }
+    }
+  }
+
+  .strategy-item {
+    display: flex;
+    // justify-content: space-between;
+    list-style: none;
+    a {
+      align-items: flex-start;
+      color: $v3-color_green-dark;
+      display: flex;
+      justify-content: flex-end;
+      margin: 1rem 1rem 0 0;
+      text-decoration: none;
+      &:hover {
+        color: $v3-color_green-light;
+        text-decoration: underline;
+        svg {
+          fill: $v3-color_green-light;
+        }
+      }
+      svg {
+        height: $font_size-small;
+        margin: 0 0.2rem;
+        width: $font_size-small;
+      }
+    }
+    &-title {
+      width: 75%;
+      &-number {
+        text-decoration: underline;
+      }
+    }
+    &-policy-actions {
+      font-weight: $font_weight-bold;
+    }
+    &-actions {
+      align-items: flex-end;
+      margin-left: 1rem;
+      padding-left: 0;
+      text-align: right;
+      width: 25%;
+    }
+  }
+}
+
+// Colored accordion titles
+.accordion-title-button {
+  border: 1px solid $color_bg-lightest;
+  color: $color_bg-lightest;
+  font-family: $font_family-secondary;
+  font-size: $v3_font_size-button;
+  letter-spacing: 0.0035rem;
+  // margin-top: 1.4rem;
+  padding: 1rem 3.1rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.4s ease-in-out;
+  white-space: nowrap;
+  width: 12.625rem;
+          
+  a {
+    color: $color_bg-lightest;
+    text-decoration: none;
+  }
+  
+  &:hover {
+    background-color: $v3-color_green-light;
+    border-color: $v3_color_bg-lightest;
+    cursor: pointer;
+    
+    a {
+      color: $v3_color_bg-lightest;
+    }
+  }
+}
+
+#accordion-title {
+  &-red {
+    align-items: center;
+    background-color: $v3-color_red-light;
+    border-radius: 40px;
+    color: $color_bg-lightest;
+    display: flex;
+    font-size: $font_size-xlarge;
+    justify-content: space-between;
+    padding: 2rem;
+    a {
+      text-align: center;
+      width: 10%;
+    }
+    svg {
+      fill: $v3-color_red-light;
+    }
+  }
+  &-yellow {
+    align-items: center;
+    background-color: $v3-color_yellow-light;
+    border-radius: 40px;
+    color: $color_bg-lightest;
+    display: flex;
+    font-size: $font_size-xlarge;
+    justify-content: space-between;
+    padding: 2rem;
+    a {
+      text-align: center;
+      width: 10%;
+    }
+    svg {
+      fill: $v3-color_yellow-light;
+    }
+  }
+  &-green {
+    align-items: center;
+    background-color: $v3-color_green-light;
+    border-radius: 40px;
+    color: $color_bg-lightest;
+    display: flex;
+    font-size: $font_size-xlarge;
+    justify-content: space-between;
+    padding: 2rem;
+    a {
+      text-align: center;
+      width: 10%;
+    }
+    svg {
+      fill: $v3-color_green-light;
+    }
+  }
+  &-blue {
+    align-items: center;
+    background-color: $v3-color_blue-light;
+    border-radius: 40px;
+    color: $color_bg-lightest;
+    display: flex;
+    font-size: $font_size-xlarge;
+    justify-content: space-between;
+    padding: 2rem;
+    a {
+      text-align: center;
+      width: 10%;
+    }
+    svg {
+      fill: $v3-color_blue-light;
+    }
+  }
+  &-purple {
+    align-items: center;
+    background-color: $v3-color_purple-light;
+    border-radius: 40px;
+    border: 2px solid $v3-color_purple-light;
+    color: $color_bg-lightest;
+    display: flex;
+    font-size: $font_size-xlarge;
+    justify-content: space-between;
+    padding: 2rem;
+    a {
+      text-align: center;
+      width: 10%;
+    }
+    svg {
+      fill: $v3-color_purple-light;
+    }
+  }
+}
+
+.accordion {
+  background-color: $color_bg-lightest;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0.5rem 0;
+  text-align: left;
+  transition: all 0.4s;
+  width: 100%;
+  // hover state over any button.accordion
+  &:hover {
+    background-color: $color_bg-light;
+  }
+}
+  
+.active {
+  img {
+    transform: rotate(90deg);
+    transition: all 0.2s;
+  }
+}
+  
+.panel {
+  padding: 0 1rem 0;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
