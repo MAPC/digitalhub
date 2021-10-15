@@ -89,8 +89,8 @@
 
   .strategy-item {
     display: flex;
-    // justify-content: space-between;
     list-style: none;
+    margin-left: 3rem;
     a {
       align-items: flex-start;
       color: $v3-color_green-dark;
@@ -114,11 +114,15 @@
     &-title {
       width: 75%;
       &-number {
-        text-decoration: underline;
+        // text-decoration: underline;
+        color: $v3-color_green-dark;
+        font-weight: 900;
       }
     }
     &-policy-actions {
-      font-weight: $font_weight-bold;
+      color: $v3-color_green-dark;
+      font-weight: 900;
+      line-height: 2.2rem;
     }
     &-actions {
       align-items: flex-end;
@@ -137,7 +141,6 @@
   font-family: $font_family-secondary;
   font-size: $v3_font_size-button;
   letter-spacing: 0.0035rem;
-  // margin-top: 1.4rem;
   padding: 1rem 3.1rem;
   text-align: center;
   text-decoration: none;
@@ -235,7 +238,6 @@
     align-items: center;
     background-color: $v3-color_purple-light;
     border-radius: 40px;
-    border: 2px solid $v3-color_purple-light;
     color: $color_bg-lightest;
     display: flex;
     font-size: $font_size-xlarge;
@@ -263,6 +265,10 @@
   // hover state over any button.accordion
   &:hover {
     background-color: $color_bg-light;
+  }
+
+  button.focus--keyboard, a.focus--keyboard span {
+    background-color: $color_bg-lightest;
   }
 }
   

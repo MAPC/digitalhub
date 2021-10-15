@@ -73,6 +73,11 @@
         text-decoration: none;
         text-transform: uppercase;
         width: 145px;
+        &:hover {
+          color: $v3-color_green-dark;
+          background-color: $color_bg-lightest;
+          transition: 0.4s ease-in-out;
+        }
     }
   }
 }
