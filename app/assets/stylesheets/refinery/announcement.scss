@@ -8,6 +8,7 @@
   }
 
   .container {
+    padding: 0 1.35rem 2rem 1.35rem;
     @include media (small) {
       display: grid;
       margin: 0;
@@ -74,18 +75,19 @@
         grid-row: 6;
         margin-bottom: 1rem;
         min-height: unset;
-        padding: .5rem 1.35rem 1rem;
+        padding: 0 1.35rem 1rem;
       }
 
       color: $v3-color_gray-dark;
       font-size: $font_size-small;
       line-height: 1.5rem;
       min-height: 27.85rem;
-      padding: .5rem 0 1rem;
+      padding: 0 0 1rem;
     }
 
     .image__wrapper {
       @include mobile-image-wrapper;
+      display: none;
       float: right;
       height: auto;
       margin: 11.25rem 0 .6rem .8rem;

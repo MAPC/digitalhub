@@ -4,6 +4,7 @@ $font_size-small: 1rem; // 16px
 $font_size-medium: 1.125rem; // 18px
 $font-size-md-large: 1.25rem; // 20px
 $font_size-large: 1.5rem; // 24px
+$font_size-larger: 1.75rem; // 28px
 $font_size-xlarge: 2.1875rem; // 35px
 $font_size-xxlarge: 3.75rem; //60px
 // font sizes in v3 home page
@@ -41,6 +42,8 @@ $v3-color_red-light: #f15b52;
 $v3-color_yellow-light: #fdb521; 
 $v3-color_green-light--dark: mix($v3-color_black-dark, $v3-color_green-light, 15);
 $v3-color_gray-dark: #707070;
+$v3-color_gray-light: #979F9E;
+$v3-color_beige: #f0efe7;
 $v3-color_light-teal: #4cc1b9;
 $v3-color_slate: #f0efe7;
 $v3-color_overlay-dark-green: #03332d;
