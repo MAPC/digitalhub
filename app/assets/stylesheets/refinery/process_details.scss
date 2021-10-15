@@ -14,6 +14,72 @@
     }
   }
 
+  .about-the-plan {
+    @include media (large) {
+      margin: 2rem 9rem 1rem;
+      width: 45rem;
+    }
+    @include media (medium) {
+      margin: 2rem 6rem 1rem;
+      width: 25rem;
+    }
+    @include media (x-small) {
+      margin: 0 1rem 1rem;
+      width: 22rem;
+    }
+    margin: 2rem 13.5rem 0;
+    padding: 1rem;
+    width: 47rem;
+
+    &__title {
+      @include media (x-small) {font-size: $font_size-large;}
+      color: $v3-color_green-dark;
+      font-family: $font_family-primary;
+    }
+
+    &__subtitle {
+      color: $v3-color_green-light;
+    }
+
+    &__text {
+      margin-left: 3rem;
+      a {
+        color: $v3-color_green-light;
+        text-decoration: none;
+        &:hover {
+          color: $v3-color_green-dark;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &__video {
+      @include media (x-large) {width: 48rem;}
+      @include media (medium) {width: 23rem;}
+      @include media (x-small) {width: 18rem;}
+      width: 47rem;
+    }
+
+    &__video-arrow {
+      img {
+        @include media (medium) {
+          bottom: 5rem;
+          left: -2rem;
+          width: 4rem;
+        }
+        @include media (x-small) {
+          bottom: 4.5rem;
+          left: -1.5rem;
+          width: 3rem;
+        }
+        bottom: 8rem;
+        height: auto;
+        left: -3rem;
+        width: 6rem;
+      }
+    }
+  }
+
   .process-details {
     @include media (large) {
       margin: 2rem 9rem 1rem;
@@ -48,119 +114,6 @@
     }
   }
 
-  .about-the-plan {
-    @include media (large) {
-      margin: 2rem 9rem 1rem;
-      width: 45rem;
-    }
-    @include media (medium) {
-      margin: 2rem 6rem 1rem;
-      width: 25rem;
-    }
-    @include media (x-small) {
-      margin: 0 1rem 1rem;
-      width: 22rem;
-    }
-    margin: 2rem 13.5rem 0;
-    padding: 1rem;
-    width: 47rem;
-
-    &__title {
-      @include media (x-small) {font-size: $font_size-large;}
-      color: $v3-color_green-dark;
-      font-family: $font_family-primary;
-    }
-
-    &__video {
-      @include media (x-large) {width: 48rem;}
-      @include media (medium) {width: 23rem;}
-      @include media (x-small) {width: 18rem;}
-      width: 47rem;
-    }
-
-    &__video-arrow {
-      img {
-        @include media (medium) {
-          bottom: 5rem;
-          left: -2rem;
-          width: 4rem;
-        }
-        @include media (x-small) {
-          bottom: 4.5rem;
-          left: -1.5rem;
-          width: 3rem;
-        }
-        bottom: 8rem;
-        height: auto;
-        left: -3rem;
-        width: 6rem;
-      }
-    }
-  }
-
-  .external-advisors {
-    @include media (large) {
-      margin: 2rem 9rem 1rem;
-      width: 45rem;
-    }
-    @include media (medium) {
-      margin: 2rem 6rem 1rem;
-      width: 25rem;
-    }
-    @include media (x-small) {
-      margin: 0 1rem 1rem;
-      width: 22rem;
-    }
-    margin: 2rem 13.5rem 1rem;
-    padding: 1rem;
-    width: 53rem;
-
-    &__title {
-      @include media (x-small) {font-size: $font_size-large;}
-      color: $v3-color_green-dark;
-      font-family: $font_family-primary;
-    }
-
-    &__text {
-      font-family: $font_family-primary;
-      margin-bottom: 4rem;
-    }
-
-    .cards {
-      width: 55vw;
-    }
-
-    .card {
-      display: inline-grid;
-      font-size: $font_size-xsmall;
-      grid-template-columns: 20% 80%;
-      line-height: 1.05rem;
-      margin: 0 .3rem 1rem 0;
-      width: 17rem;
-
-      &__download {
-        background-color: $v3_color_bg-lightest;
-        border: .0625rem solid $v3-color_green-dark;
-        display: inline-block;
-        height: 100%;
-        text-align: center;
-
-        img {
-          height: 2rem;
-          margin: 24% 0;
-        }
-      }
-
-      &__body {
-        background: $v3-color_green-dark;
-        color: $v3_color_bg-lightest;
-        font-family: $font_family-primary;
-        grid-column: 2;
-        padding: .5rem;
-      }
-    }
-  }
-
   .process-timeline {
     &__slides {
       @include media (large) {
@@ -185,13 +138,21 @@
   }
 
   .process-documents {
-    background-color: $v3-color_green-dark;
-    margin-top: 2rem;
-    padding: 1rem;
-
-    .container {
-      width: 90%;
+    @include media (large) {
+      padding: 3rem 10rem 2rem;
+      width: 100%;
     }
+    @include media (medium) {
+      padding: 3rem 7rem 2rem;
+      width: 100%;
+    }
+    @include media (x-small) {
+      padding: 1rem 2rem 2rem;
+      width: 100%;
+    }
+    background-color: $v3-color_green-dark;
+    padding: 3rem 14.5rem 1rem;
+    width: 100%;
 
     &__title {
       @include media (x-small) {font-size: $font_size-large;}
@@ -211,11 +172,83 @@
       grid-template-columns: 20% 80%;
       line-height: 1.05rem;
       margin: 0 .3rem 1rem 0;
-      width: 17rem;
+      width: 48%;
 
       &__download {
         background-color: $v3_color_bg-lightest;
         border: 0;
+        display: inline-block;
+        height: 100%;
+        text-align: center;
+
+        img {
+          height: 2rem;
+          margin: 24% 0;
+        }
+      }
+
+      &__body {
+        background: $v3-color_green-dark;
+        color: $v3_color_bg-lightest;
+        font-family: $font_family-primary;
+        grid-column: 2;
+        padding: .5rem;
+      }
+    }
+  }
+
+  .acknowledgements {
+    @include media (large) {
+      margin: 2rem 9rem 1rem;
+      width: 45rem;
+    }
+    @include media (medium) {
+      margin: 2rem 6rem 1rem;
+      width: 25rem;
+    }
+    @include media (x-small) {
+      margin: 0 1rem 1rem;
+      width: 22rem;
+    }
+    margin: 2rem 13.5rem 0;
+    padding: 1rem;
+    width: 47rem;
+
+    &__title {
+      @include media (x-small) {font-size: $font_size-large;}
+      color: $v3-color_green-dark;
+      font-family: $font_family-primary;
+    }
+
+    &__subtitle {
+      color: $v3-color_green-light;
+    }
+
+    &__text {
+      font-family: $font_family-primary;
+      margin-bottom: 4rem;
+      margin-left: 3rem;
+    }
+
+    ul, li {
+      list-style: none;
+    }
+
+    .cards {
+      width: 55vw;
+    }
+
+    .card {
+      display: inline-grid;
+      font-size: $font_size-xsmall;
+      grid-template-columns: 20% 80%;
+      line-height: 1.05rem;
+      margin: 0 .3rem 1rem 0;
+      width: 17rem;
+
+      &__download {
+        background-color: $v3_color_bg-lightest;
+        border: .0625rem solid $v3-color_green-dark;
         display: inline-block;
         height: 100%;
         text-align: center;
