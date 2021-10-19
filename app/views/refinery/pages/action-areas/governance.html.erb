@@ -14,7 +14,7 @@
       <li class="action-areas-content__list_item">Challenges</li>
     </ul>
   </div>
-  <div class="container">
+  <div>
     <div class="action-areas-vision">
       <div class="leader-line"></div>
       <h2 class="action-areas-vision__title">The Vision</h2>
@@ -28,23 +28,38 @@
       <div class="action-areas-menu__tools">
       <div class="action-areas-menu__strategies">
     <div>
-    <div class="action-areas-recommendations">
-      <h2 class="action-areas-recommendations__title">Policy Recommendations</h2>
-      <div class="action-areas-recommendations__copy">
-        <%= render "/refinery/shared/copy/action-areas/governance/recommendations" %> 
+    <div class="action-areas-grid">
+      <div class="action-areas-grid-col-1">
+        <div class="action-areas-recommendations">
+          <h2 class="action-areas-recommendations__title">Policy Recommendations</h2>
+          <div class="action-areas-recommendations__copy">
+            <%= render "/refinery/shared/copy/action-areas/governance/recommendations" %> 
+          </div>
+          <div class="action-areas-recommendations__grid">
+            <%= render "/refinery/shared/copy/action-areas/governance/recommendations_grid" %> 
+          </div>
+        </div>
+        <div class="action-areas-history">
+          <h2 class="action-areas-history__title">How We Got Here</h2>
+          <div class="action-areas-history__copy">
+            <%= render "/refinery/shared/copy/action-areas/governance/history" %> 
+          </div>
+        </div>
+        <div class="action-areas-challenges">
+          <h2 class="action-areas-challenges__title">Challenges</h2>
+          <div class="action-areas-challenges__copy">
+            <%= render "/refinery/shared/copy/action-areas/governance/challenges" %> 
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="action-areas-history">
-      <h2 class="action-areas-history__title">How We Got Here</h2>
-      <div class="action-areas-history__copy">
-        <%= render "/refinery/shared/copy/action-areas/governance/history" %> 
-      </div>
-    </div>
-    <div class="action-areas-challenges">
-      <h2 class="action-areas-challenges__title">Challenges</h2>
-      <div class="action-areas-challenges__copy">
-        <%= render "/refinery/shared/copy/action-areas/governance/challenges" %> 
+      <div class="action-areas-grid-col-2">
+        <div class="action-areas-sidebar">
+          <%= render "/refinery/shared/copy/action-areas/governance/sidebar" %> 
+        </div>
       </div>
     </div>
   </div> 
+  <div class="action-areas-carousel container">
+    <%= render "/refinery/shared/action_areas_carousel" %>
+  </div>
 </div>
