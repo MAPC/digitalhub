@@ -1,5 +1,34 @@
 .recommendation {
-  &_equity {
+
+  &_growth-mobility {
+    h2 {
+      color: $v3-color_green-light;
+    }
+    .recommendation_header {
+      &__contents li::before {
+        border-color: transparent $v3-color_green-light;
+      }
+      &__link {
+        border: solid 1px $v3-color_green-light;
+      }
+    }
+  }
+
+  &_housing {
+    h2 {
+      color: $v3-color_blue-light;
+    }
+    .recommendation_header {
+      &__contents li::before {
+        border-color: transparent $v3-color_blue-light;
+      }
+      &__link {
+        border: solid 1px $v3-color_blue-light;
+      }
+    }
+  }
+
+  &_equity-wealth-health {
     h2 {
       color: $v3-color_purple-light;
     }
@@ -9,6 +38,34 @@
       }
       &__link {
         border: solid 1px $v3-color_purple-light;
+      }
+    }
+  }
+
+  &_governance {
+    h2 {
+      color: $v3-color_red-light;
+    }
+    .recommendation_header {
+      &__contents li::before {
+        border-color: transparent $v3-color_red-light;
+      }
+      &__link {
+        border: solid 1px $v3-color_red-light;
+      }
+    }
+  }
+
+  &_climate {
+    h2 {
+      color: $v3-color_yellow-light;
+    }
+    .recommendation_header {
+      &__contents li::before {
+        border-color: transparent $v3-color_yellow-light;
+      }
+      &__link {
+        border: solid 1px $v3-color_yellow-light;
       }
     }
   }
@@ -95,6 +152,28 @@
             padding: 1rem;
           }
         }
+      }
+    }
+    &__best {
+      background-color: $color_yellow-light;
+      &-title {
+        color: $color_fuchsia;
+      }
+    }
+    &__inline-footnote {
+      font-size: $font_size-footnote;
+    }
+    &__footnotes {
+      list-style: none;
+      counter-reset: item;
+      li {
+        counter-increment: item;
+      }
+      li:before {
+        content: counter(item);
+        font-size: $font_size-footnote;
+        margin-right: 5px; 
+        top: 0;
       }
     }
   }
