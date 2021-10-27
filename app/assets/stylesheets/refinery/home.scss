@@ -107,10 +107,11 @@
 
     &-styled-box {
       background-color: $v3-color_green-lightest;
-      min-height: 33rem;
+      height: 33rem;
       margin: 4rem 0 auto auto;
       padding: 3rem;
       position: absolute;
+      overflow: scroll;
       right: 0;
       top: 0;
       width: 50%;
@@ -129,15 +130,19 @@
         width: 100%;
       }
 
-      h2 {
-        color: $v3-color_green-light;
-        font-family: $font_family-secondary;
-        text-transform: uppercase;
-      }
-
-      p {
-        color: $v3-color_gray-dark;
-        font-size: $font_size-small;
+      &__text {
+        height: 22rem;
+        overflow: scroll;
+        h2 {
+          color: $v3-color_green-light;
+          font-family: $font_family-secondary;
+          text-transform: uppercase;
+        }
+  
+        p {
+          color: $v3-color_gray-dark;
+          font-size: $font_size-small;
+        }
       }
 
       &__button {
