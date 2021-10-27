@@ -93,7 +93,7 @@
       margin: 0 1rem 1rem;
       width: 22rem;
     }
-    margin: 2rem 13.5rem 0;
+    margin: 3rem 13.5rem;
     padding: 0 1rem;
     width: 53rem;
 
@@ -151,7 +151,7 @@
       width: 100%;
     }
     background-color: $v3-color_green-dark;
-    padding: 3rem 14.5rem 1rem;
+    padding: 3rem 14.5rem;
     width: 100%;
 
     &__title {
@@ -193,6 +193,65 @@
         font-family: $font_family-primary;
         grid-column: 2;
         padding: .5rem;
+      }
+    }
+  }
+
+  .statement-on-equity {
+    @include media (large) {
+      margin: 2rem 9rem 1rem;
+      width: 45rem;
+    }
+    @include media (medium) {
+      margin: 2rem 6rem 1rem;
+      width: 25rem;
+    }
+    @include media (x-small) {
+      margin: 0 1rem 1rem;
+      width: 22rem;
+    }
+    margin: 2rem 13.5rem 0;
+    padding: 1rem;
+    width: 47rem;
+
+    &__title {
+      @include media (x-small) {font-size: $font_size-large;}
+      color: $v3-color_green-dark;
+      font-family: $font_family-primary;
+    }
+
+    &__subtitle {
+      color: $v3-color_green-light;
+    }
+
+    &__text {
+      margin-left: 3rem;
+      a {
+        color: $v3-color_green-light;
+        text-decoration: none;
+        &:hover {
+          color: $v3-color_green-dark;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &__inline-footnote {
+      font-size: $font_size-footnote;
+    }
+
+    &__footnotes {
+      counter-reset: item;
+      list-style: none;
+      li {
+        counter-increment: item;
+        line-height: 1.5rem;
+      }
+      li:before {
+        content: counter(item);
+        font-size: $font_size-footnote;
+        margin-right: 5px; 
+        top: 0;
       }
     }
   }
