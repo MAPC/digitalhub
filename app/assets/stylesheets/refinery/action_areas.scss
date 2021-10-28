@@ -59,6 +59,13 @@
       margin: 2rem 13.5rem 0;
       padding: 0 1rem;
       width: 848px;
+      ul {
+        line-height: 1.5rem;
+        list-style: none;
+      }
+      li {
+        margin-bottom: 0.5rem;
+      }
         &__title {
             @include media (x-small) {
                 font-size: $font_size-large;
