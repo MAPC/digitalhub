@@ -26,7 +26,7 @@ module Refinery
         if event
           'events'
         elsif announcement
-          'news'
+          'recommendations'
         elsif report
           'publications'
         end
