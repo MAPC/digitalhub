@@ -86,7 +86,7 @@
 
     &_Equity {
       .action-areas-banner {
-        background-image: url(action-area-equity-wealth-health.jpg);
+        background-image: image-url('action-area-equity-wealth-health.jpg');
         background-position-x: right;
         background-position-y: 60%;
         background-repeat: no-repeat;
@@ -183,7 +183,7 @@
   
     &_Climate {
       .action-areas-banner {
-        background-image: url(action-area-climate.jpg);
+        background-image: image-url('action-area-climate.jpg');
         background-position-x: right;
         background-position-y: 45%;
         background-repeat: no-repeat;
@@ -291,7 +291,7 @@
   
     &_Growth {
       .action-areas-banner {
-        background-image: url(action-area-growth-mobility.jpg);
+        background-image: image-url('action-area-growth-mobility.jpg');
         background-position-x: right;
         background-position-y: 75%;
         background-repeat: no-repeat;
@@ -388,7 +388,7 @@
   
     &_Housing {
       .action-areas-banner {
-        background-image: url(action-area-housing.png);
+        background-image: image-url('action-area-housing.png');
         background-position-x: right;
         background-position-y: 75%;
         background-repeat: no-repeat;
@@ -485,7 +485,7 @@
   
     &_Governance {
       .action-areas-banner {
-        background-image: url(action-area-governance.jpg);
+        background-image: image-url('action-area-governance.jpg');
         background-position-x: right;
         background-position-y: 40%;
         background-repeat: no-repeat;
@@ -652,7 +652,7 @@
       position: relative;
 
       &:before {
-        background-image: url('medium_green_bullet.svg');
+        background-image: image-url('medium_green_bullet.svg');
         background-size: 100% 100%;
         content: " ";
         display: block;
