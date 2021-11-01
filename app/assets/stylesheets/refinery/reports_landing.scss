@@ -84,7 +84,7 @@
     background-color: $v3-color_green-dark;
 
     &-container {
-      background-image: url(arrow-map.svg);
+      background-image: image-url('arrow-map.svg');
       background-position-x: right;
       background-repeat: no-repeat;
       height: auto;
