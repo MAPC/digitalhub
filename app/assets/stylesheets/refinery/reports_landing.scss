@@ -57,11 +57,8 @@
       color: $v3-color_green-dark;
       font-size: $font_size-xlarge;
     }
-    &:hover {
-      cursor: pointer;
-    }
     &-close {
-      // color: darkgray;
+      cursor: pointer;
       font-family: $font_family-secondary-light;
       font-size: $font_size-larger;
       padding: 2.5rem 3rem;
@@ -69,14 +66,21 @@
       right: 0;
       top: 0;
     }
+    &-header {
+      h1, h4 {
+        margin-bottom: 0.6rem;
+      }
+      p {
+        margin: 0 0 4rem;
+      }
+    }
     &-text {
       background-color: $color_bg-lightest;
-      box-shadow: 5px 5px 20px 10px;
+      box-shadow: 5px 5px 20px 10px #00000040;
       max-height: 80vh;
       max-width: 80vw;
       overflow: scroll;
       padding: 6rem 8rem;
-      // width: 100%;
     }
   }
 
