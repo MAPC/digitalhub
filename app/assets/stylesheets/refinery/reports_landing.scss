@@ -61,18 +61,13 @@
       cursor: pointer;
       font-family: $font_family-secondary-light;
       font-size: $font_size-larger;
-      padding: 2.5rem 3rem;
+      margin: 7.5rem 11rem;
+      max-height: 80vh;
+      max-width: 80vw;
       position: absolute;
       right: 0;
       top: 0;
-    }
-    &-header {
-      h1, h4 {
-        margin-bottom: 0.6rem;
-      }
-      p {
-        margin: 0 0 4rem;
-      }
+      z-index: 1;
     }
     &-text {
       background-color: $color_bg-lightest;
@@ -81,6 +76,14 @@
       max-width: 80vw;
       overflow: scroll;
       padding: 6rem 8rem;
+      &-header {
+        h1, h4 {
+          margin-bottom: 0.6rem;
+        }
+        p {
+          margin: 0 0 4rem;
+        }
+      }
     }
   }
 
