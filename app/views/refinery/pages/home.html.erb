@@ -1,3 +1,16 @@
+<script>
+    window.onload = init;
+    function init() {
+        const letter = document.getElementById("reports-letter");
+        const close = document.getElementById("reports-letter-close");
+        letter.style.display = "flex";
+        function hide() {
+            letter.style.display = "none";
+        }
+        close.addEventListener("click", hide);
+    };
+</script>
+
 <div class="HomePage">
   <section class="hero">
     <div class="hero-bg">
