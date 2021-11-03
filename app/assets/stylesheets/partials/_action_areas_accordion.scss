@@ -1,17 +1,14 @@
 .accordion-container {
   margin: 3rem 0;
   width: 100%;
-
   button {
     -webkit-appearance: none;
     -moz-appearance: none;
-
     &:focus {
       outline: none;
       box-shadow: none;
     }
   }
-
   h1 {
     svg {
       enable-background:new 0 0 32 32;
@@ -26,7 +23,6 @@
       }
     }
   }
-
   hr {
     margin: 0;
   }
@@ -37,25 +33,21 @@
   }
   > ul > li {
     list-style: none;
-
     .accordion-recommendations-item {
       display: flex;
       justify-content: space-between;
       padding: 0.5rem 2rem;
-
       img {
         height: $font_size-large;
         margin: 1.3rem 1rem 0 0;
         width: $font_size-large;
       }
-
       &-copy {
         border-bottom: none;
         color: $v3-color_green-dark;
         font-size: $font_size-large;
         width: 75%;
       }
-
       &-link {
         display: flex;
         font-size: $font_size-large;
@@ -86,7 +78,6 @@
       }
     }
   }
-
   .strategy-item {
     display: flex;
     list-style: none;
@@ -136,8 +127,8 @@
 
 // Colored accordion titles
 .accordion-title-button {
-  border: 1px solid $color_bg-lightest;
-  color: $color_bg-lightest;
+  border: solid 1px $color_bg-lightest;
+  color: $color_font-light;
   font-family: $font_family-secondary;
   font-size: $v3_font_size-button;
   letter-spacing: 0.0035rem;
@@ -147,20 +138,20 @@
   text-transform: uppercase;
   transition: all 0.4s ease-in-out;
   white-space: nowrap;
-  width: 12.625rem;
-          
+  width: 12.625rem;     
   a {
     color: $color_bg-lightest;
+    height: 100%;
     text-decoration: none;
+    width: 100%;
   }
-  
   &:hover {
-    background-color: $v3-color_green-light;
-    border-color: $v3_color_bg-lightest;
-    cursor: pointer;
-    
+    background-color: $color_bg-lightest;
+    cursor: pointer;    
+    transition: 0.4s ease-in-out;
     a {
-      color: $v3_color_bg-lightest;
+      color: $v3-color_green-dark;
+      transition: 0.4s ease-in-out;
     }
   }
 }
@@ -266,7 +257,6 @@
   &:hover {
     background-color: $color_bg-light;
   }
-
   button.focus--keyboard, a.focus--keyboard span {
     background-color: $color_bg-lightest;
   }
