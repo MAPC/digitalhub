@@ -638,7 +638,7 @@
   &-sidebar {
     &__section {
       background-color: $v3-color_slate;
-      margin: 1rem;
+      margin: 1rem 0 1rem 3rem;
       padding: 0.25rem 1.25rem;
     }
     &__title {
@@ -657,7 +657,7 @@
       font-family: $font_family-secondary;
       font-size: $v3_font_size-button;
       letter-spacing: 0.0035rem;
-      margin: 1rem;
+      margin: 1rem 0 1rem 3rem;
       padding: 1rem 3.1rem;
       text-align: center;
       text-decoration: none;
