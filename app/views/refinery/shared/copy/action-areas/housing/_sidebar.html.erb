@@ -2,7 +2,7 @@
     <%= image_tag("li-marker-20px.png", class: "li-marker", alt: t("triangle")) %>
     <p class="action-areas-sidebar__title">Artist’s Eye</p>
     <%= image_tag("art-image-housing.png", alt: t("Artwork")) %>
-    <li><a class="action-areas-sidebar__link" href="">Video by Mariona Lloretta</a></li>
+    <li><a class="action-areas-sidebar__link" href="https://www.youtube.com/watch?v=3qTt6Bqzzqc&ab_channel=MAPCMetroBoston">Video by Mariona Lloretta</a></li>
 </div>
 <div class="action-areas-sidebar__section">
     <%= image_tag("li-marker-20px.png", class: "li-marker", alt: t("triangle")) %>
@@ -22,5 +22,5 @@
     </ul>
 </div>
 <div class="action-areas-sidebar__button">
-    <a href="" target="_blank">Download PDF Version</a>
+    <%= link_to "Download PDF Version", asset_path("MC2050_Homes_for_Everyone_Brief.pdf") %>
 </div>
