@@ -241,6 +241,11 @@
         }
       }
     }
+    @include media (medium) {
+      &-text {
+        padding: 1rem;
+      }
+    }
   }
 
   .statement-on-equity {
