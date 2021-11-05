@@ -1,7 +1,7 @@
 Refinery::Core::Engine.routes.draw do
 
   namespace :announcements do
-    resources :announcements, :path => '', :only => [:index, :show]
+    resources :announcements, :path => 'recommendations', :only => [:link, :show]
   end
 
   # Admin routes

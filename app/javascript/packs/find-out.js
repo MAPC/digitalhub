@@ -1,3 +1,6 @@
+/* eslint-disable no-undef */
+/* eslint-disable max-len */
+/* eslint-disable no-restricted-globals */
 class Report {
   constructor(reportResponse) {
     this.title = reportResponse.data.attributes.title;
@@ -124,47 +127,23 @@ Announcement.prototype.announcementCardHtml = function announcementCardHtml() {
 
   return (`
     <div class="card" data-sortdate="${Date.parse(this.published_date)}">
-      <a href="/announcements/${this.id}">
+      <a href="/announcements/recommendations/${this.id}">
         <img class="card__image" src=${this.image_url} />
       </a>
       <div class="card__content-type">NEWS</div>
       <div class="card__title">
-        <a class="card__link" href="/announcements/${this.id}">${this.title}</a>
+        <a class="card__link" href="/announcements/recommendations/${this.id}">${this.title}</a>
         <div class="card__tags">tags: ${tags}</div>
       </div>
     </div>
   `);
 };
 
-function loadDropdowns(initialTaggings) {
-  $.get({
-    url: '/tags.json',
-    dataType: 'json',
-  }).done((response) => {
-    const contentTypeDropdown = (`<select class="content-type__select content-type__dropdown">
-      <option id='all-content-types' value='everything' ${initialTaggings.content_type === 'everything' ? 'selected' : ''}>everything</option>${
-       response.filter(tag => tag.data.attributes.tag_type === 'content_type' && tag.data.attributes.title !== 'calls to action' && tag.data.attributes.title !== 'datasets')
-        .map((tag) => (`<option data-id=${tag.data.attributes.id} value=${tag.data.attributes.title} class="find-out__tag-title" ${initialTaggings.content_type === tag.data.attributes.title ? 'selected' : 'ex'}>
-        ${tag.data.attributes.title}
-      </option>`))
-      .join('')
-     }</select>`)
-
-     $('.content-type')[0].innerHTML = `You're looking for ${contentTypeDropdown}`;
-
-    const topicAreaDropdown = (`<select class="topic-area__select topic-area__dropdown">
-      <option id='all-topic-areas' value='all topic areas' ${initialTaggings.topic_area === 'all-topic-areas' ? 'selected' : ''}>all topic areas</option>${
-       response.filter(tag => tag.data.attributes.tag_type === 'topic_area')
-        .map(tag => `<option data-id=${tag.data.attributes.id} value=${tag.data.attributes.title}  class="find-out__tag-title" ${initialTaggings.topic_area === tag.data.attributes.title ? 'selected' : ''}>
-          ${tag.data.attributes.title}
-        </option>`)
-        .join('')
-       }</select>`);
-      $('.topic-area')[0].innerHTML = `in ${topicAreaDropdown}`;
-    onDropdownChange();
-    cueOverlay();
+const onClickOverlay = () => {
+  $('#find-out__overlay').on('click', () => {
+    $('#find-out__overlay').removeClass('find-out__overlay');
   });
-}
+};
 
 const cueOverlay = () => {
   $('.content-type__select').on('click', () => {
@@ -181,30 +160,6 @@ const openOverlay = () => {
   $('.current').on('click', () => {
     $('#find-out__overlay').addClass('find-out__overlay');
     onClickOverlay();
-  });
-};
-
-const onClickOverlay = () => {
-  $('#find-out__overlay').on('click', () => {
-    $('#find-out__overlay').removeClass('find-out__overlay');
-  });
-};
-
-const onDropdownChange = () => {
-  $('select').niceSelect().on('change', () => {
-    openOverlay();
-    const dropdownSelections = Array.from($('option')).filter(tag => tag.selected);
-    const dropdownsObject = {
-      content_type: dropdownSelections[0].text,
-      topic_area: dropdownSelections[1].text,
-    };
-    fetchTaggings(dropdownsObject);
-    if (dropdownsObject.content_type === 'everything' && dropdownsObject.topic_area === 'all topic areas') {
-      history.pushState(null, '', '/find-out');
-    } else {
-      history.pushState(null, '', `/find-out/${dropdownsObject.content_type}/${dropdownsObject.topic_area}`);
-    }
-    $('#find-out__overlay').removeClass('find-out__overlay');
   });
 };
 
@@ -310,6 +265,55 @@ const fetchTaggings = (dropdownsObject) => {
     onClickOverlay();
   });
 };
+
+
+const onDropdownChange = () => {
+  $('select').niceSelect().on('change', () => {
+    openOverlay();
+    const dropdownSelections = Array.from($('option')).filter(tag => tag.selected);
+    const dropdownsObject = {
+      content_type: dropdownSelections[0].text,
+      topic_area: dropdownSelections[1].text,
+    };
+    fetchTaggings(dropdownsObject);
+    if (dropdownsObject.content_type === 'everything' && dropdownsObject.topic_area === 'all topic areas') {
+      history.pushState(null, '', '/find-out');
+    } else {
+      history.pushState(null, '', `/find-out/${dropdownsObject.content_type}/${dropdownsObject.topic_area}`);
+    }
+    $('#find-out__overlay').removeClass('find-out__overlay');
+  });
+};
+
+function loadDropdowns(initialTaggings) {
+  $.get({
+    url: '/tags.json',
+    dataType: 'json',
+  }).done((response) => {
+    const contentTypeDropdown = (`<select class="content-type__select content-type__dropdown">
+      <option id='all-content-types' value='everything' ${initialTaggings.content_type === 'everything' ? 'selected' : ''}>everything</option>${
+       response.filter(tag => tag.data.attributes.tag_type === 'content_type' && tag.data.attributes.title !== 'calls to action' && tag.data.attributes.title !== 'datasets')
+        .map((tag) => (`<option data-id=${tag.data.attributes.id} value=${tag.data.attributes.title} class="find-out__tag-title" ${initialTaggings.content_type === tag.data.attributes.title ? 'selected' : 'ex'}>
+        ${tag.data.attributes.title}
+      </option>`))
+      .join('')
+     }</select>`)
+
+     $('.content-type')[0].innerHTML = `You're looking for ${contentTypeDropdown}`;
+
+    const topicAreaDropdown = (`<select class="topic-area__select topic-area__dropdown">
+      <option id='all-topic-areas' value='all topic areas' ${initialTaggings.topic_area === 'all-topic-areas' ? 'selected' : ''}>all topic areas</option>${
+       response.filter(tag => tag.data.attributes.tag_type === 'topic_area')
+        .map(tag => `<option data-id=${tag.data.attributes.id} value=${tag.data.attributes.title}  class="find-out__tag-title" ${initialTaggings.topic_area === tag.data.attributes.title ? 'selected' : ''}>
+          ${tag.data.attributes.title}
+        </option>`)
+        .join('')
+       }</select>`);
+      $('.topic-area')[0].innerHTML = `in ${topicAreaDropdown}`;
+    onDropdownChange();
+    cueOverlay();
+  });
+}
 
 $(() => {
   const urlPathVariables = window.location.pathname.split('/').slice(2).map(filter => filter.replace(/%20/g, " "));
