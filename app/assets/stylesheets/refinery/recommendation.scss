@@ -112,6 +112,7 @@
         display: flex;
         font-size: $font_size-small;
         line-height: 1.5em;
+        margin-bottom: 0.5rem;
 
         &::before {
           content: "";
@@ -175,6 +176,28 @@
         margin-right: 5px; 
         top: 0;
       }
+    }
+  }
+  @include media (x-small) {
+    &_header {
+      display: block;
+      margin: 0;
+      padding: 2rem 1.35rem;
+      img {
+        margin: 1rem 0 0;
+        width: 100%;
+      }
+      div {
+        width: 100%;
+      }
+      &__title {
+        font-size: $font_size-large;
+        line-height: 1.8rem;
+        margin: 0.5rem 0;
+      }
+    }
+    &_body {
+      margin: 2rem 1.35rem;
     }
   }
 }

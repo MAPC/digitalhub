@@ -34,8 +34,7 @@
 
     .content__date {
       @include media(small) {
-        grid-row: 4;
-        padding: 1rem 1.35rem 0;
+        display: none;
       }
 
       appearance: none;
@@ -59,8 +58,7 @@
 
     .content__tags {
       @include media(small) {
-        grid-row: 5;
-        padding: .5rem 1.35rem 0;
+        display: none;
       }
 
       color: $color_bg-darkgrey;
@@ -75,7 +73,7 @@
         grid-row: 6;
         margin-bottom: 1rem;
         min-height: unset;
-        padding: 0 1.35rem 1rem;
+        // padding: 0 1.35rem 1rem;
       }
 
       color: $v3-color_gray-dark;
