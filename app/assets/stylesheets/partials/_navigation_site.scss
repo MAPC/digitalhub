@@ -57,4 +57,9 @@
     list-style-image: image-url('li-marker-20px.png');
     }
   }
+  @include media (medium) {
+    &-content {
+      display: block;
+    }
+  }
 }   

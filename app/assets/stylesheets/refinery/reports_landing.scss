@@ -14,6 +14,9 @@
     font-family: $font_family-primary;
     font-size: $font_size-xlarge; // 35px
     width: 75%;
+    @include media (medium) {
+      width: 100%;
+    }
   }
   // Section Subtitles
   h3 {
@@ -33,7 +36,6 @@
     margin: 0 auto;
     width: 75%;
     @media (max-width: 425px){
-      padding: 2rem 1.35rem;
       width: 100%;
     }
   }
@@ -79,6 +81,14 @@
         }
       }
     }
+    @include media (small) {
+      &-close {
+        margin: 5.5rem 4.5rem;
+      }
+      &-text {
+        padding: 4rem 1rem;
+      }
+    }
   }
   .reports-hero {
     background-color: $v3-color_green-dark;
@@ -105,6 +115,30 @@
           width: 50%;
         }
       } 
+    }
+    @include media (medium) {
+      h1 {
+        font-size: $font_size-xlarge;
+      }
+      h3 {
+        font-size: $font_size-medium;
+      }
+      &-content {
+        min-height: 34rem;
+        padding: 2rem 1.35rem;
+        &__header {
+          justify-content: center;
+          min-height: 30rem;
+        }
+        &__body {
+          margin: 0;
+          padding-bottom: 4rem;
+          width: 100%;
+          p {
+            width: 100%;
+          }
+        }
+      }
     }
   }
   // MAPC logo and triangle section break
@@ -145,9 +179,6 @@
         flex-grow: 1;
         text-decoration: none;
         transition: all 0.4s ease-in-out;
-        @media (max-width: 425px){
-          flex-basis: 40%;
-        }
         img {
           width: 100%;
         }
@@ -221,12 +252,15 @@
     }
     &-action-areas-carousel {
       display: none;
-      @media (max-width: 425px){
+    }
+    @include media (medium) {
+      &-goals-card {
+        flex-basis: 40%;
+      }
+      &-action-areas-carousel {
         display: block;
       }
-    }
-    &-action-areas-accordion {
-      @media (max-width: 425px){
+      &-action-areas-accordion {
         display: none;
       }
     }
