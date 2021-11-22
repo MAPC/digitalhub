@@ -10,6 +10,17 @@
       }
       &__link {
         border: solid 1px $v3-color_green-light;
+        background-color: $v3-color_green-light;
+        color: $color_font-light;
+        font-family: $font_family-secondary;
+        font-size: $v3_font_size-button;
+        transition: all 0.4s ease-in-out;
+        &:hover {
+          background-color: $v3_color_bg-lightest;
+          border-color: $v3-color_green-light;
+          color: $v3-color_green-light;
+          cursor: pointer;
+        }
       }
     }
   }
@@ -24,6 +35,17 @@
       }
       &__link {
         border: solid 1px $v3-color_blue-light;
+        background-color: $v3-color_blue-light;
+        color: $color_font-light;
+        font-family: $font_family-secondary;
+        font-size: $v3_font_size-button;
+        transition: all 0.4s ease-in-out;
+        &:hover {
+          background-color: $v3_color_bg-lightest;
+          border-color: $v3-color_blue-light;
+          color: $v3-color_blue-light;
+          cursor: pointer;
+        }
       }
     }
   }
@@ -38,6 +60,17 @@
       }
       &__link {
         border: solid 1px $v3-color_purple-light;
+        background-color: $v3-color_purple-light;
+        color: $color_font-light;
+        font-family: $font_family-secondary;
+        font-size: $v3_font_size-button;
+        transition: all 0.4s ease-in-out;
+        &:hover {
+          background-color: $v3_color_bg-lightest;
+          border-color: $v3-color_purple-light;
+          color: $v3-color_purple-light;
+          cursor: pointer;
+        }
       }
     }
   }
@@ -52,6 +85,17 @@
       }
       &__link {
         border: solid 1px $v3-color_red-light;
+        background-color: $v3-color_red-light;
+        color: $color_font-light;
+        font-family: $font_family-secondary;
+        font-size: $v3_font_size-button;
+        transition: all 0.4s ease-in-out;
+        &:hover {
+          background-color: $v3_color_bg-lightest;
+          border-color: $v3-color_red-light;
+          color: $v3-color_red-light;
+          cursor: pointer;
+        }
       }
     }
   }
@@ -66,6 +110,17 @@
       }
       &__link {
         border: solid 1px $v3-color_yellow-light;
+        background-color: $v3-color_yellow-light;
+        color: $color_font-light;
+        font-family: $font_family-secondary;
+        font-size: $v3_font_size-button;
+        transition: all 0.4s ease-in-out;
+        &:hover {
+          background-color: $v3_color_bg-lightest;
+          border-color: $v3-color_yellow-light;
+          color: $v3-color_yellow-light;
+          cursor: pointer;
+        }
       }
     }
   }
@@ -74,8 +129,8 @@
     background-color: $v3-color_beige;
     display: flex;
     font-family: $font_family-primary;
-    margin: -10rem;
-    padding: 3rem 15rem;
+    margin: 0 -40rem -10rem;
+    padding: 3rem 45rem;
 
     div {
       width: 60%;
