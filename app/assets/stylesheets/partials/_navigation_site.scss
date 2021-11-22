@@ -23,7 +23,7 @@
 
     a {
       text-decoration: none;
-      &:hover {
+      :hover {
         color: $v3-color_green-light;
       }
     }
