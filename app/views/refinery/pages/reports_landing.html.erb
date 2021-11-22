@@ -1,11 +1,14 @@
 <script>
     window.onload = init;
     function init() {
+        const body = document.body;
         const letter = document.getElementById("reports-letter");
         const close = document.getElementById("reports-letter-close");
         letter.style.display = "flex";
+        body.style.position = "fixed";
         function hide() {
             letter.style.display = "none";
+            body.style.position = "relative";
         }
         close.addEventListener("click", hide);
     };
