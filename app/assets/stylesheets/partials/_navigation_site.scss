@@ -22,9 +22,18 @@
     }
 
     a {
+      text-decoration: none;
+      &:hover {
+        color: $v3-color_green-light;
+      }
+    }
+
+    li > a {
       bottom: 0.3125rem;
       color: $v3-color_gray-dark;
-      text-decoration: none;
+      &:hover {
+        color: $v3-color_green-light;
+      }
     }
 
     h4 {
