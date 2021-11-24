@@ -115,7 +115,7 @@
       margin: 4rem 0 auto auto;
       padding: 3rem;
       position: absolute;
-      overflow: scroll;
+      overflow: hidden;
       right: 0;
       top: 0;
       width: 50%;
@@ -137,8 +137,14 @@
 
       &__text {
         height: 22rem;
+        -ms-overflow-style: none;
         overflow: scroll;
+        overflow-x: hidden;
         padding-right: 1rem;
+        scrollbar-width: none; 
+        &::-webkit-scrollbar {
+          display: none;
+        }
         h2 {
           color: $v3-color_green-light;
           font-family: $font_family-secondary;
