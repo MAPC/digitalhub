@@ -67,11 +67,16 @@
     }
     &-text {
       background-color: $color_bg-lightest;
-      box-shadow: 5px 5px 20px 10px #00000040;
-      max-height: 80vh;
+      box-shadow: 5px 5px 20px 10px #00000060;
+      max-height: 85vh;
       max-width: 80vw;
-      overflow: scroll;
+      -ms-overflow-style: none;
+      overflow-y: scroll;
       padding: 6rem 8rem;
+      scrollbar-width: none;
+      &::-webkit-scrollbar {
+        display: none;
+      }
       &-header {
         h1, h4 {
           margin-bottom: 0.6rem;
