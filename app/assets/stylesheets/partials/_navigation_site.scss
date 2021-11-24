@@ -44,9 +44,12 @@
       text-transform: uppercase;
     }
 
-    p {
-    color: $v3-color_gray-dark;
-    margin-top: .2rem;
+    p > a {
+      color: $v3-color_gray-dark;
+      margin-top: .2rem;
+      &:hover {
+        color: $v3-color_green-light;
+      }
     }
 
     ul {
