@@ -194,6 +194,9 @@
     &__strategy {
       font-size: $font_size-larger;
     }
+    p {
+      color: $v3-color_gray-light;
+    }
     &__actions {
       list-style-type: none;
 
@@ -203,7 +206,7 @@
         ul {
           list-style-type: none;
           li {
-            color: $v3-color_gray-light;
+            color: $v3-color_black-dark;
             padding: 1rem;
           }
         }
