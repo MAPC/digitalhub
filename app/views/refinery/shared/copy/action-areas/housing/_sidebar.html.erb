@@ -1,3 +1,21 @@
+<script>
+    
+    window.onload = init;
+    
+    function init() {
+
+        document.getElementById('download').addEventListener("click", function () {
+            console.log("gtag event clicked");
+            gtag('event', 'Download', {
+                'event_category' : 'PDF',
+                'event_label' : 'MC2050_Homes_for_Everyone_Brief.pdf'
+            });
+            console.log("gtag event fired");
+        });
+    };
+    
+</script>
+
 <div class="action-areas-sidebar__section">
     <%= image_tag("li-marker-20px.png", class: "li-marker", alt: t("triangle")) %>
     <p class="action-areas-sidebar__title">Artist’s Eye</p>
@@ -22,5 +40,5 @@
     </ul>
 </div>
 <div class="action-areas-sidebar__button">
-    <%= link_to "Download PDF Version", asset_path("MC2050_Homes_for_Everyone_Brief.pdf") %>
+    <%= link_to "Download PDF Version", asset_path("MC2050_Homes_for_Everyone_Brief.pdf"), id: "download" %>
 </div>
