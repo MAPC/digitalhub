@@ -5,12 +5,10 @@
     function init() {
 
         document.getElementById('download').addEventListener("click", function () {
-            console.log("gtag event clicked");
             gtag('event', 'Download', {
                 'event_category' : 'PDF',
                 'event_label' : 'MC2050_Homes_for_Everyone_Brief.pdf'
             });
-            console.log("gtag event fired");
         });
     };
     
