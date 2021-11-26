@@ -1,6 +1,9 @@
 <script>
+    
     window.onload = init;
+    
     function init() {
+
         const body = document.body;
         const letter = document.getElementById("reports-letter");
         const close = document.getElementById("reports-letter-close");
@@ -11,7 +14,17 @@
             body.style.position = "relative";
         }
         close.addEventListener("click", hide);
+
+        document.getElementById('download').addEventListener("click", function () {
+            console.log("gtag event clicked");
+            gtag('event', 'Download', {
+                'event_category' : 'PDF',
+                'event_label' : 'MC2050_COMPLETE_PDF.pdf'
+            });
+            console.log("gtag event fired");
+        });
     };
+    
 </script>
 
 <div class="ReportsPage">
