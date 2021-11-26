@@ -1,3 +1,11 @@
+<script>
+
+document.getElementById('download').addEventListener("click", function () {
+   ga('send', 'event', 'PDF', 'Download', 'MC2050_COMPLETE_PDF.pdf');
+});
+
+</script>
+
 <div class="navigation-site">
     <div class="navigation-site-container container margins">
         <div class="navigation-site-content">
@@ -9,7 +17,7 @@
             </div>
             <div class="navigation-site-content__col-2">
                 <h4>Download PDF</h4>
-                <p><%= link_to "Version 1.0", asset_path("MC2050_COMPLETE_PDF.pdf") %></p>
+                <p><%= link_to "Version 1.0", asset_path("MC2050_COMPLETE_PDF.pdf"), id: "download" %></p>
             </div>
             <div class="navigation-site-content__col-3">
                 <h4>Jump-To Pages</h4>
