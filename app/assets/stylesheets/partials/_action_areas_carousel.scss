@@ -2,15 +2,16 @@
   --slide-count: 5;
   height: 27rem;
   margin: 0 auto;
-  overflow: scroll;
+  overflow-x: scroll;
+  overflow-y: none;
   padding: 0;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
-  width: 83rem;
 }
 .action-areas-carousel {
   display: flex;
-  width: calc(100% * var(--slide-count));
+  width: 83rem;
+  // width: calc(100% * var(--slide-count));
   &-card:nth-child(1) {
     background-color: $v3-color_green-light;
   }
