@@ -219,7 +219,16 @@
       }
     }
     &__inline-footnote {
+      bottom: 6px;
+      cursor: pointer;
       font-size: $font_size-footnote;
+      text-decoration: none;
+      &:before {
+        content: "[";
+      }
+      &:after {
+        content: "]";
+      }
     }
     &__footnotes {
       list-style: none;
