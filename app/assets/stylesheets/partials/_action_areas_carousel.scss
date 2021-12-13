@@ -1,17 +1,12 @@
 .action-areas-carousel-wrapper {
   --slide-count: 5;
-  height: 535px;
-  // -ms-overflow-style: none;
-  overflow-x: scroll;
-  overflow-y: hidden;
+  height: 27rem;
+  margin: 0 auto;
+  overflow: scroll;
   padding: 0;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
-  // scrollbar-width: none;
-  width: 100%;
-  // &::-webkit-scrollbar {
-  //   display: none;
-  // }
+  width: 83rem;
 }
 .action-areas-carousel {
   display: flex;
@@ -32,21 +27,21 @@
       background-color: $v3-color_yellow-light;
   }
   &-card {
-    border-radius: 48px;
+    border-radius: 30px;
     display: flex;
     flex-direction: column;
-    height: 500px;
+    height: 400px;
     list-style: none;
     margin: 0 .5rem;
     object-fit: cover;
-    padding: 2rem;
+    padding: 1.5rem 1.125rem;
     scroll-snap-align: start;
-    width: 350px;
+    width: 250px;
     &__type {
         color: $color_font-light;
         flex-basis: 5%;
         font-family: $font_family-secondary;
-        font-size: $font-size-large;
+        font-size: $font-size-md-large;
         margin-bottom: .5rem;
         text-transform: uppercase;
     }
@@ -54,7 +49,7 @@
         display: block;
         flex-basis: 25%;
         font-family: $font_family-primary;
-        font-size: $font_size-xlarge;
+        font-size: $font_size-large;
     }
     &__copy {
         align-items: flex-end;
@@ -62,8 +57,8 @@
         display: flex;
         flex-basis: 60%;
         font-family: $font_family-primary;
-        font-size: $font-size-md-large;
-        line-height: 1.5rem;
+        font-size: $font-size-small;
+        line-height: 1.25rem;
     }
     &__link {
         align-items: flex-end;
@@ -72,7 +67,7 @@
         display: flex;
         flex-basis: 10%;
         font-family: $font_family-secondary;
-        font-size: $font-size-medium;
+        font-size: $font-size-small;
         font-weight: 100;
         margin-top: 10px;
         padding: 10px 25px;
