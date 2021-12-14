@@ -41,6 +41,7 @@
   }
   #reports-letter {
     align-items: center;
+    animation: fade-in 3s forwards;
     display: none;
     height: 100vh;
     margin: auto;
@@ -49,6 +50,11 @@
     transition: all 0.4s ease-in-out;
     width: 100vw;
     z-index: 2;
+    @keyframes fade-in {
+      0% {opacity: 0;}
+      60% {opacity: 0;}
+      100% {opacity: 1;}
+    }
     h1 {
       color: $v3-color_green-dark;
       font-size: $font_size-xlarge;
