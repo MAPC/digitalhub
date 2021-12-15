@@ -56,15 +56,18 @@
         </div>
         <div class="one-box-grid">
           <div class="one-box-grid__content grid grid--3-2">
-            <% @one_boxes.each do |box| %>
-              <% next unless box.visible %>
-              <div class="grid__cell">
-                <%= link_to box.link do %>
-                  <%= render partial: '/partials/one_box', locals: { type: box.triangle_overlay ? 'half' : nil, title: box.title, image: box.image.thumbnail(geometry: :one_box).url } %>
-                <% end %>
-              </div>
-            <% end %>
+          <% @one_boxes.each do |box| %>
+            <% next unless box.visible %>
+            <div class="grid__cell">
+              <%= link_to box.link do %>
+                <%= render partial: '/partials/one_box', locals: { type: box.triangle_overlay ? 'half' : nil, title: box.title, image: box.image.thumbnail(geometry: :one_box).url } %>
+              <% end %>
+            </div>
+          <% end %>
+          <div class="grid__cell">
+            <%= render partial: '/partials/research_box', locals: { events: @next_events } %>
           </div>
+        </div>
         </div>
       </div>
     </div>
