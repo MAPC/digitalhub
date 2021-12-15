@@ -23,6 +23,18 @@
             });
             console.log("gtag event fired");
         });
+
+        const equity = document.getElementById("equity-letter");
+        const showBtn = document.getElementById("equity-letter-show");
+        const closeBtn = document.getElementById("equity-letter-close");
+        function showEquity() {
+            equity.style.display = "block";
+        }
+        function hideEquity() {
+            equity.style.display = "none";
+        }
+        showBtn.addEventListener("click", showEquity);
+        closeBtn.addEventListener("click", hideEquity);
     };
     
 </script>
@@ -93,6 +105,48 @@
                         Since its creation by the Massachusetts legislature in 1963, MAPC has developed a decennial regional plan, as we have a statutory obligation to do. With MetroCommon 2050, we have met that challenge with a vision for a sustainable and equitable Metropolitan Boston. It is bold and it is achievable, but only if we work together to shape the region that we want. 
                     </p>
                 </div>  
+                <div class="reports-content-values">
+                    <h2>MetroCommon 2050 Values and Commitments</h2>
+                    <h3>What are values?</h3>
+                    <p>These values are the characteristics of the region we want to become. They shape MAPC’s approach to our work and allow us to assess and prioritize the projects and policies we pursue.</p>
+                    <h3>What purpose do values serve?</h3>
+                    <ol>
+                        <li>Values are an organizational consciousness that we implicitly use while making decisions</li>
+                        <li>Values act as a tool that we used to create and assess MetroCommon activities, goals, content, and recommendations</li>
+                        <li>Values provide context to potential and current partners in regards to MAPC priorities and decision making</li>
+                    </ol>
+                    <h3>The Values</h3>
+                    <p>Equity: The condition of fair and just inclusion into a society. Equity will exist when those who have been most marginalized have equal access to opportunities, power, participation, and resources and all have avenues to safe, healthy, productive, and fulfilling lives. It requires restructuring deeply entrenched systems of privilege and oppression that have led to the uneven distribution of benefits and burdens over multiple generations. Read our <a id="equity-letter-show">Statement on Equity</a>.</p>
+                    <section id="equity-letter">
+                        <a id="equity-letter-close">X</a>
+                        <div id="equity-letter-text">
+                            <div id="equity-letter-text-header">
+                                <h1>Statement on Equity</h1>
+                            </div>
+                            <p>Throughout MetroCommon we have strived to place equity at the center of this plan. The Equity of Wealth and Health Action Area dives deep into two aspects of unequal and inequitable outcomes found in our region. The other four Action Areas are devoted to other significant challenges facing Metro Boston, but they too seek to address the disparities that exist within those topics. We developed the plan’s recommendations by closely working with partners that are leading voices for creating a more equitable and resilient region. We also sought feedback from residents most likely to be impacted by the policy and programmatic decisions made in the future. It will take the work of many partners and allies to fashion a more equitable region. We look forward to supporting their efforts and continuing to learn and work for a more equitable and resilient region. A Greater Boston region that supports and serves all residents and workers is possible.</p>
+                            <p>Achieving an equitable future requires acknowledging the inequities of our past and present. Since colonization of what is now the United States, our country has been built on the dispossession of native populations and economic and racial exclusion of low-income and BIPOC communities. This exclusion and oppression have continued over the centuries through governmental policies, programs and through our economic systems. From the federally sanctioned practice of enslavement of Black, Brown and Indigenous people, to Jim Crow era legislation, to contemporary labor, environmental, housing, and educational systems, the rules of society have been intentionally designed to create the disparities between residents in the region. The range of disparities along racial demographics include but are not certainly limited to wealth accumulation and health.</p>
+                            <p>The MAPC region has its own particular history of oppression and exclusion based on race, ethnicity, gender, religious beliefs, and sexual orientation. Our region encompasses lands that are the original homelands of the Wampanoag, Nipmuc, Abenaki, and Massachusett tribal nations. The painful history of genocide and forced removal from this territory is infrequently taught by modern day curricula. And harm and erasure continue to be perpetrated against Indigenous people to this day.<span class="statement-on-equity__inline-footnote">1, 2</span></p>
+                            <p>Residents of African descent have experienced a painful history as well. From the history of slavery to the practice of redlining, Black residents have been intentionally excluded from the freedoms, privileges, and neighborhoods enjoyed by White residents. Even after realizing the same legal rights as Whites, Black residents continue to face systematic racism and economic exclusion. In Metro Boston, the legacies of redlining, exclusion from government programs such as the GI Bill, segregated public housing, and decisions to locate environmental hazards in predominately Black and Brown communities have led to the stark differences in health and wealth outcomes at the zip code level. </p>
+                            <p>Many of the disparities Black residents currently experience in wealth and income, health, educational, and safety are similarly shared by other BIPOC populations, notably Latinx residents.<span class="statement-on-equity__inline-footnote">3</span> In addition to systemic oppression and exclusion, violence and intolerance also operates on the individual level. This past year we have experienced national and regional increases in hate crimes and violence targeting Asians and members of the Jewish faith.</p>
+                            <p>The COVID-19 pandemic has brought even greater clarity and understanding of how some populations are at greater risks to public health and economic devastation and insecurity. This crisis compounded the already existing crises and vulnerabilities facing particular residents and workers.  Residents of nursing homes, those incarcerated, older adults, people of color, and low-income service and gig workers were disproportionately affected during the pandemic. It is promising that federal and state priorities for use of recovery funds are prioritizing equity, however we have to make sure that the voices of those most impacted by COVID-19 have a say in how these funds are allocated. This is a once in a generation opportunity to begin addressing both the long-standing disparities and more acute impacts that the pandemic inflicted on certain populations.</p>
+                            <p>State, regional, and local governments have contributed to this history of exclusion and are part of the systems that continue to result in widely divergent lived experiences and outcomes along racial and economic lines. The planning field is complicit in this history as land use, transportation, and housing decisions that have led to the segregation and unequal access to opportunity that persist throughout the region today. MAPC acknowledges that we are part of this system that has caused harm and are committed to doing our best to undo the practices and policies that lead to oppression. In 2015 as part of a strategic planning process, we adopted four strategic priorities. One of them is to advance equity, including a special emphasis on racial equity, in our work. While we have made strides in this work, we realize that we, like many in our field, are early in our journey and we approach this work with humility and a willingness to learn. To meet our commitment, we believe that we need to partner with - and support- allies and leaders in this work and to center the voices of those most impacted in our projects and in our advocacy campaigns. This work is rooted in long term relationship- and trust-building, which we understand will take time and resources. We are committed to prioritizing this work and helping to dismantle inequitable systems to create a Metro Boston where all can succeed.</p>  
+                            <ul class="statement-on-equity__footnotes">
+                            <li>O’Brien, Jean. Firsting and Lasting: Writing Indians out of Existence in New England. Minneapolis: University of Minnesota Press. 2010.</li>
+                            <li>Gould, Rae. The Nipmuc Nation, Federal Acknowledgment, and a Case of Mistaken Identity. In Recognition, Sovereignty Struggles, and Indigenous Rights in the United States. A Sourcebook. University of North Carolina Press. 2013.</li>
+                            <li><a href="https://www.regionalindicators.org/">Regionalindicators.org</a>.</li>  
+                            </ul>  
+                        </div>
+                    </section>
+                    <p>Resilience: The capacity of communities, organizations, and natural systems to respond, adapt, and flourish no matter what kinds of chronic stresses and acute shocks they experience.</p>
+                    <p>Prosperity: The opportunity for all individuals as well as communities to thrive and provide for themselves in meaningful and fulfilling ways.</p>
+                    <p>Stewardship: Our collective responsibility to maintain, invest in, and protect the quality of our natural, built, and social environments to support healthy and happy people and conserve environmental, economic, social, and cultural assets.</p>
+                    <h3>Commitments</h3>
+                    <p>If values help ensure that we become the region and the organization we aspire towards, commitments are processes for getting there. They are efforts to ensure that innovation, collaboration, and objectivity are present along our journey to embody our values.</p>
+                    <p>Creativity: We will strive to approach our work with creativity and encourage creativity in both our process and outcomes. We view creativity as the spark of imagination, playfulness, and spirit of open-mindedness in envisioning our collective future. Creativity yields inspiration from novel connections, insightful visions, and the ability to plan for the future with inventiveness so we can ensure that our resources are used sensitively and with purpose.</p>
+                    <p>Partnerships: We will center our planning process and implementation strategies on partnerships, defined as the committed, collaborative relationship and shared contributions among individuals, organizations, and municipalities that seeks to deliver practical solutions in response to societal issues.</p>
+                    <p>Data-driven & evidence-based: Where possible, we will collect and analyze data, extract patterns and facts from that data, and utilize those facts to make inferences that influence decision-making.</p>
+              
+                </div>
                 <div class="reports-content-goals">
                     <h2>What does making the region a better place actually mean?</h2>
                     <h3>What purpose do the MetroCommon 2050 goals serve?</h3>
