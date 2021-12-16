@@ -1,7 +1,7 @@
 <% events = events[0..2] if events.size > 3 %>
 
 <div class="event-box">
-  <%= link_to "See All Research Reports", events_events_path, class: "event-box__header" %>
+  <%= link_to "See All Research Reports", "/find-out/publications/all%20topic%20areas", class: "event-box__header" %>
   <div class="event-box__content">
   <% if events.size > 0 %>
     <ul class="event-box__list">
