@@ -23,13 +23,15 @@
       <h1 class="process-documents__title">Process Documents</h1>
       <div class="cards">
         <div class="card">
-          <div class="card__download"><%= link_to image_tag("download.svg"), 'https://metrocommon.mapc.org/system/refinery/resources/W1siZiIsIjIwMTkvMDkvMDQvNHI0bTAycnhhYl9NQ19WYWx1ZXN2MDdEcmFmdF8yMDE5XzAxXzMwLnBkZiJdXQ/MC%20Valuesv07Draft_2019-01-30.pdf' %></div>
-          <div class="card__body">
+        <div class="card__download"><%= link_to image_tag("download.svg"), asset_path("MC2050_Engagement_Summary.pdf") %></div>
+        <div class="card__body">
             <div class="card__title">Summary of MetroCommon Engagement</div>
           </div>
         </div>
         <div class="card">
-          <div class="card__download"><%= link_to image_tag('calendar-icon.svg'), asset_path("MC2050_Homes_for_Everyone_Brief.pdf") %></div>
+          <div class="card__download">
+            <%= link_to image_tag('calendar-icon.svg'), "/find-out/events/all%20topic%20areas" %>
+          </div>
           <div class="card__body">
             <div class="card__title">MetroCommon 2050 Events</div>
           </div>
