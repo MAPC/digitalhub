@@ -12,11 +12,6 @@ development: &development
   username: <%= ENV.fetch("POSTGRES_USER") { nil } %>
   password: <%= ENV.fetch("POSTGRES_PASSWORD") { nil } %>
   database: <%= ENV.fetch("POSTGRES_DB") { 'digitalhub_development' } %>
-  # host: <%= ENV.fetch("POSTGRES_DEV_HOST") { 'pg.mapc.org' } %>
-  # port: <%= ENV.fetch("POSTGRES_PORT") { 5432 } %>
-  # username: <%= ENV.fetch("POSTGRES_USER") { 'postgres' } %>
-  # password: <%= ENV.fetch("POSTGRES_PASSWORD") { 'M@P@D@T@B@SES!' } %>
-  # database: <%= ENV.fetch("POSTGRES_DB") { 'digitalhub_staging' } %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
