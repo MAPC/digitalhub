@@ -287,9 +287,14 @@
       color: $v3-color_green-dark;
       font-size: $font_size-xlarge;
     }
-    &-show:hover {
-      cursor: pointer;
-    }
+    &-show {
+      font-weight: bold;
+      text-decoration: underline;
+
+      &:hover {
+        cursor: pointer;
+      }
+  }
     &-close {
       cursor: pointer;
       font-family: $font_family-secondary-light;
