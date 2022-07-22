@@ -619,7 +619,7 @@ GEM
     tty-screen (0.6.5)
     tty-tree (0.2.0)
     tty-which (0.4.0)
-    tzinfo (1.2.6)
+    tzinfo (1.2.10)
       thread_safe (~> 0.1)
     uber (0.1.0)
     uglifier (4.1.20)
